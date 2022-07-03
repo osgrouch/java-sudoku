@@ -3,12 +3,19 @@ package sudoku.puzzle;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Class representing a cell in a Sudoku puzzle. Keeps track of the digit this Cell has been marked as,
+ * and the pencil markings regarding what digit this Cell could be.
+ */
 public class Cell {
 	/** The number of this Cell in the Sudoku puzzle */
 	private int digit;
 	/** The possible numbers of this Cell in the Sudoku puzzle */
 	private Set<Integer> pencilMarks;
 
+	/**
+	 * Create a new Cell instance and initialize its private fields to a blank state.
+	 */
 	public Cell () {
 		this.digit = 0;
 		this.pencilMarks = new HashSet<>();
