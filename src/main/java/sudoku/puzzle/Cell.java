@@ -1,0 +1,52 @@
+package sudoku.puzzle;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class Cell {
+	/** The number of this Cell in the Sudoku puzzle */
+	private int digit;
+	/** The possible numbers of this Cell in the Sudoku puzzle */
+	private Set<Integer> pencilMarks;
+
+	public Cell () {
+		this.digit = 0;
+		this.pencilMarks = new HashSet<>();
+	}
+
+	/**
+	 * Adds the given number to this Cell's Set of pencil marks.
+	 * The Set is used to keep track of the user's annotations for each Cell.
+	 *
+	 * @param num number to add
+	 */
+	public void addMark (int num) {
+		this.pencilMarks.add(num);
+	}
+
+	/**
+	 * Removes the given number from this Cell's Set of pencil marks.
+	 * The Set is used to keep track of the user's annotations for each Cell.
+	 *
+	 * @param num number to remove
+	 */
+	public void removeMark (int num) {
+		this.pencilMarks.remove(num);
+	}
+
+	/**
+	 * Set this Cell's digit. Displayed in the GUI and used when verifying puzzle solution.
+	 *
+	 * @param digit number to set in this Cell
+	 */
+	public void setDigit (int digit) {
+		this.digit = digit;
+	}
+
+	/**
+	 * @return the digit within this Cell
+	 */
+	public int getDigit () {
+		return digit;
+	}
+}
