@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="400.0"
+            prefWidth="400.0" style="-fx-background-color: #e2e9ee;" xmlns="http://javafx.com/javafx/18"
+            fx:controller="sudoku.PuzzleController">
+	<children>
+		<Button layoutX="145.0" layoutY="188.0" mnemonicParsing="false" text="This does nothing"/>
+	</children>
+</AnchorPane>
