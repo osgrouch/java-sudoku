@@ -10,19 +10,15 @@ public class Nonet {
 	/** The number of columns in this region */
 	public static final int cols = 3;
 
-	/** A 2D Array of Cells within this region */
-	private Cell[][] cells;
+	/** A Box (2D Array) of Cells within this region */
+	private Box<Cell> cells;
 
 	/**
-	 * Create a new Nonet with a blank Array of Cells.
+	 * Create a new Nonet with a blank Box of Cells.
 	 */
 	public Nonet () {
-		this.cells = new Cell[rows][cols];
-		for (int row = 0; row < rows; row++) {
-			for (int col = 0; col < cols; col++) {
-				this.cells[row][col] = new Cell();
-			}
-		}
+		this.cells = new Box<>(Cell.class, rows, cols);
+		this.cells.createArray();
 	}
 
 	/**
@@ -32,7 +28,7 @@ public class Nonet {
 	 * @return Array of Cells
 	 */
 	public Cell[] getRow (int row) {
-		return cells[row];
+		return cells.getRow(row);
 	}
 
 	/**
@@ -42,10 +38,6 @@ public class Nonet {
 	 * @return Array of Cells
 	 */
 	public Cell[] getCol (int col) {
-		Cell[] column = new Cell[3];
-		for (int row = 0; row < rows; row++) {
-			column[row] = cells[row][col];
-		}
-		return column;
+		return cells.getCol(col);
 	}
 }
