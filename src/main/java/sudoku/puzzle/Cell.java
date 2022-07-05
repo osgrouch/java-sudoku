@@ -5,9 +5,13 @@ import java.util.Set;
 
 /**
  * Class representing a cell in a Sudoku puzzle. Keeps track of the digit this Cell has been marked as,
- * and the pencil markings regarding what digit this Cell could be.
+ * and the pencil markings regarding what digit this Cell could be. Also tracks what region this Cell
+ * belongs to within the puzzle.
  */
 public class Cell {
+	/** The region within the Sudoku puzzle this Cell belongs to */
+	private final int region;
+
 	/** The number of this Cell in the Sudoku puzzle */
 	private int digit;
 	/** The possible numbers of this Cell in the Sudoku puzzle */
@@ -16,7 +20,8 @@ public class Cell {
 	/**
 	 * Create a new Cell instance and initialize its private fields to a blank state.
 	 */
-	public Cell () {
+	public Cell (int region) {
+		this.region = region;
 		this.digit = 0;
 		this.pencilMarks = new HashSet<>();
 	}
@@ -48,6 +53,13 @@ public class Cell {
 	 */
 	public void setDigit (int digit) {
 		this.digit = digit;
+	}
+
+	/**
+	 * @return the region this Cell belongs to
+	 */
+	public int getRegion () {
+		return region;
 	}
 
 	/**
