@@ -4,8 +4,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Class representing a cell in a Sudoku puzzle. Keeps track of the digit this Cell has been marked as,
- * and the pencil markings regarding what digit this Cell could be. Also tracks what region this Cell
+ * Class representing a cell in a Sudoku puzzle. Keeps track of the number this Cell has been marked as,
+ * and the pencil markings regarding what number this Cell could be. Also tracks what region this Cell
  * belongs to within the puzzle.
  */
 public class Cell {
@@ -13,7 +13,7 @@ public class Cell {
 	private final int region;
 
 	/** The number of this Cell in the Sudoku puzzle */
-	private int digit;
+	private int number;
 	/** The possible numbers of this Cell in the Sudoku puzzle */
 	private Set<Integer> pencilMarks;
 
@@ -22,7 +22,7 @@ public class Cell {
 	 */
 	public Cell (int region) {
 		this.region = region;
-		this.digit = 0;
+		this.number = 0;
 		this.pencilMarks = new HashSet<>();
 	}
 
@@ -47,12 +47,12 @@ public class Cell {
 	}
 
 	/**
-	 * Set this Cell's digit. Displayed in the GUI and used when verifying puzzle solution.
+	 * Set this Cell's number. Displayed in the GUI and used when verifying puzzle solution.
 	 *
-	 * @param digit number to set in this Cell
+	 * @param number number to set in this Cell
 	 */
-	public void setDigit (int digit) {
-		this.digit = digit;
+	public void setNumber (int number) {
+		this.number = number;
 	}
 
 	/**
@@ -63,9 +63,9 @@ public class Cell {
 	}
 
 	/**
-	 * @return the digit within this Cell
+	 * @return the number within this Cell
 	 */
-	public int getDigit () {
-		return digit;
+	public int getNumber () {
+		return number;
 	}
 }
