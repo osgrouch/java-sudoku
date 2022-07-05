@@ -14,8 +14,11 @@ public class Grid {
 	public static final int cols = 9;
 
 	/** 2D Array of Cells in the puzzle */
-	private Cell[][] grid;
+	private final Cell[][] grid;
 
+	/**
+	 * Create a new Grid instance and populate the 2D Array of Cells with blank Cell instances.
+	 */
 	public Grid () {
 		this.grid = new Cell[rows][cols];
 		int region = 1;
@@ -93,6 +96,7 @@ public class Grid {
 	 * @return true if this Grid is a solution
 	 */
 	public boolean isSolution () {
+		// used to create arraylists below to check for repeating numbers
 		final List<Integer> listOfNumbers = List.of(new Integer[]{ 1, 2, 3, 4, 5, 6, 7, 8, 9 });
 
 		for (int region = 0; region < 9; region++) {
@@ -105,6 +109,34 @@ public class Grid {
 				if (!numbers.remove(num)) {
 					// remove returns false only if the given object was not in the ArrayList
 					// therefore a number was repeated in the region and this Grid is not a solution
+					return false;
+				}
+			}
+		}
+
+		for (int row = 0; row < rows; row++) {
+			Cell[] rowOfCells = getGridRow(row);
+			ArrayList<Integer> numbers = new ArrayList<>(listOfNumbers);
+
+			for (Cell cell : rowOfCells) {
+				Integer num = cell.getNumber();
+				if (!numbers.remove(num)) {
+					// remove returns false only if the given object was not in the ArrayList
+					// therefore a number was repeated in the row and this Grid is not a solution
+					return false;
+				}
+			}
+		}
+
+		for (int col = 0; col < cols; col++) {
+			Cell[] colOfCells = getGridCol(col);
+			ArrayList<Integer> numbers = new ArrayList<>(listOfNumbers);
+
+			for (Cell cell : colOfCells) {
+				Integer num = cell.getNumber();
+				if (!numbers.remove(num)) {
+					// remove returns false only if the given object was not in the ArrayList
+					// therefore a number was repeated in the column and this Grid is not a solution
 					return false;
 				}
 			}
