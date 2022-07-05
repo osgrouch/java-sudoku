@@ -1,5 +1,7 @@
 package sudoku.puzzle;
 
+import java.util.ArrayList;
+
 /**
  * Class representing a 9x9 Sudoku grid.
  * Keeps track of the Cells within the 9x9 grid.
@@ -30,6 +32,26 @@ public class Grid {
 				region -= 3;
 			}
 		}
+	}
+
+	/**
+	 * Get all the Cells within the given region.
+	 * Used when verifying if current puzzle grid is a solution.
+	 *
+	 * @param region region to search for
+	 * @return ArrayList of Cells in the given region
+	 */
+	private Cell[] getRegion (int region) {
+		ArrayList<Cell> cells = new ArrayList<>(9); // there will only ever be 9 Cells in a region
+		for (int row = 0; row < rows; row++) {
+			for (int col = 0; col < cols; col++) {
+				Cell current = grid[row][col];
+				if (current.getRegion() == region) {
+					cells.add(current);
+				}
+			}
+		}
+		return (Cell[]) cells.toArray();
 	}
 
 	/**
