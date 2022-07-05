@@ -1,6 +1,7 @@
 package sudoku.puzzle;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Class representing a 9x9 Sudoku grid.
@@ -78,5 +79,37 @@ public class Grid {
 			column[row] = grid[row][col];
 		}
 		return column;
+	}
+
+	/**
+	 * Check if this Grid is a solution to the Sudoku puzzle by checking the following conditions:
+	 *
+	 * <ol>
+	 *     <li>Each region has no repeating numbers from [1, 9].</li>
+	 *     <li>Each row has no repeating numbers from [1, 9].</li>
+	 *     <li>Each column has no repeating numbers from [1, 9].</li>
+	 * </ol>
+	 *
+	 * @return true if this Grid is a solution
+	 */
+	public boolean isSolution () {
+		final List<Integer> listOfNumbers = List.of(new Integer[]{ 1, 2, 3, 4, 5, 6, 7, 8, 9 });
+
+		for (int region = 0; region < 9; region++) {
+			// there will only be 9 regions in a 9x9 Sudoku puzzle
+			Cell[] regionOfCells = getRegion(region);
+			ArrayList<Integer> numbers = new ArrayList<>(listOfNumbers);
+
+			for (Cell cell : regionOfCells) {
+				Integer num = cell.getNumber();
+				if (!numbers.remove(num)) {
+					// remove returns false only if the given object was not in the ArrayList
+					// therefore a number was repeated in the region and this Grid is not a solution
+					return false;
+				}
+			}
+		}
+
+		return true;
 	}
 }
