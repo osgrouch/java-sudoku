@@ -20,9 +20,9 @@ public class Cell {
 	/**
 	 * Create a new Cell instance and initialize its private fields to a blank state.
 	 */
-	public Cell (int region) {
+	public Cell (int region, int number) {
 		this.region = region;
-		this.number = 0;
+		this.number = number;
 		this.pencilMarks = new HashSet<>();
 	}
 

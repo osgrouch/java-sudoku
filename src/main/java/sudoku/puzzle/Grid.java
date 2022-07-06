@@ -1,5 +1,8 @@
 package sudoku.puzzle;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,14 +20,32 @@ public class Grid {
 	private final Cell[][] grid;
 
 	/**
-	 * Create a new Grid instance and populate the 2D Array of Cells with blank Cell instances.
+	 * Create a new Grid instance and populate the 2D Array of Cells with the values
+	 * from the given file. Does not check the file given is a file containing a Sudoku puzzle.
+	 *
+	 * @param filename a csv file containing a 9x9 Sudoku puzzle
 	 */
-	public Grid () {
+	public Grid (String filename) {
+		int[][] cellValues = new int[rows][cols];
+		try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
+			String line;
+			int row = 0;
+			while (( line = br.readLine() ) != null) {
+				String[] rowValues = line.split(",");
+				for (int col = 0; col < cols; col++) {
+					cellValues[row][col] = Integer.parseInt(rowValues[col]);
+				}
+				++row;
+			}
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
+
 		this.grid = new Cell[rows][cols];
 		int region = 1;
 		for (int row = 0; row < rows; row++) {
 			for (int col = 0; col < cols; col++) {
-				this.grid[row][col] = new Cell(region);
+				this.grid[row][col] = new Cell(region, cellValues[row][col]);
 				if (( col + 1 ) % 3 == 0) {
 					// increment the region every 3 columns
 					++region;
@@ -155,14 +176,24 @@ public class Grid {
 	public String toString () {
 		StringBuilder str = new StringBuilder();
 		for (int row = 0; row < rows; row++) {
-			str.append(grid[row][0].getNumber());
+			int number = grid[row][0].getNumber();
+			if (number == 0) {
+				str.append(".");
+			} else {
+				str.append(number);
+			}
 			for (int col = 1; col < cols; col++) {
 				if (( col % 3 ) == 0) {
 					str.append(" | ");
 				} else {
 					str.append(" ");
 				}
-				str.append(grid[row][col].getNumber());
+				number = grid[row][col].getNumber();
+				if (number == 0) {
+					str.append(".");
+				} else {
+					str.append(number);
+				}
 			}
 			str.append("\n");
 			if (( ( row + 1 ) != rows ) && ( ( row + 1 ) % 3 ) == 0) {
