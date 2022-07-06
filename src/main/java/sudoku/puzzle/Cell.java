@@ -68,4 +68,14 @@ public class Cell {
 	public int getNumber () {
 		return number;
 	}
+
+	/**
+	 * Create a String representation of this Cell using its number.
+	 *
+	 * @return String with this Cell's number
+	 */
+	@Override
+	public String toString () {
+		return "#" + number + ", Marks: " + pencilMarks.toString() + ", Region: " + region;
+	}
 }

@@ -144,4 +144,40 @@ public class Grid {
 
 		return true;
 	}
+
+	/**
+	 * Create a String representation of the current state of the Grid by displaying the Cell numbers
+	 * distinctly seperated by regions.
+	 *
+	 * @return visual String representation of 2D Array of Cells
+	 */
+	@Override
+	public String toString () {
+		StringBuilder str = new StringBuilder();
+		for (int row = 0; row < rows; row++) {
+			str.append(grid[row][0].getNumber());
+			for (int col = 1; col < cols; col++) {
+				if (( col % 3 ) == 0) {
+					str.append(" | ");
+				} else {
+					str.append(" ");
+				}
+				str.append(grid[row][col].getNumber());
+			}
+			str.append("\n");
+			if (( ( row + 1 ) != rows ) && ( ( row + 1 ) % 3 ) == 0) {
+				for (int col = 0; col < cols; col++) {
+					if (col == 0) {
+						str.append("-");
+					} else if (( col % 3 ) == 0) {
+						str.append("----");
+					} else {
+						str.append("--");
+					}
+				}
+				str.append("\n");
+			}
+		}
+		return str.toString();
+	}
 }
