@@ -36,20 +36,22 @@ public class PuzzleController implements Initializable {
 		for (Node node : board.getChildren()) {
 			for (Node child : ( (GridPane) node ).getChildren()) {
 				for (Node finalChild : ( (GridPane) child ).getChildren()) {
-					AtomicBoolean marked = new AtomicBoolean(false);
+					AtomicBoolean marked = new AtomicBoolean(false);    // has the button been pressed?
+					// display on hover
 					finalChild.setOnMouseEntered(event -> finalChild.setOpacity(1.0));
+					// disappear when not hovered, only if not marked
 					finalChild.setOnMouseExited(event -> {
 						if (!marked.get()) {
 							finalChild.setOpacity(0.0);
 						}
 					});
+					// toggle button display when clicked based on its previous display state
 					( (Button) finalChild ).setOnAction(event -> {
-						if (finalChild.getOpacity() == 0.0) {
+						if (marked.compareAndSet(false, true)) {
 							finalChild.setOpacity(1.0);
-							marked.set(true);
 						} else {
-							finalChild.setOpacity(0.0);
 							marked.set(false);
+							finalChild.setOpacity(0.0);
 						}
 					});
 				}
