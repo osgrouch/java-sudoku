@@ -52,75 +52,75 @@
 									</rowConstraints>
 									<children>
 										<Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-										        minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="1" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="2" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.columnIndex="1">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="40.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="3" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.columnIndex="2">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="4" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.rowIndex="1">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="40.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="5" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.columnIndex="1" GridPane.rowIndex="1">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="70.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="6" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.columnIndex="2" GridPane.rowIndex="1">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="10.0" layoutY="40.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="7" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.rowIndex="2">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="40.0" layoutY="40.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="8" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.columnIndex="1" GridPane.rowIndex="2">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="70.0" layoutY="40.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="9" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.columnIndex="2" GridPane.rowIndex="2">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 									</children>
@@ -128,86 +128,86 @@
 								<GridPane layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
 								          minWidth="-Infinity" style="-fx-background-color: #e2e9ee;" GridPane.columnIndex="1">
 									<columnConstraints>
-										<ColumnConstraints maxWidth="-Infinity" minWidth="-Infinity" prefWidth="20.0"/>
-										<ColumnConstraints maxWidth="-Infinity" minWidth="-Infinity" prefWidth="20.0"/>
-										<ColumnConstraints maxWidth="-Infinity" minWidth="-Infinity" prefWidth="20.0"/>
+										<ColumnConstraints maxWidth="-Infinity" minWidth="-Infinity"/>
+										<ColumnConstraints maxWidth="-Infinity" minWidth="-Infinity"/>
+										<ColumnConstraints maxWidth="-Infinity" minWidth="-Infinity"/>
 									</columnConstraints>
 									<rowConstraints>
-										<RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0"/>
-										<RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0"/>
-										<RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0"/>
+										<RowConstraints maxHeight="-Infinity" minHeight="-Infinity"/>
+										<RowConstraints maxHeight="-Infinity" minHeight="-Infinity"/>
+										<RowConstraints maxHeight="-Infinity" minHeight="-Infinity"/>
 									</rowConstraints>
 									<children>
 										<Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-										        minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="1" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="2" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.columnIndex="1">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="40.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="3" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.columnIndex="2">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="4" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.rowIndex="1">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="40.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="5" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.columnIndex="1" GridPane.rowIndex="1">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="70.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="6" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.columnIndex="2" GridPane.rowIndex="1">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="10.0" layoutY="40.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="7" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.rowIndex="2">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="40.0" layoutY="40.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="8" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.columnIndex="1" GridPane.rowIndex="2">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="70.0" layoutY="40.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="9" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.columnIndex="2" GridPane.rowIndex="2">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 									</children>
@@ -215,86 +215,86 @@
 								<GridPane layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
 								          minWidth="-Infinity" style="-fx-background-color: #e2e9ee;" GridPane.columnIndex="2">
 									<columnConstraints>
-										<ColumnConstraints maxWidth="-Infinity" minWidth="-Infinity" prefWidth="20.0"/>
-										<ColumnConstraints maxWidth="-Infinity" minWidth="-Infinity" prefWidth="20.0"/>
-										<ColumnConstraints maxWidth="-Infinity" minWidth="-Infinity" prefWidth="20.0"/>
+										<ColumnConstraints maxWidth="-Infinity" minWidth="-Infinity"/>
+										<ColumnConstraints maxWidth="-Infinity" minWidth="-Infinity"/>
+										<ColumnConstraints maxWidth="-Infinity" minWidth="-Infinity"/>
 									</columnConstraints>
 									<rowConstraints>
-										<RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0"/>
-										<RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0"/>
-										<RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0"/>
+										<RowConstraints maxHeight="-Infinity" minHeight="-Infinity"/>
+										<RowConstraints maxHeight="-Infinity" minHeight="-Infinity"/>
+										<RowConstraints maxHeight="-Infinity" minHeight="-Infinity"/>
 									</rowConstraints>
 									<children>
 										<Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-										        minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="1" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="2" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.columnIndex="1">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="40.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="3" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.columnIndex="2">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="4" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.rowIndex="1">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="40.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="5" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.columnIndex="1" GridPane.rowIndex="1">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="70.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="6" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.columnIndex="2" GridPane.rowIndex="1">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="10.0" layoutY="40.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="7" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.rowIndex="2">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="40.0" layoutY="40.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="8" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.columnIndex="1" GridPane.rowIndex="2">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="70.0" layoutY="40.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="9" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.columnIndex="2" GridPane.rowIndex="2">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 									</children>
@@ -302,86 +302,86 @@
 								<GridPane layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
 								          minWidth="-Infinity" style="-fx-background-color: #e2e9ee;" GridPane.rowIndex="1">
 									<columnConstraints>
-										<ColumnConstraints maxWidth="-Infinity" minWidth="-Infinity" prefWidth="20.0"/>
-										<ColumnConstraints maxWidth="-Infinity" minWidth="-Infinity" prefWidth="20.0"/>
-										<ColumnConstraints maxWidth="-Infinity" minWidth="-Infinity" prefWidth="20.0"/>
+										<ColumnConstraints maxWidth="-Infinity" minWidth="-Infinity"/>
+										<ColumnConstraints maxWidth="-Infinity" minWidth="-Infinity"/>
+										<ColumnConstraints maxWidth="-Infinity" minWidth="-Infinity"/>
 									</columnConstraints>
 									<rowConstraints>
-										<RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0"/>
-										<RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0"/>
-										<RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0"/>
+										<RowConstraints maxHeight="-Infinity" minHeight="-Infinity"/>
+										<RowConstraints maxHeight="-Infinity" minHeight="-Infinity"/>
+										<RowConstraints maxHeight="-Infinity" minHeight="-Infinity"/>
 									</rowConstraints>
 									<children>
 										<Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-										        minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="1" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="2" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.columnIndex="1">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="40.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="3" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.columnIndex="2">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="4" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.rowIndex="1">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="40.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="5" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.columnIndex="1" GridPane.rowIndex="1">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="70.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="6" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.columnIndex="2" GridPane.rowIndex="1">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="10.0" layoutY="40.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="7" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.rowIndex="2">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="40.0" layoutY="40.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="8" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.columnIndex="1" GridPane.rowIndex="2">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="70.0" layoutY="40.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="9" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.columnIndex="2" GridPane.rowIndex="2">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 									</children>
@@ -389,86 +389,86 @@
 								<GridPane layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
 								          minWidth="-Infinity" style="-fx-background-color: #e2e9ee;" GridPane.columnIndex="1" GridPane.rowIndex="1">
 									<columnConstraints>
-										<ColumnConstraints maxWidth="-Infinity" minWidth="-Infinity" prefWidth="20.0"/>
-										<ColumnConstraints maxWidth="-Infinity" minWidth="-Infinity" prefWidth="20.0"/>
-										<ColumnConstraints maxWidth="-Infinity" minWidth="-Infinity" prefWidth="20.0"/>
+										<ColumnConstraints maxWidth="-Infinity" minWidth="-Infinity"/>
+										<ColumnConstraints maxWidth="-Infinity" minWidth="-Infinity"/>
+										<ColumnConstraints maxWidth="-Infinity" minWidth="-Infinity"/>
 									</columnConstraints>
 									<rowConstraints>
-										<RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0"/>
-										<RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0"/>
-										<RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0"/>
+										<RowConstraints maxHeight="-Infinity" minHeight="-Infinity"/>
+										<RowConstraints maxHeight="-Infinity" minHeight="-Infinity"/>
+										<RowConstraints maxHeight="-Infinity" minHeight="-Infinity"/>
 									</rowConstraints>
 									<children>
 										<Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-										        minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="1" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="2" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.columnIndex="1">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="40.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="3" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.columnIndex="2">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="4" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.rowIndex="1">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="40.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="5" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.columnIndex="1" GridPane.rowIndex="1">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="70.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="6" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.columnIndex="2" GridPane.rowIndex="1">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="10.0" layoutY="40.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="7" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.rowIndex="2">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="40.0" layoutY="40.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="8" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.columnIndex="1" GridPane.rowIndex="2">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="70.0" layoutY="40.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="9" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.columnIndex="2" GridPane.rowIndex="2">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 									</children>
@@ -476,86 +476,86 @@
 								<GridPane layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
 								          minWidth="-Infinity" style="-fx-background-color: #e2e9ee;" GridPane.columnIndex="2" GridPane.rowIndex="1">
 									<columnConstraints>
-										<ColumnConstraints maxWidth="-Infinity" minWidth="-Infinity" prefWidth="20.0"/>
-										<ColumnConstraints maxWidth="-Infinity" minWidth="-Infinity" prefWidth="20.0"/>
-										<ColumnConstraints maxWidth="-Infinity" minWidth="-Infinity" prefWidth="20.0"/>
+										<ColumnConstraints maxWidth="-Infinity" minWidth="-Infinity"/>
+										<ColumnConstraints maxWidth="-Infinity" minWidth="-Infinity"/>
+										<ColumnConstraints maxWidth="-Infinity" minWidth="-Infinity"/>
 									</columnConstraints>
 									<rowConstraints>
-										<RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0"/>
-										<RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0"/>
-										<RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0"/>
+										<RowConstraints maxHeight="-Infinity" minHeight="-Infinity"/>
+										<RowConstraints maxHeight="-Infinity" minHeight="-Infinity"/>
+										<RowConstraints maxHeight="-Infinity" minHeight="-Infinity"/>
 									</rowConstraints>
 									<children>
 										<Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-										        minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="1" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="2" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.columnIndex="1">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="40.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="3" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.columnIndex="2">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="4" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.rowIndex="1">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="40.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="5" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.columnIndex="1" GridPane.rowIndex="1">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="70.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="6" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.columnIndex="2" GridPane.rowIndex="1">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="10.0" layoutY="40.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="7" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.rowIndex="2">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="40.0" layoutY="40.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="8" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.columnIndex="1" GridPane.rowIndex="2">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="70.0" layoutY="40.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="9" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.columnIndex="2" GridPane.rowIndex="2">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 									</children>
@@ -563,86 +563,86 @@
 								<GridPane layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
 								          minWidth="-Infinity" style="-fx-background-color: #e2e9ee;" GridPane.rowIndex="2">
 									<columnConstraints>
-										<ColumnConstraints maxWidth="-Infinity" minWidth="-Infinity" prefWidth="20.0"/>
-										<ColumnConstraints maxWidth="-Infinity" minWidth="-Infinity" prefWidth="20.0"/>
-										<ColumnConstraints maxWidth="-Infinity" minWidth="-Infinity" prefWidth="20.0"/>
+										<ColumnConstraints maxWidth="-Infinity" minWidth="-Infinity"/>
+										<ColumnConstraints maxWidth="-Infinity" minWidth="-Infinity"/>
+										<ColumnConstraints maxWidth="-Infinity" minWidth="-Infinity"/>
 									</columnConstraints>
 									<rowConstraints>
-										<RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0"/>
-										<RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0"/>
-										<RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0"/>
+										<RowConstraints maxHeight="-Infinity" minHeight="-Infinity"/>
+										<RowConstraints maxHeight="-Infinity" minHeight="-Infinity"/>
+										<RowConstraints maxHeight="-Infinity" minHeight="-Infinity"/>
 									</rowConstraints>
 									<children>
 										<Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-										        minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="1" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="2" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.columnIndex="1">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="40.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="3" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.columnIndex="2">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="4" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.rowIndex="1">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="40.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="5" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.columnIndex="1" GridPane.rowIndex="1">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="70.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="6" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.columnIndex="2" GridPane.rowIndex="1">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="10.0" layoutY="40.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="7" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.rowIndex="2">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="40.0" layoutY="40.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="8" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.columnIndex="1" GridPane.rowIndex="2">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="70.0" layoutY="40.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="9" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.columnIndex="2" GridPane.rowIndex="2">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 									</children>
@@ -650,86 +650,86 @@
 								<GridPane layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
 								          minWidth="-Infinity" style="-fx-background-color: #e2e9ee;" GridPane.columnIndex="1" GridPane.rowIndex="2">
 									<columnConstraints>
-										<ColumnConstraints maxWidth="-Infinity" minWidth="-Infinity" prefWidth="20.0"/>
-										<ColumnConstraints maxWidth="-Infinity" minWidth="-Infinity" prefWidth="20.0"/>
-										<ColumnConstraints maxWidth="-Infinity" minWidth="-Infinity" prefWidth="20.0"/>
+										<ColumnConstraints maxWidth="-Infinity" minWidth="-Infinity"/>
+										<ColumnConstraints maxWidth="-Infinity" minWidth="-Infinity"/>
+										<ColumnConstraints maxWidth="-Infinity" minWidth="-Infinity"/>
 									</columnConstraints>
 									<rowConstraints>
-										<RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0"/>
-										<RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0"/>
-										<RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0"/>
+										<RowConstraints maxHeight="-Infinity" minHeight="-Infinity"/>
+										<RowConstraints maxHeight="-Infinity" minHeight="-Infinity"/>
+										<RowConstraints maxHeight="-Infinity" minHeight="-Infinity"/>
 									</rowConstraints>
 									<children>
 										<Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-										        minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="1" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="2" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.columnIndex="1">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="40.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="3" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.columnIndex="2">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="4" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.rowIndex="1">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="40.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="5" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.columnIndex="1" GridPane.rowIndex="1">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="70.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="6" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.columnIndex="2" GridPane.rowIndex="1">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="10.0" layoutY="40.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="7" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.rowIndex="2">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="40.0" layoutY="40.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="8" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.columnIndex="1" GridPane.rowIndex="2">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="70.0" layoutY="40.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="9" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.columnIndex="2" GridPane.rowIndex="2">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 									</children>
@@ -737,86 +737,86 @@
 								<GridPane layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
 								          minWidth="-Infinity" style="-fx-background-color: #e2e9ee;" GridPane.columnIndex="2" GridPane.rowIndex="2">
 									<columnConstraints>
-										<ColumnConstraints maxWidth="-Infinity" minWidth="-Infinity" prefWidth="20.0"/>
-										<ColumnConstraints maxWidth="-Infinity" minWidth="-Infinity" prefWidth="20.0"/>
-										<ColumnConstraints maxWidth="-Infinity" minWidth="-Infinity" prefWidth="20.0"/>
+										<ColumnConstraints maxWidth="-Infinity" minWidth="-Infinity"/>
+										<ColumnConstraints maxWidth="-Infinity" minWidth="-Infinity"/>
+										<ColumnConstraints maxWidth="-Infinity" minWidth="-Infinity"/>
 									</columnConstraints>
 									<rowConstraints>
-										<RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0"/>
-										<RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0"/>
-										<RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0"/>
+										<RowConstraints maxHeight="-Infinity" minHeight="-Infinity"/>
+										<RowConstraints maxHeight="-Infinity" minHeight="-Infinity"/>
+										<RowConstraints maxHeight="-Infinity" minHeight="-Infinity"/>
 									</rowConstraints>
 									<children>
 										<Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-										        minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="1" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="2" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.columnIndex="1">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="40.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="3" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.columnIndex="2">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="4" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.rowIndex="1">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="40.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="5" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.columnIndex="1" GridPane.rowIndex="1">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="70.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="6" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.columnIndex="2" GridPane.rowIndex="1">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="10.0" layoutY="40.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="7" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.rowIndex="2">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="40.0" layoutY="40.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="8" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.columnIndex="1" GridPane.rowIndex="2">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 										<Button alignment="CENTER" layoutX="70.0" layoutY="40.0" maxHeight="-Infinity" maxWidth="-Infinity"
-										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"
+										        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0"
 										        style="-fx-background-color: none;" text="9" textAlignment="CENTER" textFill="#141414"
 										        textOverrun="CLIP" GridPane.columnIndex="2" GridPane.rowIndex="2">
 											<font>
-												<Font name="Iosevka 2022" size="10.0"/>
+												<Font name="Iosevka 2022" size="12.0"/>
 											</font>
 										</Button>
 									</children>
