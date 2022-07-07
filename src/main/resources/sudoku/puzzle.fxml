@@ -13,7 +13,7 @@
 			<children>
 				<Pane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="2.0" style="-fx-background-color: #C9CFD4;"
 				      translateY="40.0"/>
-				<GridPane>
+				<GridPane fx:id="actionPane">
 					<columnConstraints>
 						<ColumnConstraints halignment="CENTER" hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity"/>
 						<ColumnConstraints halignment="CENTER" hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity"/>
