@@ -13,12 +13,12 @@
 			<children>
 				<Pane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="2.0" style="-fx-background-color: #C9CFD4;"
 				      translateY="40.0"/>
-				<GridPane fx:id="actionPane">
+				<GridPane fx:id="actionBar">
 					<columnConstraints>
 						<ColumnConstraints halignment="CENTER" hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity"/>
 						<ColumnConstraints halignment="CENTER" hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity"/>
 						<ColumnConstraints fillWidth="false" halignment="CENTER" hgrow="ALWAYS" maxWidth="-Infinity" minWidth="-Infinity"
-						                   prefWidth="283.0"/>
+						                   prefWidth="295.0"/>
 						<ColumnConstraints halignment="CENTER" hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity"/>
 						<ColumnConstraints halignment="CENTER" hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity"/>
 						<ColumnConstraints halignment="CENTER" hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity"/>
@@ -67,8 +67,9 @@
 								<Cursor fx:constant="HAND"/>
 							</cursor>
 						</ToggleButton>
-						<Button contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-						        mnemonicParsing="false" prefHeight="40.0" style="-fx-background-color: none;" text="Undo" GridPane.columnIndex="4">
+						<Button fx:id="undoButton" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+						        minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: none;"
+						        GridPane.columnIndex="4">
 							<font>
 								<Font name="Iosevka 2022 Semibold" size="14.0"/>
 							</font>
@@ -76,8 +77,9 @@
 								<Cursor fx:constant="HAND"/>
 							</cursor>
 						</Button>
-						<Button contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-						        mnemonicParsing="false" prefHeight="40.0" style="-fx-background-color: none;" text="Redo" GridPane.columnIndex="5">
+						<Button fx:id="redoButton" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+						        minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: none;"
+						        GridPane.columnIndex="5">
 							<font>
 								<Font name="Iosevka 2022 Semibold" size="14.0"/>
 							</font>
