@@ -1,12 +1,9 @@
 package sudoku.puzzle;
 
-import java.util.HashSet;
-import java.util.Set;
-
 /**
- * Class representing a cell in a Sudoku puzzle. Keeps track of the number this Cell has been marked as,
- * and the pencil markings regarding what number this Cell could be. Also tracks what region this Cell
- * belongs to within the puzzle.
+ * Class representing a cell in a Sudoku puzzle.
+ * Keeps track of the number this Cell has been marked as.
+ * Also tracks what region this Cell belongs to within the puzzle.
  */
 public class Cell {
 	/** The region within the Sudoku puzzle this Cell belongs to */
@@ -14,8 +11,6 @@ public class Cell {
 
 	/** The number of this Cell in the Sudoku puzzle */
 	private int number;
-	/** The possible numbers of this Cell in the Sudoku puzzle */
-	private Set<Integer> pencilMarks;
 
 	/**
 	 * Create a new Cell instance and initialize its private fields to a blank state.
@@ -23,27 +18,6 @@ public class Cell {
 	public Cell (int region, int number) {
 		this.region = region;
 		this.number = number;
-		this.pencilMarks = new HashSet<>();
-	}
-
-	/**
-	 * Adds the given number to this Cell's Set of pencil marks.
-	 * The Set is used to keep track of the user's annotations for each Cell.
-	 *
-	 * @param num number to add
-	 */
-	public void addMark (int num) {
-		this.pencilMarks.add(num);
-	}
-
-	/**
-	 * Removes the given number from this Cell's Set of pencil marks.
-	 * The Set is used to keep track of the user's annotations for each Cell.
-	 *
-	 * @param num number to remove
-	 */
-	public void removeMark (int num) {
-		this.pencilMarks.remove(num);
 	}
 
 	/**
@@ -76,6 +50,6 @@ public class Cell {
 	 */
 	@Override
 	public String toString () {
-		return "#" + number + ", Marks: " + pencilMarks.toString() + ", Region: " + region;
+		return "#" + number + ", Region: " + region;
 	}
 }
