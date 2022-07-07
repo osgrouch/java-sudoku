@@ -2,10 +2,13 @@ package sudoku;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * Controller for user interactions with Puzzle view in puzzle.fxml.
@@ -29,5 +32,28 @@ public class PuzzleController implements Initializable {
 	 */
 	@Override
 	public void initialize (URL location, ResourceBundle resources) {
+		// iterate through each button to add display on hover and toggle display on press
+		for (Node node : board.getChildren()) {
+			for (Node child : ( (GridPane) node ).getChildren()) {
+				for (Node finalChild : ( (GridPane) child ).getChildren()) {
+					AtomicBoolean marked = new AtomicBoolean(false);
+					finalChild.setOnMouseEntered(event -> finalChild.setOpacity(1.0));
+					finalChild.setOnMouseExited(event -> {
+						if (!marked.get()) {
+							finalChild.setOpacity(0.0);
+						}
+					});
+					( (Button) finalChild ).setOnAction(event -> {
+						if (finalChild.getOpacity() == 0.0) {
+							finalChild.setOpacity(1.0);
+							marked.set(true);
+						} else {
+							finalChild.setOpacity(0.0);
+							marked.set(false);
+						}
+					});
+				}
+			}
+		}
 	}
 }
