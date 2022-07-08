@@ -76,8 +76,7 @@ public class PuzzleController implements Initializable {
 		ArrayList<Cell> cells = grid.getGridAsArrayList();
 		for (Node cellGroup : board.getChildren()) {
 			// link each cell with its corresponding Group node
-			Cell current = cells.remove(0);
-			current.setGroup((Group) cellGroup);
+			GraphicalCell link = new GraphicalCell(cells.remove(0), (Group) cellGroup);
 			for (Node annotationBtn : ( (GridPane) ( (Group) cellGroup ).getChildren().get(0) ).getChildren()) {
 				AtomicBoolean marked = new AtomicBoolean(false);    // has the button been pressed?
 				// display on hover
@@ -98,7 +97,7 @@ public class PuzzleController implements Initializable {
 					}
 				});
 			}
-			current.updateGroupContents();
+			link.updateGroupContents();
 		}
 	}
 }
