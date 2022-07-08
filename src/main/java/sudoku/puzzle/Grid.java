@@ -106,6 +106,20 @@ public class Grid {
 	}
 
 	/**
+	 * Get the 2D Array of Cells stored within this Grid instance as an ArrayList of Cells
+	 * from left to right per row, starting at row 0 and ending at row 8.
+	 *
+	 * @return ArrayList of Cells
+	 */
+	public ArrayList<Cell> getGridAsArrayList () {
+		ArrayList<Cell> cells = new ArrayList<>(81);
+		for (int row = 0; row < rows; row++) {
+			cells.addAll(List.of(getGridRow(row)));
+		}
+		return cells;
+	}
+
+	/**
 	 * Check if this Grid is a solution to the Sudoku puzzle by checking the following conditions:
 	 *
 	 * <ol>

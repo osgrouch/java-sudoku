@@ -2,13 +2,17 @@ package sudoku;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
+import sudoku.puzzle.Cell;
+import sudoku.puzzle.Grid;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.concurrent.atomic.AtomicBoolean;
 
@@ -30,8 +34,13 @@ public class PuzzleController implements Initializable {
 	@FXML
 	private GridPane board;
 
+	/** The Sudoku Grid class with the different Cells */
+	private Grid grid;
+
 	/** Default constructor. */
-	public PuzzleController () {}
+	public PuzzleController () {
+		this.grid = new Grid("input/sample_puzzle.csv");
+	}
 
 	/**
 	 * Called to initialize a controller after its root element has been completely processed.
@@ -64,28 +73,29 @@ public class PuzzleController implements Initializable {
 		redoButton.setGraphic(redoImg);
 
 		// iterate through each Sudoku annotation button to add display on hover and toggle display on press
-		for (Node node : board.getChildren()) {
-			for (Node child : ( (GridPane) node ).getChildren()) {
-				for (Node finalChild : ( (GridPane) child ).getChildren()) {
-					AtomicBoolean marked = new AtomicBoolean(false);    // has the button been pressed?
-					// display on hover
-					finalChild.setOnMouseEntered(event -> finalChild.setOpacity(1.0));
-					// disappear when not hovered, only if not marked
-					finalChild.setOnMouseExited(event -> {
-						if (!marked.get()) {
-							finalChild.setOpacity(0.0);
-						}
-					});
-					// toggle button display when clicked based on its previous display state
-					( (Button) finalChild ).setOnAction(event -> {
-						if (marked.compareAndSet(false, true)) {
-							finalChild.setOpacity(1.0);
-						} else {
-							marked.set(false);
-							finalChild.setOpacity(0.0);
-						}
-					});
-				}
+		ArrayList<Cell> cells = grid.getGridAsArrayList();
+		for (Node cellGroup : board.getChildren()) {
+			// link each cell with its corresponding Group node
+			cells.remove(0).setGroup((Group) cellGroup);
+			for (Node annotationBtn : ( (GridPane) ( (Group) cellGroup ).getChildren().get(0) ).getChildren()) {
+				AtomicBoolean marked = new AtomicBoolean(false);    // has the button been pressed?
+				// display on hover
+				annotationBtn.setOnMouseEntered(event -> annotationBtn.setOpacity(1.0));
+				// disappear when not hovered, only if not marked
+				annotationBtn.setOnMouseExited(event -> {
+					if (!marked.get()) {
+						annotationBtn.setOpacity(0.0);
+					}
+				});
+				// toggle button display when clicked based on its previous display state
+				( (Button) annotationBtn ).setOnAction(event -> {
+					if (marked.compareAndSet(false, true)) {
+						annotationBtn.setOpacity(1.0);
+					} else {
+						marked.set(false);
+						annotationBtn.setOpacity(0.0);
+					}
+				});
 			}
 		}
 	}
