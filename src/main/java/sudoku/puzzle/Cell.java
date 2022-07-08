@@ -39,8 +39,8 @@ public class Cell {
 	 * Else it does the opposite: shows the label with the number and erases and hides annotations.
 	 */
 	public void updateGroupContents () {
-		GridPane gridPane = ( (GridPane) group.getChildren().get(1) );
-		Label label = ( (Label) group.getChildren().get(0) );
+		GridPane gridPane = ( (GridPane) group.getChildren().get(0) );
+		Label label = ( (Label) group.getChildren().get(1) );
 		if (number == 0) {
 			// remove the number from this Cell's Label
 			label.setText("");
