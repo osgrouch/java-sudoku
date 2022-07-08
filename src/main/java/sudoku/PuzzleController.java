@@ -5,6 +5,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
@@ -79,6 +80,7 @@ public class PuzzleController implements Initializable {
 			node.setOnMouseExited(event -> node.setStyle("-fx-background-color: transparent;"));
 		}
 
+		// set annotation button behavior
 		annotationBtn.setOnAction(event -> {
 			if (!annotate) {
 				annotationBtn.setText("Annotations: ON");
@@ -92,6 +94,7 @@ public class PuzzleController implements Initializable {
 			}
 		});
 
+		// set erase button behavior
 		eraseBtn.setOnAction(event -> {
 			if (!erase) {
 				eraseBtn.setText("Erase: ON");
@@ -152,6 +155,14 @@ public class PuzzleController implements Initializable {
 				});
 			}
 			link.updateGroupContents();
+
+			// erase numbers from cells
+			Label cellLabel = link.getLabel();
+			cellLabel.setOnMouseClicked(event -> {
+				if (erase) {
+					link.removeNumber();
+				}
+			});
 		}
 	}
 }

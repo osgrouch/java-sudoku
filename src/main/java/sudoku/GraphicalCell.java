@@ -12,6 +12,11 @@ public class GraphicalCell {
 	private Cell cell;
 	/** The Group this instance is responsible for updating */
 	private Group group;
+	/**
+	 * The Label originally within the Group, used to remove and reinsert to the Group to prevent resizing bug
+	 * that occurs when setting label text to "" when removing number from Cell
+	 */
+	private Label label;
 
 	/**
 	 * Create a new instance to "link" the given Cell and Group.
@@ -19,6 +24,7 @@ public class GraphicalCell {
 	public GraphicalCell (Cell cell, Group group) {
 		this.cell = cell;
 		this.group = group;
+		this.label = (Label) group.getChildren().remove(1);
 	}
 
 	/**
@@ -29,12 +35,15 @@ public class GraphicalCell {
 	 */
 	public void updateGroupContents () {
 		GridPane gridPane = ( (GridPane) group.getChildren().get(0) );
-		Label label = ( (Label) group.getChildren().get(1) );
 		int number = cell.getNumber();
 		if (number == 0) {
-			// remove the number from this Cell's Label
-			label.setText("");
-
+			try {
+				// remove the number from this Cell's Label
+				this.label = (Label) group.getChildren().remove(1);
+			} catch (Exception e) {
+				// catch cases when first updating group contents and label was removed in constructor,
+				// and so it would throw an exception when trying to remove it again in the try block
+			}
 			label.setDisable(true);
 			gridPane.setDisable(false);
 		} else {
@@ -43,12 +52,13 @@ public class GraphicalCell {
 				annotationBtn.setOpacity(0.0);
 			}
 			// display the number set for this Cell
-			label.setText(String.valueOf(number));
+			this.label.setText(String.valueOf(number));
 			if (cell.isGivenNumber()) {
-				label.setTextFill(Color.valueOf("#C33C54"));
-				label.setStyle("-fx-font-weight: bold");
+				this.label.setTextFill(Color.valueOf("#C33C54"));
+				this.label.setStyle("-fx-font-weight: bold");
 			}
 
+			group.getChildren().add(label);
 			label.setDisable(false);
 			gridPane.setDisable(true);
 		}
@@ -76,5 +86,12 @@ public class GraphicalCell {
 			cell.setNumber(number);
 			updateGroupContents();
 		}
+	}
+
+	/**
+	 * @return this Cell's Label
+	 */
+	public Label getLabel () {
+		return label;
 	}
 }
