@@ -232,8 +232,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -332,8 +332,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -432,8 +432,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -535,8 +535,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -635,8 +635,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -735,8 +735,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -835,8 +835,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -938,8 +938,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -1038,8 +1038,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -1138,8 +1138,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -1238,8 +1238,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -1338,8 +1338,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -1441,8 +1441,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -1541,8 +1541,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -1641,8 +1641,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -1741,8 +1741,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -1844,8 +1844,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -1944,8 +1944,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -2044,8 +2044,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -2147,8 +2147,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -2250,8 +2250,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -2353,8 +2353,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -2456,8 +2456,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -2559,8 +2559,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -2662,8 +2662,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -2765,8 +2765,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -2868,8 +2868,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -2971,8 +2971,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -3071,8 +3071,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -3171,8 +3171,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -3274,8 +3274,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -3374,8 +3374,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -3474,8 +3474,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -3574,8 +3574,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -3677,8 +3677,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -3777,8 +3777,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -3877,8 +3877,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -3977,8 +3977,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -4077,8 +4077,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -4180,8 +4180,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -4280,8 +4280,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -4380,8 +4380,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -4480,8 +4480,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -4583,8 +4583,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -4683,8 +4683,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -4783,8 +4783,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -4883,8 +4883,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -4983,8 +4983,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -5086,8 +5086,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -5186,8 +5186,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -5286,8 +5286,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -5386,8 +5386,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -5489,8 +5489,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -5589,8 +5589,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -5689,8 +5689,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -5792,8 +5792,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -5895,15 +5895,15 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
 								</Label>
 							</children>
 							<GridPane.margin>
-								<Insets top="2.0" right="2.0"/>
+								<Insets right="2.0" top="2.0"/>
 							</GridPane.margin>
 						</Group>
 						<Group GridPane.columnIndex="3" GridPane.rowIndex="6">
@@ -5998,8 +5998,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -6101,8 +6101,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -6204,8 +6204,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -6307,15 +6307,15 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
 								</Label>
 							</children>
 							<GridPane.margin>
-								<Insets top="2.0" left="2.0"/>
+								<Insets left="2.0" top="2.0"/>
 							</GridPane.margin>
 						</Group>
 						<Group GridPane.columnIndex="7" GridPane.rowIndex="6">
@@ -6410,8 +6410,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -6513,8 +6513,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -6616,8 +6616,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -6716,8 +6716,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -6816,8 +6816,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -6919,8 +6919,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -7019,8 +7019,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -7119,8 +7119,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -7219,8 +7219,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -7322,8 +7322,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -7422,8 +7422,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -7522,8 +7522,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -7622,8 +7622,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -7722,8 +7722,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -7825,8 +7825,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -7925,8 +7925,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -8025,8 +8025,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -8125,8 +8125,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -8228,8 +8228,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
@@ -8328,8 +8328,8 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</GridPane>
-								<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+								<Label alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 									<font>
 										<Font name="Iosevka 2022" size="48.0"/>
 									</font>
