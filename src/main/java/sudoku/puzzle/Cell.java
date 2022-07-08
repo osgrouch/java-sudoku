@@ -4,6 +4,7 @@ import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
 
 /**
  * Class representing a cell in a Sudoku puzzle.
@@ -25,11 +26,19 @@ public class Cell {
 	private Group group;
 
 	/**
+	 * Is this number a given number?
+	 * Used to apply different rules to Cells with given numbers (can't change the number, can't annotate)
+	 * and to color them differently to indicate they're given numbers.
+	 */
+	private boolean givenNumber;
+
+	/**
 	 * Create a new Cell instance and initialize its private fields to a blank state.
 	 */
 	public Cell (int region, int number) {
 		this.region = region;
 		this.number = number;
+		this.givenNumber = ( number != 0 );
 	}
 
 	/**
@@ -54,6 +63,10 @@ public class Cell {
 			}
 			// display the number set for this Cell
 			label.setText(String.valueOf(number));
+			if (givenNumber) {
+				label.setTextFill(Color.valueOf("#C33C54"));
+				label.setStyle("-fx-font-weight: bold");
+			}
 
 			label.setDisable(false);
 			gridPane.setDisable(true);
@@ -63,10 +76,13 @@ public class Cell {
 	/**
 	 * Reset this Cell's number back to 0, indicating the number is "erased."
 	 * Then call method to update this Cell's Group for graphical display.
+	 * Only performs the above if this Cell is not a givenNumber, a boolean flag set during creation of this Cell.
 	 */
 	public void removeNumber () {
-		this.number = 0;
-		updateGroupContents();
+		if (!givenNumber) {
+			this.number = 0;
+			updateGroupContents();
+		}
 	}
 
 	/**
