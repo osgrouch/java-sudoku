@@ -5,6 +5,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.ToggleButton;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
@@ -23,6 +24,9 @@ public class PuzzleController implements Initializable {
 	/** The GridPane object that displays the different action buttons in the top section of the window */
 	@FXML
 	private GridPane actionBar;
+	/** The button that controls whether to set annotations of set the number of the Cell */
+	@FXML
+	private ToggleButton annotationBtn;
 	/** The undo button in the actionBar */
 	@FXML
 	private Button undoButton;
@@ -33,7 +37,6 @@ public class PuzzleController implements Initializable {
 	/** The GridPane object that displays the Sudoku puzzle */
 	@FXML
 	private GridPane board;
-
 	/** The Sudoku Grid class with the different Cells */
 	private Grid grid;
 
@@ -77,23 +80,30 @@ public class PuzzleController implements Initializable {
 		for (Node cellGroup : board.getChildren()) {
 			// link each cell with its corresponding Group node
 			GraphicalCell link = new GraphicalCell(cells.remove(0), (Group) cellGroup);
-			for (Node annotationBtn : ( (GridPane) ( (Group) cellGroup ).getChildren().get(0) ).getChildren()) {
+			for (Node annotationNumBtn : ( (GridPane) ( (Group) cellGroup ).getChildren().get(0) ).getChildren()) {
 				AtomicBoolean marked = new AtomicBoolean(false);    // has the button been pressed?
 				// display on hover
-				annotationBtn.setOnMouseEntered(event -> annotationBtn.setOpacity(1.0));
+				annotationNumBtn.setOnMouseEntered(event -> annotationNumBtn.setOpacity(1.0));
 				// disappear when not hovered, only if not marked
-				annotationBtn.setOnMouseExited(event -> {
+				annotationNumBtn.setOnMouseExited(event -> {
 					if (!marked.get()) {
-						annotationBtn.setOpacity(0.0);
+						annotationNumBtn.setOpacity(0.0);
 					}
 				});
 				// toggle button display when clicked based on its previous display state
-				( (Button) annotationBtn ).setOnAction(event -> {
-					if (marked.compareAndSet(false, true)) {
-						annotationBtn.setOpacity(1.0);
+				( (Button) annotationNumBtn ).setOnAction(event -> {
+					if (annotationBtn.isSelected()) {
+						// display annotation
+						if (marked.compareAndSet(false, true)) {
+							annotationNumBtn.setOpacity(1.0);
+						} else {
+							marked.set(false);
+							annotationNumBtn.setOpacity(0.0);
+						}
 					} else {
+						// set the number selected as this Cell's number
 						marked.set(false);
-						annotationBtn.setOpacity(0.0);
+						link.setNumber(Integer.parseInt(( (Button) annotationNumBtn ).getText()));
 					}
 				});
 			}

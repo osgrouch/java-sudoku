@@ -57,9 +57,9 @@
 								<Cursor fx:constant="HAND"/>
 							</cursor>
 						</MenuButton>
-						<ToggleButton contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-						              mnemonicParsing="false" prefHeight="40.0" style="-fx-background-color: none;" text="Annotations"
-						              GridPane.columnIndex="3">
+						<ToggleButton fx:id="annotationBtn" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+						              minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" style="-fx-background-color: none;"
+						              text="Annotations" GridPane.columnIndex="3">
 							<font>
 								<Font name="Iosevka 2022 Semibold" size="14.0"/>
 							</font>
