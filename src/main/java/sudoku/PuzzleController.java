@@ -5,7 +5,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
-import javafx.scene.control.ToggleButton;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
@@ -24,15 +23,33 @@ public class PuzzleController implements Initializable {
 	/** The GridPane object that displays the different action buttons in the top section of the window */
 	@FXML
 	private GridPane actionBar;
-	/** The button that controls whether to set annotations of set the number of the Cell */
+	/** Undo button in the actionBar */
 	@FXML
-	private ToggleButton annotationBtn;
-	/** The undo button in the actionBar */
+	private Button undoBtn;
+	/** Redo button in the actionBar */
 	@FXML
-	private Button undoButton;
-	/** The redo button in the actionBar */
+	private Button redoBtn;
+	/** Reset button in the actionBar */
 	@FXML
-	private Button redoButton;
+	private Button resetBtn;
+
+	/**
+	 * Annotations button in the actionBar, controls whether to set the numbers pressed as annotations
+	 * or as the number value of the Cell
+	 */
+	@FXML
+	private Button annotationBtn;
+	/** Has the annotate button been pressed? */
+	private boolean annotate;
+
+	/**
+	 * Erase button in the actionBar, controls whether to set the number pressed or "erase" the number pressed,
+	 * on both annotations and number value of Cells
+	 */
+	@FXML
+	private Button eraseBtn;
+	/** Hass the erase button been pressed? */
+	private boolean erase;
 
 	/** The GridPane object that displays the Sudoku puzzle */
 	@FXML
@@ -47,8 +64,6 @@ public class PuzzleController implements Initializable {
 
 	/**
 	 * Called to initialize a controller after its root element has been completely processed.
-	 * Used to add display on hover property and toggle display on button press for each button
-	 * representing a pencil mark in each cell of the board.
 	 *
 	 * @param location  The location used to resolve relative paths for the root object, or
 	 *                  {@code null} if the location is not known.
@@ -57,11 +72,35 @@ public class PuzzleController implements Initializable {
 	 */
 	@Override
 	public void initialize (URL location, ResourceBundle resources) {
+		// TODO: update docstring when fully done with method
 		// iterate through each button in the top actionBar to add background when hovered
 		for (Node node : actionBar.getChildren()) {
 			node.setOnMouseEntered(event -> node.setStyle("-fx-background-color: #D5DCE0;"));
 			node.setOnMouseExited(event -> node.setStyle("-fx-background-color: transparent;"));
 		}
+
+		annotationBtn.setOnAction(event -> {
+			if (!annotate) {
+				annotationBtn.setText("Annotations: ON");
+				this.annotate = true;
+			} else {
+				annotationBtn.setText("Annotations: OFF");
+				this.annotate = false;
+			}
+			if (erase) {
+				eraseBtn.fire();
+			}
+		});
+
+		eraseBtn.setOnAction(event -> {
+			if (!erase) {
+				eraseBtn.setText("Erase: ON");
+				this.erase = true;
+			} else {
+				eraseBtn.setText("Erase: OFF");
+				this.erase = false;
+			}
+		});
 
 		// set graphics for the undo and redo buttons
 		ImageView undoImg = new ImageView(new Image(getClass().getResourceAsStream("undo-arrow.png")));
@@ -72,8 +111,8 @@ public class PuzzleController implements Initializable {
 		redoImg.setFitHeight(20);
 		redoImg.setPreserveRatio(true);
 		redoImg.setOpacity(0.2);
-		undoButton.setGraphic(undoImg);
-		redoButton.setGraphic(redoImg);
+		undoBtn.setGraphic(undoImg);
+		redoBtn.setGraphic(redoImg);
 
 		// iterate through each Sudoku annotation button to add display on hover and toggle display on press
 		ArrayList<Cell> cells = grid.getGridAsArrayList();
@@ -92,7 +131,12 @@ public class PuzzleController implements Initializable {
 				});
 				// toggle button display when clicked based on its previous display state
 				( (Button) annotationNumBtn ).setOnAction(event -> {
-					if (annotationBtn.isSelected()) {
+					if (erase) {
+						// erase annotation
+						if (marked.compareAndSet(true, false)) {
+							annotationNumBtn.setOpacity(0.0);
+						}
+					} else if (annotate) {
 						// display annotation
 						if (marked.compareAndSet(false, true)) {
 							annotationNumBtn.setOpacity(1.0);

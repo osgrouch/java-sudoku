@@ -18,7 +18,7 @@
 						<ColumnConstraints halignment="CENTER" hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity"/>
 						<ColumnConstraints halignment="CENTER" hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity"/>
 						<ColumnConstraints fillWidth="false" halignment="CENTER" hgrow="ALWAYS" maxWidth="-Infinity" minWidth="-Infinity"
-						                   prefWidth="295.0"/>
+						                   prefWidth="241.0"/>
 						<ColumnConstraints halignment="CENTER" hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity"/>
 						<ColumnConstraints halignment="CENTER" hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity"/>
 						<ColumnConstraints halignment="CENTER" hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity"/>
@@ -57,17 +57,17 @@
 								<Cursor fx:constant="HAND"/>
 							</cursor>
 						</MenuButton>
-						<ToggleButton fx:id="annotationBtn" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-						              minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" style="-fx-background-color: none;"
-						              text="Annotations" GridPane.columnIndex="3">
+						<Button fx:id="annotationBtn" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+						        minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="130.0" style="-fx-background-color: none;"
+						        text="Annotations: OFF" textAlignment="CENTER" GridPane.columnIndex="3">
 							<font>
 								<Font name="Iosevka 2022 Semibold" size="14.0"/>
 							</font>
 							<cursor>
 								<Cursor fx:constant="HAND"/>
 							</cursor>
-						</ToggleButton>
-						<Button fx:id="undoButton" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+						</Button>
+						<Button fx:id="undoBtn" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
 						        minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: none;"
 						        GridPane.columnIndex="4">
 							<font>
@@ -77,7 +77,7 @@
 								<Cursor fx:constant="HAND"/>
 							</cursor>
 						</Button>
-						<Button fx:id="redoButton" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+						<Button fx:id="redoBtn" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
 						        minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: none;"
 						        GridPane.columnIndex="5">
 							<font>
@@ -87,8 +87,9 @@
 								<Cursor fx:constant="HAND"/>
 							</cursor>
 						</Button>
-						<Button contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-						        mnemonicParsing="false" prefHeight="40.0" style="-fx-background-color: none;" text="Erase" GridPane.columnIndex="6">
+						<Button fx:id="eraseBtn" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+						        minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="88.0" style="-fx-background-color: none;"
+						        text="Erase: OFF" textAlignment="CENTER" GridPane.columnIndex="6">
 							<font>
 								<Font name="Iosevka 2022 Semibold" size="14.0"/>
 							</font>
@@ -96,8 +97,9 @@
 								<Cursor fx:constant="HAND"/>
 							</cursor>
 						</Button>
-						<Button contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-						        mnemonicParsing="false" prefHeight="40.0" style="-fx-background-color: none;" text="Reset" GridPane.columnIndex="7">
+						<Button fx:id="resetBtn" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+						        minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" style="-fx-background-color: none;" text="Reset"
+						        GridPane.columnIndex="7">
 							<font>
 								<Font name="Iosevka 2022 Semibold" size="14.0"/>
 							</font>
