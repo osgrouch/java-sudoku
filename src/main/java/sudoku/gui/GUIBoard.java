@@ -1,15 +1,13 @@
 package sudoku.gui;
 
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.scene.layout.GridPane;
 import sudoku.puzzle.SudokuBoard;
 
-import java.net.URL;
-import java.util.ResourceBundle;
+import java.io.IOException;
 
-public class GUIBoard implements Initializable {
+public class GUIBoard {
 	/** The number of GUICells rows in this grid */
 	public static final int rows = 9;
 	/** The number of GUICells columns in this grid */
@@ -19,34 +17,34 @@ public class GUIBoard implements Initializable {
 	private SudokuBoard sudokuBoard;
 
 	/** A GridPane with Groups, displaying information about a SudokuCell */
-	@FXML
 	private GridPane gridPaneOfGroups;
 	/** 2D Array of GUICells in the puzzle */
 	private GUICell[][] boardOfGUICells;
 
 	/**
-	 * Create a new GUIBoard instance with a new GridPane to visually display the GUICells that make up the board.
-	 * Create a new SudokuBoard with a sample Sudoku CSV file and link each SudokuCell in the SudokuBoard with
-	 * its corresponding GUICell in this GUIBoard.
+	 * Create a new GUIBoard instance with a new SudokuBoard from the sample Sudoku CSV file.
+	 * Create a new GridPane to contain the GUICell's Group display.
 	 */
 	public GUIBoard () {
 		this.sudokuBoard = new SudokuBoard("input/sample_puzzle.csv");
-		// create a new GridPane
 		this.boardOfGUICells = new GUICell[rows][cols];
+
+		// create this GUIBoard's GridPane
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(GUICell.class.getResource("sudokuBoardGridPane.fxml"));
+		try {
+			this.gridPaneOfGroups = loader.load();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		init();
 	}
 
 	/**
-	 * Called to initialize a controller after its root element has been completely processed.
 	 * Populates the 2D Array of GUICells and links up each GUICell with its corresponding SudokuCell from the
 	 * SudokuBoard. Adds each GUICell Group to the GridPane to be displayed on the GUI.
-	 *
-	 * @param location  The location used to resolve relative paths for the root object, or
-	 *                  {@code null} if the location is not known.
-	 * @param resources The resources used to localize the root object, or {@code null} if
-	 *                  the root object was not localized.
 	 */
-	@Override
-	public void initialize (URL location, ResourceBundle resources) {
+	public void init () {
 		for (int row = 0; row < rows; row++) {
 			for (int col = 0; col < cols; col++) {
 				// link each GUICell with its corresponding SudokuCell in the SudokuBoard
