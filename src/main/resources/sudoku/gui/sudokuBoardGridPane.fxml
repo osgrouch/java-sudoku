@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.*?>
+<GridPane xmlns:fx="http://javafx.com/fxml" xmlns="http://javafx.com/javafx" fx:controller="sudoku.gui.GUIBoard" fx:id="gridPaneOfGroups"
+          alignment="CENTER" hgap="4.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+          style="-fx-background-color: #141414;" vgap="4.0">
+	<columnConstraints>
+		<ColumnConstraints halignment="CENTER" hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity"/>
+		<ColumnConstraints halignment="CENTER" hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity"/>
+		<ColumnConstraints halignment="CENTER" hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity"/>
+		<ColumnConstraints halignment="CENTER" hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity"/>
+		<ColumnConstraints halignment="CENTER" hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity"/>
+		<ColumnConstraints halignment="CENTER" hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity"/>
+		<ColumnConstraints halignment="CENTER" hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity"/>
+		<ColumnConstraints halignment="CENTER" hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity"/>
+		<ColumnConstraints halignment="CENTER" hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity"/>
+	</columnConstraints>
+	<rowConstraints>
+		<RowConstraints maxHeight="-Infinity" minHeight="-Infinity" valignment="CENTER" vgrow="NEVER"/>
+		<RowConstraints maxHeight="-Infinity" minHeight="-Infinity" valignment="CENTER" vgrow="NEVER"/>
+		<RowConstraints maxHeight="-Infinity" minHeight="-Infinity" valignment="CENTER" vgrow="NEVER"/>
+		<RowConstraints maxHeight="-Infinity" minHeight="-Infinity" valignment="CENTER" vgrow="NEVER"/>
+		<RowConstraints maxHeight="-Infinity" minHeight="-Infinity" valignment="CENTER" vgrow="NEVER"/>
+		<RowConstraints maxHeight="-Infinity" minHeight="-Infinity" valignment="CENTER" vgrow="NEVER"/>
+		<RowConstraints maxHeight="-Infinity" minHeight="-Infinity" valignment="CENTER" vgrow="NEVER"/>
+		<RowConstraints maxHeight="-Infinity" minHeight="-Infinity" valignment="CENTER" vgrow="NEVER"/>
+		<RowConstraints maxHeight="-Infinity" minHeight="-Infinity" valignment="CENTER" vgrow="NEVER"/>
+	</rowConstraints>
+	<padding>
+		<Insets bottom="4.0" left="4.0" right="4.0" top="4.0"/>
+	</padding>
+</GridPane>
