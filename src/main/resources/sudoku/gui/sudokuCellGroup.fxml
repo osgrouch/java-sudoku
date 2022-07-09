@@ -5,7 +5,7 @@
 <?import javafx.scene.Group?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-<Group xmlns:fx="http://javafx.com/fxml" xmlns="http://javafx.com/javafx" fx:controller="sudoku.gui.GUICell" fx:id="group">
+<Group xmlns:fx="http://javafx.com/fxml" xmlns="http://javafx.com/javafx" fx:id="group">
 	<children>
 		<GridPane fx:id="annotationsGridPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
 		          style="-fx-background-color: #e2e9ee;">
@@ -97,8 +97,7 @@
 			</cursor>
 		</GridPane>
 		<Label fx:id="cellNumberLabel" alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-		       minWidth="-Infinity"
-		       prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
+		       minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" textAlignment="CENTER" textFill="#005377">
 			<font>
 				<Font name="Iosevka 2022" size="48.0"/>
 			</font>

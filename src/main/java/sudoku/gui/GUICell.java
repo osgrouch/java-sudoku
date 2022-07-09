@@ -1,7 +1,6 @@
 package sudoku.gui;
 
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
@@ -10,22 +9,19 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import sudoku.puzzle.SudokuCell;
 
-import java.net.URL;
-import java.util.ResourceBundle;
+import java.io.IOException;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-public class GUICell implements Initializable {
+public class GUICell {
 	/** The SudokuCell this GUICell represents graphically */
 	private SudokuCell sudokuCell;
+
 	/** The Group of nodes to visually display information on, about the SudokuCell */
-	@FXML
 	private Group group;
 	/** The GridPane with buttons displaying annotations made on this SudokuCell */
-	@FXML
 	private GridPane annotationsGridPane;
 	/** The Label displaying this SudokuCell's number */
-	@FXML
 	private Label cellNumberLabel;
 
 	/** Used to set numbers pressed as annotations or as the number for the SudokuCell */
@@ -42,6 +38,60 @@ public class GUICell implements Initializable {
 		this.sudokuCell = null;
 		this.annotate = new AtomicBoolean(false);
 		this.erase = new AtomicBoolean(false);
+
+		// create this GUICell's Group
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(GUICell.class.getResource("sudokuCellGroup.fxml"));
+		try {
+			this.group = loader.load();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		this.annotationsGridPane = (GridPane) group.getChildren().get(0);
+		this.cellNumberLabel = (Label) group.getChildren().get(1);
+		init();
+	}
+
+	/**
+	 * Initialize the behavior each annotation button will have.
+	 * Will either add the button pressed as the SudokuCell's number or as annotation (annotate flag dependent).
+	 * Or will erase the annotation or number from the SudokuCell (erase flag dependent).
+	 */
+	public void init () {
+		for (Node annotationNumBtn : annotationsGridPane.getChildren()) {
+			AtomicBoolean marked = new AtomicBoolean(false);    // has the button been pressed?
+			// display on hover
+			annotationNumBtn.setOnMouseEntered(event -> annotationNumBtn.setOpacity(1.0));
+			// disappear when not hovered, only if not marked
+			annotationNumBtn.setOnMouseExited(event -> {
+				if (!marked.get()) {
+					annotationNumBtn.setOpacity(0.0);
+				}
+			});
+
+			( (Button) annotationNumBtn ).setOnAction(event -> {
+				if (erase.get()) {
+					// erase annotation
+					if (marked.compareAndSet(true, false)) {
+						removeAnnotation(Integer.parseInt(( (Button) annotationNumBtn ).getText()));
+					}
+				} else if (annotate.get()) {
+					// set annotation
+					if (marked.compareAndSet(false, true)) {
+						addAnnotation(Integer.parseInt(( (Button) annotationNumBtn ).getText()));
+					}
+				} else {
+					// set the number selected as this SudokuCell's number
+					marked.set(false);
+					setSudokuCellNumber(Integer.parseInt(( (Button) annotationNumBtn ).getText()));
+				}
+			});
+		}
+		cellNumberLabel.setOnMouseClicked(event -> {
+			if (erase.get()) {
+				removeSudokuCellNumber();
+			}
+		});
 	}
 
 	/**
@@ -51,7 +101,7 @@ public class GUICell implements Initializable {
 	 */
 	public void setSudokuCell (SudokuCell sudokuCell) {
 		this.sudokuCell = sudokuCell;
-		// updateDisplay();
+		updateDisplay();
 	}
 
 	/**
@@ -59,7 +109,7 @@ public class GUICell implements Initializable {
 	 *
 	 * @param num num to set
 	 */
-	public void setSudokuCellNumber (int num) {
+	private void setSudokuCellNumber (int num) {
 		sudokuCell.setNumber(num);
 		updateDisplay();
 	}
@@ -67,7 +117,7 @@ public class GUICell implements Initializable {
 	/**
 	 * Remove this instance's SudokuCell number, if the SudokuCell does not contain a given number.
 	 */
-	public void removeSudokuCellNumber () {
+	private void removeSudokuCellNumber () {
 		sudokuCell.removeNumber();
 		updateDisplay();
 	}
@@ -77,7 +127,7 @@ public class GUICell implements Initializable {
 	 *
 	 * @param num number to add
 	 */
-	public void addAnnotation (int num) {
+	private void addAnnotation (int num) {
 		sudokuCell.addAnnotation(num);
 		updateDisplay();
 	}
@@ -87,7 +137,7 @@ public class GUICell implements Initializable {
 	 *
 	 * @param num number to remove
 	 */
-	public void removeAnnotation (int num) {
+	private void removeAnnotation (int num) {
 		sudokuCell.removeAnnotation(num);
 		updateDisplay();
 	}
@@ -95,7 +145,7 @@ public class GUICell implements Initializable {
 	/**
 	 * Update the contents of this instance's Group to display new information about the SudokuCell.
 	 */
-	public void updateDisplay () {
+	private void updateDisplay () {
 		// display the annotations made for this SudokuCell
 		Set<Integer> annotations = sudokuCell.getAnnotations();
 		for (Node annotationNumBtn : annotationsGridPane.getChildren()) {
@@ -144,52 +194,5 @@ public class GUICell implements Initializable {
 	 */
 	public Group getGroup () {
 		return group;
-	}
-
-	/**
-	 * Called to initialize a controller after its root element has been
-	 * completely processed.
-	 *
-	 * @param location  The location used to resolve relative paths for the root object, or
-	 *                  {@code null} if the location is not known.
-	 * @param resources The resources used to localize the root object, or {@code null} if
-	 *                  the root object was not localized.
-	 */
-	@Override
-	public void initialize (URL location, ResourceBundle resources) {
-		for (Node annotationNumBtn : annotationsGridPane.getChildren()) {
-			AtomicBoolean marked = new AtomicBoolean(false);    // has the button been pressed?
-			// display on hover
-			annotationNumBtn.setOnMouseEntered(event -> annotationNumBtn.setOpacity(1.0));
-			// disappear when not hovered, only if not marked
-			annotationNumBtn.setOnMouseExited(event -> {
-				if (!marked.get()) {
-					annotationNumBtn.setOpacity(0.0);
-				}
-			});
-
-			( (Button) annotationNumBtn ).setOnAction(event -> {
-				if (erase.get()) {
-					// erase annotation
-					if (marked.compareAndSet(true, false)) {
-						removeAnnotation(Integer.parseInt(( (Button) annotationNumBtn ).getText()));
-					}
-				} else if (annotate.get()) {
-					// set annotation
-					if (marked.compareAndSet(false, true)) {
-						addAnnotation(Integer.parseInt(( (Button) annotationNumBtn ).getText()));
-					}
-				} else {
-					// set the number selected as this SudokuCell's number
-					marked.set(false);
-					setSudokuCellNumber(Integer.parseInt(( (Button) annotationNumBtn ).getText()));
-				}
-			});
-		}
-		cellNumberLabel.setOnMouseClicked(event -> {
-			if (erase.get()) {
-				removeSudokuCellNumber();
-			}
-		});
 	}
 }
