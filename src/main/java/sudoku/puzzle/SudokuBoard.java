@@ -7,25 +7,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Class representing a 9x9 Sudoku grid.
- * Keeps track of the Cells within the 9x9 grid.
+ * Class representing a 9x9 Sudoku board.
+ * Keeps track of the cells within the 9x9 board.
  */
-public class SudokuGrid {
+public class SudokuBoard {
 	/** The number of SudokuCell rows in this grid */
 	public static final int rows = 9;
 	/** The number of SudokuCell columns in this grid */
 	public static final int cols = 9;
 
-	/** 2D Array of Cells in the puzzle */
-	private final SudokuCell[][] grid;
+	/** 2D Array of SudokuCells in the puzzle */
+	private final SudokuCell[][] board;
 
 	/**
-	 * Create a new SudokuGrid instance and populate the 2D Array of Cells with the values
+	 * Create a new SudokuBoard instance and populate the 2D Array of SudokuCells with the values
 	 * from the given file. Does not check the file given is a file containing a Sudoku puzzle.
 	 *
 	 * @param filename a csv file containing a 9x9 Sudoku puzzle
 	 */
-	public SudokuGrid (String filename) {
+	public SudokuBoard (String filename) {
 		int[][] cellValues = new int[rows][cols];
 		try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
 			String line;
@@ -41,11 +41,11 @@ public class SudokuGrid {
 			throw new RuntimeException(e);
 		}
 
-		this.grid = new SudokuCell[rows][cols];
+		this.board = new SudokuCell[rows][cols];
 		int region = 1;
 		for (int row = 0; row < rows; row++) {
 			for (int col = 0; col < cols; col++) {
-				this.grid[row][col] = new SudokuCell(region, cellValues[row][col]);
+				this.board[row][col] = new SudokuCell(region, cellValues[row][col]);
 				if (( col + 1 ) % 3 == 0) {
 					// increment the region every 3 columns
 					++region;
@@ -60,17 +60,17 @@ public class SudokuGrid {
 	}
 
 	/**
-	 * Get all the Cells within the given region.
+	 * Get all the SudokuCells within the given region.
 	 * Used when verifying if current puzzle grid is a solution.
 	 *
 	 * @param region region to search for
-	 * @return ArrayList of Cells in the given region
+	 * @return ArrayList of SudokuCells in the given region
 	 */
 	private SudokuCell[] getRegion (int region) {
-		ArrayList<SudokuCell> sudokuCells = new ArrayList<>(9); // there will only ever be 9 Cells in a region
+		ArrayList<SudokuCell> sudokuCells = new ArrayList<>(9); // there will only ever be 9 SudokuCells in a region
 		for (int row = 0; row < rows; row++) {
 			for (int col = 0; col < cols; col++) {
-				SudokuCell current = grid[row][col];
+				SudokuCell current = board[row][col];
 				if (current.getRegion() == region) {
 					sudokuCells.add(current);
 				}
@@ -80,47 +80,58 @@ public class SudokuGrid {
 	}
 
 	/**
-	 * Get the given row of Cells in the puzzle grid.
+	 * Get the given row of SudokuCells in the puzzle grid.
 	 * Used when verifying if current puzzle grid is a solution.
 	 *
 	 * @param row row number
-	 * @return Array of Cells
+	 * @return Array of SudokuCells
 	 */
-	private SudokuCell[] getGridRow (int row) {
-		return grid[row];
+	private SudokuCell[] getRow (int row) {
+		return board[row];
 	}
 
 	/**
-	 * Get the given column of Cells in the puzzle grid.
+	 * Get the given column of SudokuCells in the puzzle grid.
 	 * Used when verifying if current puzzle grid is a solution.
 	 *
 	 * @param col column number
-	 * @return Array of Cells
+	 * @return Array of SudokuCells
 	 */
-	private SudokuCell[] getGridCol (int col) {
+	private SudokuCell[] getCol (int col) {
 		SudokuCell[] column = new SudokuCell[rows];
 		for (int row = 0; row < rows; row++) {
-			column[row] = grid[row][col];
+			column[row] = board[row][col];
 		}
 		return column;
 	}
 
 	/**
-	 * Get the 2D Array of Cells stored within this SudokuGrid instance as an ArrayList of Cells
+	 * Get the SudokuCell at a given row and column number in the board (2D Array of SudokuCells).
+	 *
+	 * @param row row number
+	 * @param col column number
+	 * @return SudokuCell at the given coordinates
+	 */
+	public SudokuCell getSudokuCell (int row, int col) {
+		return board[row][col];
+	}
+
+	/**
+	 * Get the 2D Array of SudokuCells stored within this SudokuBoard instance as an ArrayList of SudokuCells
 	 * from left to right per row, starting at row 0 and ending at row 8.
 	 *
-	 * @return ArrayList of Cells
+	 * @return ArrayList of SudokuCells
 	 */
-	public ArrayList<SudokuCell> getGridAsArrayList () {
+	public ArrayList<SudokuCell> getBoardAsArrayList () {
 		ArrayList<SudokuCell> sudokuCells = new ArrayList<>(81);
 		for (int row = 0; row < rows; row++) {
-			sudokuCells.addAll(List.of(getGridRow(row)));
+			sudokuCells.addAll(List.of(getRow(row)));
 		}
 		return sudokuCells;
 	}
 
 	/**
-	 * Check if this SudokuGrid is a solution to the Sudoku puzzle by checking the following conditions:
+	 * Check if this SudokuBoard is a solution to the Sudoku puzzle by checking the following conditions:
 	 *
 	 * <ol>
 	 *     <li>Each region has no repeating numbers from [1, 9].</li>
@@ -128,7 +139,7 @@ public class SudokuGrid {
 	 *     <li>Each column has no repeating numbers from [1, 9].</li>
 	 * </ol>
 	 *
-	 * @return true if this SudokuGrid is a solution
+	 * @return true if this SudokuBoard is a solution
 	 */
 	public boolean isSolution () {
 		// used to create arraylists below to check for repeating numbers
@@ -143,35 +154,35 @@ public class SudokuGrid {
 				Integer num = sudokuCell.getNumber();
 				if (!numbers.remove(num)) {
 					// remove returns false only if the given object was not in the ArrayList
-					// therefore a number was repeated in the region and this SudokuGrid is not a solution
+					// therefore a number was repeated in the region and this SudokuBoard is not a solution
 					return false;
 				}
 			}
 		}
 
 		for (int row = 0; row < rows; row++) {
-			SudokuCell[] rowOfSudokuCells = getGridRow(row);
+			SudokuCell[] rowOfSudokuCells = getRow(row);
 			ArrayList<Integer> numbers = new ArrayList<>(listOfNumbers);
 
 			for (SudokuCell sudokuCell : rowOfSudokuCells) {
 				Integer num = sudokuCell.getNumber();
 				if (!numbers.remove(num)) {
 					// remove returns false only if the given object was not in the ArrayList
-					// therefore a number was repeated in the row and this SudokuGrid is not a solution
+					// therefore a number was repeated in the row and this SudokuBoard is not a solution
 					return false;
 				}
 			}
 		}
 
 		for (int col = 0; col < cols; col++) {
-			SudokuCell[] colOfSudokuCells = getGridCol(col);
+			SudokuCell[] colOfSudokuCells = getCol(col);
 			ArrayList<Integer> numbers = new ArrayList<>(listOfNumbers);
 
 			for (SudokuCell sudokuCell : colOfSudokuCells) {
 				Integer num = sudokuCell.getNumber();
 				if (!numbers.remove(num)) {
 					// remove returns false only if the given object was not in the ArrayList
-					// therefore a number was repeated in the column and this SudokuGrid is not a solution
+					// therefore a number was repeated in the column and this SudokuBoard is not a solution
 					return false;
 				}
 			}
@@ -181,16 +192,16 @@ public class SudokuGrid {
 	}
 
 	/**
-	 * Create a String representation of the current state of the SudokuGrid by displaying the SudokuCell numbers
+	 * Create a String representation of the current state of the SudokuBoard by displaying the SudokuCell numbers
 	 * distinctly seperated by regions.
 	 *
-	 * @return visual String representation of 2D Array of Cells
+	 * @return visual String representation of 2D Array of SudokuCells
 	 */
 	@Override
 	public String toString () {
 		StringBuilder str = new StringBuilder();
 		for (int row = 0; row < rows; row++) {
-			int number = grid[row][0].getNumber();
+			int number = board[row][0].getNumber();
 			if (number == 0) {
 				str.append(".");
 			} else {
@@ -202,7 +213,7 @@ public class SudokuGrid {
 				} else {
 					str.append(" ");
 				}
-				number = grid[row][col].getNumber();
+				number = board[row][col].getNumber();
 				if (number == 0) {
 					str.append(".");
 				} else {
