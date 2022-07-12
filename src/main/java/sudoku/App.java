@@ -35,13 +35,14 @@ public class App extends Application {
 	 *              Applications may create other stages, if needed, but they will not be
 	 *              primary stages.
 	 */
-	@Override public void start (Stage stage) {
+	@Override
+	public void start (Stage stage) {
 		try {
-			stage.getIcons().add(new Image(getClass().getResourceAsStream("icon.png")));
+			stage.getIcons().add(new Image(App.class.getResourceAsStream("icon.png")));
 			stage.setTitle("JavaFX Sudoku");
 			stage.setResizable(false);
 
-			Parent root = FXMLLoader.load(getClass().getResource("puzzle.fxml"));
+			Parent root = FXMLLoader.load(App.class.getResource("container.fxml"));
 			Scene scene = new Scene(root);
 			stage.setScene(scene);
 			stage.show();
