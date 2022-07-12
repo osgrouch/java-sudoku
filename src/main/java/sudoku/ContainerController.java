@@ -55,7 +55,7 @@ public class ContainerController implements Initializable {
 	}
 
 	/**
-	 * Toggle annotations on for all GUICell's, so that any number pressed is marked as an
+	 * Toggle annotations on all GUICell's, so that any number pressed is marked as an
 	 * annotation on the SudokuCell instead of the SudokuCell's number.
 	 *
 	 * @param event ActionEvent from button press
@@ -67,6 +67,22 @@ public class ContainerController implements Initializable {
 			annotationBtn.setText("Annotations: ON");
 		} else {
 			annotationBtn.setText("Annotations: OFF");
+		}
+	}
+
+	/**
+	 * Toggle erase on all GUICell's, so that any number pressed is removed from the SudokuCell
+	 * instead of being added to the SudokuCell as a number or annotation.
+	 *
+	 * @param event ActionEvent from button press
+	 */
+	public void toggleErase (ActionEvent event) {
+		this.erase = !erase;
+		guiBoard.setErase(erase);
+		if (erase) {
+			eraseBtn.setText("Erase: ON");
+		} else {
+			eraseBtn.setText("Erase: OFF");
 		}
 	}
 
