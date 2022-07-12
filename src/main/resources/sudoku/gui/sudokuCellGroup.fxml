@@ -5,7 +5,7 @@
 <?import javafx.scene.Group?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-<Group xmlns:fx="http://javafx.com/fxml" xmlns="http://javafx.com/javafx" fx:id="group">
+<Group xmlns:fx="http://javafx.com/fxml" xmlns="http://javafx.com/javafx">
 	<children>
 		<GridPane fx:id="annotationsGridPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
 		          style="-fx-background-color: #e2e9ee;">
