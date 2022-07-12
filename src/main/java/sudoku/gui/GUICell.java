@@ -169,7 +169,8 @@ public class GUICell {
 		int number = sudokuCell.getNumber();
 		if (number == 0) {
 			// remove the number from the label
-			cellNumberLabel.setText("");
+			// setting text to "" created visual bug where the cell wasn't lined up with the rest of the row
+			cellNumberLabel.setText(" ");
 			cellNumberLabel.setDisable(true);
 			annotationsGridPane.setDisable(false);
 		} else {
