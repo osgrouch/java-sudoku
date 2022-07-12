@@ -61,6 +61,7 @@ public class ContainerController implements Initializable {
 	 */
 	public void undoLastAction (ActionEvent event) {
 		guiBoard.undoLastAction();
+		updateBoardDisplay();
 	}
 
 	/**
@@ -70,6 +71,7 @@ public class ContainerController implements Initializable {
 	 */
 	public void redoLastAction (ActionEvent event) {
 		guiBoard.redoLastAction();
+		updateBoardDisplay();
 	}
 
 	/**
@@ -109,6 +111,14 @@ public class ContainerController implements Initializable {
 	}
 
 	/**
+	 * Update the GUI to display the changes made to GUI Board.
+	 */
+	private void updateBoardDisplay () {
+		boardAnchor.getChildren().clear();
+		boardAnchor.getChildren().add(guiBoard.getGridPaneOfGroups());
+	}
+
+	/**
 	 * @return the JavaFX Button representing undo
 	 */
 	public Button getUndoBtn () {
@@ -133,7 +143,7 @@ public class ContainerController implements Initializable {
 	 */
 	@Override
 	public void initialize (URL location, ResourceBundle resources) {
-		// display sudoku board
+		// display intitial sudoku board
 		boardAnchor.getChildren().add(guiBoard.getGridPaneOfGroups());
 
 		// set undo and redo images

@@ -105,6 +105,7 @@ public class GUIBoard {
 	 * @param cell GUICell to add
 	 */
 	public void pushOnToUndoStack (GUICell cell) {
+		System.out.println(cell.toString());
 		undoStack.push(cell);
 		controller.getUndoBtn().setDisable(false);
 	}
@@ -116,6 +117,7 @@ public class GUIBoard {
 	 * @param cell GUICell to add
 	 */
 	public void pushOnToRedoStack (GUICell cell) {
+		System.out.println(cell.toString());
 		redoStack.push(cell);
 		controller.getRedoBtn().setDisable(false);
 	}
@@ -128,7 +130,7 @@ public class GUIBoard {
 		if (!undoStack.empty()) {
 			GUICell newCell = undoStack.pop();
 			GUICell oldCell = boardOfGUICells[newCell.getRow()][newCell.getCol()];
-			boardOfGUICells[newCell.getRow()][newCell.getCol()] = newCell;
+			replaceGUICell(oldCell, newCell);
 			pushOnToRedoStack(oldCell);
 			if (undoStack.empty()) {
 				controller.getUndoBtn().setDisable(true);
@@ -144,12 +146,25 @@ public class GUIBoard {
 		if (!redoStack.empty()) {
 			GUICell newCell = redoStack.pop();
 			GUICell oldCell = boardOfGUICells[newCell.getRow()][newCell.getCol()];
-			boardOfGUICells[newCell.getRow()][newCell.getCol()] = newCell;
+			replaceGUICell(oldCell, newCell);
 			pushOnToUndoStack(oldCell);
 			if (redoStack.empty()) {
 				controller.getRedoBtn().setDisable(true);
 			}
 		}
+	}
+
+	/**
+	 * Replace a GUICell with a different GUICell by replacing it from the 2D Array of GUICells
+	 * and replacing it in the GridPane of GUICell Groups to update the display.
+	 *
+	 * @param remove GUICell to remove
+	 * @param insert GUICell to insert
+	 */
+	private void replaceGUICell (GUICell remove, GUICell insert) {
+		gridPaneOfGroups.getChildren().remove(remove.getGroup());
+		boardOfGUICells[remove.getRow()][remove.getCol()] = insert;
+		gridPaneOfGroups.add(insert.getGroup(), insert.getCol(), insert.getRow());
 	}
 
 	/**
