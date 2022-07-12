@@ -56,7 +56,7 @@ public class GUICell {
 		this.guiBoard = guiBoard;
 		this.row = row;
 		this.col = col;
-		init();
+		initializeGUI();
 	}
 
 	/**
@@ -71,7 +71,7 @@ public class GUICell {
 		this.annotate = other.annotate;
 		this.erase = other.erase;
 		this.sudokuCell = new SudokuCell(other.sudokuCell);
-		init();
+		initializeGUI();
 		updateDisplay();
 	}
 
@@ -80,59 +80,59 @@ public class GUICell {
 	 * Will either add the button pressed as the SudokuCell's number or as annotation (annotate flag dependent).
 	 * Or will erase the annotation or number from the SudokuCell (erase flag dependent).
 	 */
-	public void init () {
-		// create this GUICell's Group
-		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(GUICell.class.getResource("sudokuCellGroup.fxml"));
+	public void initializeGUI () {
 		try {
+			// create this GUICell's Group
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(GUICell.class.getResource("sudokuCellGroup.fxml"));
 			this.group = loader.load();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		this.annotationsGridPane = (GridPane) group.getChildren().get(0);
-		this.cellNumberLabel = (Label) group.getChildren().get(1);
-		for (Node annotationNumBtn : annotationsGridPane.getChildren()) {
-			AtomicBoolean marked = new AtomicBoolean(false);    // has the button been pressed?
-			// display on hover, only if erase is not on
-			annotationNumBtn.setOnMouseEntered(event -> {
-				if (!erase.get()) {
-					annotationNumBtn.setOpacity(1.0);
-				}
-			});
-			// disappear when not hovered, only if not marked
-			annotationNumBtn.setOnMouseExited(event -> {
-				if (!marked.get()) {
-					annotationNumBtn.setOpacity(0.0);
-				}
-			});
+			this.annotationsGridPane = (GridPane) group.getChildren().get(0);
+			this.cellNumberLabel = (Label) group.getChildren().get(1);
+			for (Node annotationNumBtn : annotationsGridPane.getChildren()) {
+				AtomicBoolean marked = new AtomicBoolean(false);    // has the button been pressed?
+				// display on hover, only if erase is not on
+				annotationNumBtn.setOnMouseEntered(event -> {
+					if (!erase.get()) {
+						annotationNumBtn.setOpacity(1.0);
+					}
+				});
+				// disappear when not hovered, only if not marked
+				annotationNumBtn.setOnMouseExited(event -> {
+					if (!marked.get()) {
+						annotationNumBtn.setOpacity(0.0);
+					}
+				});
 
-			( (Button) annotationNumBtn ).setOnAction(event -> {
+				( (Button) annotationNumBtn ).setOnAction(event -> {
+					// add current GUICell state to undo stack
+					guiBoard.pushOnToUndoStack(new GUICell(this));
+					if (erase.get()) {
+						// erase annotation
+						if (marked.compareAndSet(true, false)) {
+							removeAnnotation(Integer.parseInt(( (Button) annotationNumBtn ).getText()));
+						}
+					} else if (annotate.get()) {
+						// set annotation
+						if (marked.compareAndSet(false, true)) {
+							addAnnotation(Integer.parseInt(( (Button) annotationNumBtn ).getText()));
+						}
+					} else {
+						// set the number selected as this SudokuCell's number
+						marked.set(false);
+						setSudokuCellNumber(Integer.parseInt(( (Button) annotationNumBtn ).getText()));
+					}
+				});
+			}
+			cellNumberLabel.setOnMouseClicked(event -> {
 				// add current GUICell state to undo stack
 				guiBoard.pushOnToUndoStack(new GUICell(this));
 				if (erase.get()) {
-					// erase annotation
-					if (marked.compareAndSet(true, false)) {
-						removeAnnotation(Integer.parseInt(( (Button) annotationNumBtn ).getText()));
-					}
-				} else if (annotate.get()) {
-					// set annotation
-					if (marked.compareAndSet(false, true)) {
-						addAnnotation(Integer.parseInt(( (Button) annotationNumBtn ).getText()));
-					}
-				} else {
-					// set the number selected as this SudokuCell's number
-					marked.set(false);
-					setSudokuCellNumber(Integer.parseInt(( (Button) annotationNumBtn ).getText()));
+					removeSudokuCellNumber();
 				}
 			});
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
-		cellNumberLabel.setOnMouseClicked(event -> {
-			// add current GUICell state to undo stack
-			guiBoard.pushOnToUndoStack(new GUICell(this));
-			if (erase.get()) {
-				removeSudokuCellNumber();
-			}
-		});
 	}
 
 	/**

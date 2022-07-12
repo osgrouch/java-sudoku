@@ -46,55 +46,54 @@ public class GUIBoard {
 		this.boardOfGUICells = new GUICell[rows][cols];
 		this.undoStack = new Stack<>();
 		this.redoStack = new Stack<>();
-
-		// create this GUIBoard's GridPane
-		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(GUICell.class.getResource("sudokuBoardGridPane.fxml"));
-		try {
-			this.gridPaneOfGroups = loader.load();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		init();
+		initializeGUI();
 	}
 
 	/**
 	 * Populates the 2D Array of GUICells and links up each GUICell with its corresponding SudokuCell from the
 	 * SudokuBoard. Adds each GUICell Group to the GridPane to be displayed on the GUI.
 	 */
-	public void init () {
-		for (int row = 0; row < rows; row++) {
-			for (int col = 0; col < cols; col++) {
-				// link each GUICell with its corresponding SudokuCell in the SudokuBoard
-				GUICell current = new GUICell(this, row, col);
-				current.setSudokuCell(sudokuBoard.getSudokuCell(row, col));
-				boardOfGUICells[row][col] = current;
-				gridPaneOfGroups.add(current.getGroup(), col, row);
+	public void initializeGUI () {
+		try {
+			// create this GUIBoard's GridPane
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(GUICell.class.getResource("sudokuBoardGridPane.fxml"));
+			this.gridPaneOfGroups = loader.load();
+			for (int row = 0; row < rows; row++) {
+				for (int col = 0; col < cols; col++) {
+					// link each GUICell with its corresponding SudokuCell in the SudokuBoard
+					GUICell current = new GUICell(this, row, col);
+					current.setSudokuCell(sudokuBoard.getSudokuCell(row, col));
+					boardOfGUICells[row][col] = current;
+					gridPaneOfGroups.add(current.getGroup(), col, row);
 
-				// add slight margins to show visual distinction between sudoku regions
-				if (col == 2) {
-					GridPane.setMargin(current.getGroup(), new Insets(0, 4, 0, 0));
-				} else if (col == 6) {
-					GridPane.setMargin(current.getGroup(), new Insets(0, 0, 0, 4));
-				}
-				if (row == 2) {
+					// add slight margins to show visual distinction between sudoku regions
 					if (col == 2) {
-						GridPane.setMargin(current.getGroup(), new Insets(0, 4, 4, 0));
+						GridPane.setMargin(current.getGroup(), new Insets(0, 4, 0, 0));
 					} else if (col == 6) {
-						GridPane.setMargin(current.getGroup(), new Insets(0, 0, 4, 4));
-					} else {
-						GridPane.setMargin(current.getGroup(), new Insets(0, 0, 4, 0));
+						GridPane.setMargin(current.getGroup(), new Insets(0, 0, 0, 4));
 					}
-				} else if (row == 6) {
-					if (col == 2) {
-						GridPane.setMargin(current.getGroup(), new Insets(4, 4, 0, 0));
-					} else if (col == 6) {
-						GridPane.setMargin(current.getGroup(), new Insets(4, 0, 0, 4));
-					} else {
-						GridPane.setMargin(current.getGroup(), new Insets(4, 0, 0, 0));
+					if (row == 2) {
+						if (col == 2) {
+							GridPane.setMargin(current.getGroup(), new Insets(0, 4, 4, 0));
+						} else if (col == 6) {
+							GridPane.setMargin(current.getGroup(), new Insets(0, 0, 4, 4));
+						} else {
+							GridPane.setMargin(current.getGroup(), new Insets(0, 0, 4, 0));
+						}
+					} else if (row == 6) {
+						if (col == 2) {
+							GridPane.setMargin(current.getGroup(), new Insets(4, 4, 0, 0));
+						} else if (col == 6) {
+							GridPane.setMargin(current.getGroup(), new Insets(4, 0, 0, 4));
+						} else {
+							GridPane.setMargin(current.getGroup(), new Insets(4, 0, 0, 0));
+						}
 					}
 				}
 			}
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 	}
 
@@ -116,7 +115,7 @@ public class GUIBoard {
 	 *
 	 * @param cell GUICell to add
 	 */
-	public void pushOnToRedoStack (GUICell cell) {
+	private void pushOnToRedoStack (GUICell cell) {
 		System.out.println(cell.toString());
 		redoStack.push(cell);
 		controller.getRedoBtn().setDisable(false);
