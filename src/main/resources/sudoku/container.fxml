@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 <AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-            xmlns="http://javafx.com/javafx/18" fx:controller="sudoku.gui.ContainerController">
+            style="-fx-background-color: #e2e9ee;" xmlns="http://javafx.com/javafx/18" fx:controller="sudoku.ContainerController">
 	<children>
-		<VBox fx:id="vbox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0"
+		<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0"
 		      AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
 			<children>
 				<HBox>
@@ -92,6 +93,11 @@
 				</HBox>
 				<Pane maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="2.0"
 				      style="-fx-background-color: #C9CFD4;"/>
+				<AnchorPane fx:id="boardAnchor" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity">
+					<VBox.margin>
+						<Insets bottom="40.0" left="40.0" right="40.0" top="40.0"/>
+					</VBox.margin>
+				</AnchorPane>
 			</children>
 		</VBox>
 	</children>

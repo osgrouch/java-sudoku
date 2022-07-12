@@ -1,9 +1,10 @@
-package sudoku.gui;
+package sudoku;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.AnchorPane;
+import sudoku.gui.GUIBoard;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -13,9 +14,10 @@ import java.util.ResourceBundle;
  * and controlls contents of the GUIBoard.
  */
 public class ContainerController implements Initializable {
-	/** Vertical Box that aligns the different sections of the GUI */
+	/** The AnchorPane which wraps GUIBoard's GridPane */
 	@FXML
-	private VBox vbox;
+	private AnchorPane boardAnchor;
+
 	/** Button toggles annotation mode on or off */
 	@FXML
 	private Button annotationBtn;
@@ -52,6 +54,6 @@ public class ContainerController implements Initializable {
 	@Override
 	public void initialize (URL location, ResourceBundle resources) {
 		// TODO: update docstring
-		vbox.getChildren().add(guiBoard.getGridPaneOfGroups());
+		boardAnchor.getChildren().add(guiBoard.getGridPaneOfGroups());
 	}
 }

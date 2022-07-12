@@ -83,4 +83,11 @@ public class GUIBoard {
 			}
 		}
 	}
+
+	/**
+	 * @return GridPane of Groups used to graphically represent a SudokuCell
+	 */
+	public GridPane getGridPaneOfGroups () {
+		return gridPaneOfGroups;
+	}
 }
