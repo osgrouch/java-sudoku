@@ -32,8 +32,13 @@ public class ContainerController implements Initializable {
 	@FXML
 	private Button resetBtn;
 
+	/** A graphical representation of a SudokuBoard */
+	private GUIBoard guiBoard;
+
 	/** Default constructor. */
-	public ContainerController () {}
+	public ContainerController () {
+		this.guiBoard = new GUIBoard();
+	}
 
 	/**
 	 * Called to initialize a controller after its root element has been
@@ -47,5 +52,6 @@ public class ContainerController implements Initializable {
 	@Override
 	public void initialize (URL location, ResourceBundle resources) {
 		// TODO: update docstring
+		vbox.getChildren().add(guiBoard.getGridPaneOfGroups());
 	}
 }
