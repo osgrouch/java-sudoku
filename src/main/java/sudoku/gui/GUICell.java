@@ -13,6 +13,11 @@ import java.io.IOException;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicBoolean;
 
+/**
+ * Class to represent a SudokuCell graphically using JavaFX nodes.
+ * Updates information in the SudokuCell based on user input and displays
+ * that changes made to the Cell to the user.
+ */
 public class GUICell {
 	/** The SudokuCell this GUICell represents graphically */
 	private SudokuCell sudokuCell;

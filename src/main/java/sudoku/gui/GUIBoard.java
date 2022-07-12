@@ -7,6 +7,10 @@ import sudoku.puzzle.SudokuBoard;
 
 import java.io.IOException;
 
+/**
+ * Class to represent a SudokuBoard graphically using GUICells.
+ * Organizes and displays each GUICell for the user to interact with.
+ */
 public class GUIBoard {
 	/** The number of GUICells rows in this grid */
 	public static final int rows = 9;
