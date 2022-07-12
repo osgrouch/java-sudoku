@@ -105,7 +105,7 @@ public class GUICell {
 
 				( (Button) annotationNumBtn ).setOnAction(event -> {
 					// add current GUICell state to undo stack
-					guiBoard.pushOnToUndoStack(new GUICell(this));
+					guiBoard.pushOnToUndoStack(new GUICell(this), true);
 					if (erase.get()) {
 						// erase annotation
 						if (marked.compareAndSet(true, false)) {
@@ -125,7 +125,7 @@ public class GUICell {
 			}
 			cellNumberLabel.setOnMouseClicked(event -> {
 				// add current GUICell state to undo stack
-				guiBoard.pushOnToUndoStack(new GUICell(this));
+				guiBoard.pushOnToUndoStack(new GUICell(this), true);
 				if (erase.get()) {
 					removeSudokuCellNumber();
 				}

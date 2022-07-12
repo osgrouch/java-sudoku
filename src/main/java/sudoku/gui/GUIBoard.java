@@ -100,12 +100,19 @@ public class GUIBoard {
 	/**
 	 * Push the given GUICell on to the undo stack and enable the undo button,
 	 * since the undo stack is no longer empty.
+	 * ClearRedo argument shuld be true when pushing a new user action
+	 * and false when cycling back through the undo stack.
 	 *
-	 * @param cell GUICell to add
+	 * @param cell      GUICell to add
+	 * @param clearRedo boolean value
 	 */
-	public void pushOnToUndoStack (GUICell cell) {
+	public void pushOnToUndoStack (GUICell cell, boolean clearRedo) {
 		undoStack.push(cell);
 		controller.getUndoBtn().setDisable(false);
+		if (clearRedo) {
+			redoStack.clear();
+			controller.getRedoBtn().setDisable(true);
+		}
 	}
 
 	/**
@@ -144,7 +151,7 @@ public class GUIBoard {
 			GUICell newCell = redoStack.pop();
 			GUICell oldCell = boardOfGUICells[newCell.getRow()][newCell.getCol()];
 			replaceGUICell(oldCell, newCell);
-			pushOnToUndoStack(oldCell);
+			pushOnToUndoStack(oldCell, false);
 			if (redoStack.empty()) {
 				controller.getRedoBtn().setDisable(true);
 			}

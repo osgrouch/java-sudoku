@@ -62,6 +62,7 @@ public class ContainerController implements Initializable {
 	public void undoLastAction (ActionEvent event) {
 		guiBoard.undoLastAction();
 		updateBoardDisplay();
+		eraseOff();
 	}
 
 	/**
@@ -72,6 +73,7 @@ public class ContainerController implements Initializable {
 	public void redoLastAction (ActionEvent event) {
 		guiBoard.redoLastAction();
 		updateBoardDisplay();
+		eraseOff();
 	}
 
 	/**
@@ -88,10 +90,7 @@ public class ContainerController implements Initializable {
 		} else {
 			annotationBtn.setText("Annotations: OFF");
 		}
-		if (erase) {
-			// turn off erase when annotation button has been pressed
-			eraseBtn.fire();
-		}
+		eraseOff();
 	}
 
 	/**
@@ -107,6 +106,16 @@ public class ContainerController implements Initializable {
 			eraseBtn.setText("Erase: ON");
 		} else {
 			eraseBtn.setText("Erase: OFF");
+		}
+	}
+
+	/**
+	 * Turn erase boolean false by having the button fire if erase is currently true.
+	 * Used to clear erase when user presses a different button with erase on.
+	 */
+	private void eraseOff () {
+		if (erase) {
+			eraseBtn.fire();
 		}
 	}
 
