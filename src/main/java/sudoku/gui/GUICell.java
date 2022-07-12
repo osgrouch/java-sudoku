@@ -19,9 +19,20 @@ import java.util.concurrent.atomic.AtomicBoolean;
  * that changes made to the SudokuCell to the user.
  */
 public class GUICell {
+	/** The GUIBoard that contains this GUICell, used to add previous states of this GUICell to the undo stack */
+	private final GUIBoard guiBoard;
+	/** The row number, in the 2D Array within a GUIBoard */
+	private final int row;
+	/** The column number, in the 2D Array within a GUIBoard */
+	private final int col;
+
+	/** Used to set numbers pressed as annotations or as the number for the SudokuCell */
+	private final AtomicBoolean annotate;
+	/** Used to indicate numbers pressed are to be removed from SudokuCell instead of added as annotations or its number */
+	private final AtomicBoolean erase;
+
 	/** The SudokuCell this GUICell represents graphically */
 	private SudokuCell sudokuCell;
-
 	/** The Group of nodes to visually display information on, about the SudokuCell */
 	private Group group;
 	/** The GridPane with buttons displaying annotations made on this SudokuCell */
@@ -29,20 +40,22 @@ public class GUICell {
 	/** The Label displaying this SudokuCell's number */
 	private Label cellNumberLabel;
 
-	/** Used to set numbers pressed as annotations or as the number for the SudokuCell */
-	private AtomicBoolean annotate;
-	/** Used to indicate numbers pressed are to be removed from SudokuCell instead of added as annotations or its number */
-	private AtomicBoolean erase;
-
 	/**
 	 * Create a new GUICell instance to display information about a SudokuCell in a Group node.
 	 * This instance's SudokuCell will be set to null, and {@link GUICell#setSudokuCell(SudokuCell)} should be called
 	 * afterwards to set its value.
+	 *
+	 * @param guiBoard the GUIBoard that contains this GUICell in a 2D Array
+	 * @param row      the row this GUICell is located in
+	 * @param col      the column number this GUICell is located in
 	 */
-	public GUICell () {
+	public GUICell (GUIBoard guiBoard, int row, int col) {
 		this.sudokuCell = null;
 		this.annotate = new AtomicBoolean(false);
 		this.erase = new AtomicBoolean(false);
+		this.guiBoard = guiBoard;
+		this.row = row;
+		this.col = col;
 
 		// create this GUICell's Group
 		FXMLLoader loader = new FXMLLoader();
@@ -55,6 +68,23 @@ public class GUICell {
 		this.annotationsGridPane = (GridPane) group.getChildren().get(0);
 		this.cellNumberLabel = (Label) group.getChildren().get(1);
 		init();
+	}
+
+	/**
+	 * Make a copy of the given GUICell's current state, for use in the GUIBoard's undoStack.
+	 *
+	 * @param other GUICell to clone
+	 */
+	private GUICell (GUICell other) {
+		this.guiBoard = other.guiBoard;
+		this.row = other.row;
+		this.col = other.col;
+		this.annotate = other.annotate;
+		this.erase = other.erase;
+		this.sudokuCell = new SudokuCell(other.sudokuCell);
+		this.group = other.group;
+		this.annotationsGridPane = other.annotationsGridPane;
+		this.cellNumberLabel = other.cellNumberLabel;
 	}
 
 	/**
@@ -79,6 +109,8 @@ public class GUICell {
 			});
 
 			( (Button) annotationNumBtn ).setOnAction(event -> {
+				// add current GUICell state to undo stack
+				guiBoard.pushOnToUndoStack(new GUICell(this));
 				if (erase.get()) {
 					// erase annotation
 					if (marked.compareAndSet(true, false)) {
@@ -97,6 +129,8 @@ public class GUICell {
 			});
 		}
 		cellNumberLabel.setOnMouseClicked(event -> {
+			// add current GUICell state to undo stack
+			guiBoard.pushOnToUndoStack(new GUICell(this));
 			if (erase.get()) {
 				removeSudokuCellNumber();
 			}

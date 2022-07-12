@@ -12,10 +12,10 @@ public class SudokuCell {
 	/** The region within the Sudoku puzzle this SudokuCell belongs to */
 	private final int region;
 
+	/** Does this SudokuCell contain a given number? */
+	private final boolean givenNumber;
 	/** The number of this SudokuCell in the Sudoku puzzle */
 	private int number;
-	/** Does this SudokuCell contain a given number? */
-	private boolean givenNumber;
 
 	/** The Set of possible numbers this SudokuCell could be */
 	private Set<Integer> annotations;
@@ -28,6 +28,18 @@ public class SudokuCell {
 		this.number = number;
 		this.givenNumber = ( number != 0 );
 		this.annotations = new HashSet<>();
+	}
+
+	/**
+	 * Make a copy of the given SudokuCell's current state, for use in a cloned GUICell in the GUIBoard's undoStack.
+	 *
+	 * @param other SudokuCell to copy
+	 */
+	public SudokuCell (SudokuCell other) {
+		this.region = other.region;
+		this.number = other.number;
+		this.givenNumber = other.givenNumber;
+		this.annotations = other.annotations;
 	}
 
 	/**

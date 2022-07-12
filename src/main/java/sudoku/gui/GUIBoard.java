@@ -6,6 +6,7 @@ import javafx.scene.layout.GridPane;
 import sudoku.puzzle.SudokuBoard;
 
 import java.io.IOException;
+import java.util.Stack;
 
 /**
  * Class to represent a SudokuBoard graphically using GUICells.
@@ -17,13 +18,19 @@ public class GUIBoard {
 	/** The number of GUICells columns in this grid */
 	public static final int cols = 9;
 
+	/** 2D Array of GUICells in the puzzle */
+	private final GUICell[][] boardOfGUICells;
+
+	/** Stack of GUICells used to undo a user's actions */
+	private final Stack<GUICell> undoStack;
+	/** Stack of GUICells used to redo a user's actions */
+	private final Stack<GUICell> redoStack;
+
 	/** The SudokuBoard this GUIBoard represents graphically */
 	private SudokuBoard sudokuBoard;
 
 	/** A GridPane with Groups, displaying information about a SudokuCell */
 	private GridPane gridPaneOfGroups;
-	/** 2D Array of GUICells in the puzzle */
-	private GUICell[][] boardOfGUICells;
 
 	/**
 	 * Create a new GUIBoard instance with a new SudokuBoard from the sample Sudoku CSV file.
@@ -32,6 +39,8 @@ public class GUIBoard {
 	public GUIBoard () {
 		this.sudokuBoard = new SudokuBoard("input/sample_puzzle.csv");
 		this.boardOfGUICells = new GUICell[rows][cols];
+		this.undoStack = new Stack<>();
+		this.redoStack = new Stack<>();
 
 		// create this GUIBoard's GridPane
 		FXMLLoader loader = new FXMLLoader();
@@ -52,7 +61,7 @@ public class GUIBoard {
 		for (int row = 0; row < rows; row++) {
 			for (int col = 0; col < cols; col++) {
 				// link each GUICell with its corresponding SudokuCell in the SudokuBoard
-				GUICell current = new GUICell();
+				GUICell current = new GUICell(this, row, col);
 				current.setSudokuCell(sudokuBoard.getSudokuCell(row, col));
 				boardOfGUICells[row][col] = current;
 				gridPaneOfGroups.add(current.getGroup(), col, row);
@@ -82,6 +91,15 @@ public class GUIBoard {
 				}
 			}
 		}
+	}
+
+	/**
+	 * Push the given GUICell on to the undo Stack.
+	 *
+	 * @param cell GUICell to add
+	 */
+	public void pushOnToUndoStack (GUICell cell) {
+		undoStack.push(cell);
 	}
 
 	/**
