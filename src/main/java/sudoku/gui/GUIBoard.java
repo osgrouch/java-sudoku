@@ -104,7 +104,6 @@ public class GUIBoard {
 	 * @param cell GUICell to add
 	 */
 	public void pushOnToUndoStack (GUICell cell) {
-		System.out.println(cell.toString());
 		undoStack.push(cell);
 		controller.getUndoBtn().setDisable(false);
 	}
@@ -116,7 +115,6 @@ public class GUIBoard {
 	 * @param cell GUICell to add
 	 */
 	private void pushOnToRedoStack (GUICell cell) {
-		System.out.println(cell.toString());
 		redoStack.push(cell);
 		controller.getRedoBtn().setDisable(false);
 	}
@@ -164,6 +162,32 @@ public class GUIBoard {
 		gridPaneOfGroups.getChildren().remove(remove.getGroup());
 		boardOfGUICells[remove.getRow()][remove.getCol()] = insert;
 		gridPaneOfGroups.add(insert.getGroup(), insert.getCol(), insert.getRow());
+
+		// add slight margins to show visual distinction between sudoku regions
+		int row = insert.getRow();
+		int col = insert.getCol();
+		if (col == 2) {
+			GridPane.setMargin(insert.getGroup(), new Insets(0, 4, 0, 0));
+		} else if (col == 6) {
+			GridPane.setMargin(insert.getGroup(), new Insets(0, 0, 0, 4));
+		}
+		if (row == 2) {
+			if (col == 2) {
+				GridPane.setMargin(insert.getGroup(), new Insets(0, 4, 4, 0));
+			} else if (col == 6) {
+				GridPane.setMargin(insert.getGroup(), new Insets(0, 0, 4, 4));
+			} else {
+				GridPane.setMargin(insert.getGroup(), new Insets(0, 0, 4, 0));
+			}
+		} else if (row == 6) {
+			if (col == 2) {
+				GridPane.setMargin(insert.getGroup(), new Insets(4, 4, 0, 0));
+			} else if (col == 6) {
+				GridPane.setMargin(insert.getGroup(), new Insets(4, 0, 0, 4));
+			} else {
+				GridPane.setMargin(insert.getGroup(), new Insets(4, 0, 0, 0));
+			}
+		}
 	}
 
 	/**
