@@ -56,17 +56,6 @@ public class GUICell {
 		this.guiBoard = guiBoard;
 		this.row = row;
 		this.col = col;
-
-		// create this GUICell's Group
-		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(GUICell.class.getResource("sudokuCellGroup.fxml"));
-		try {
-			this.group = loader.load();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		this.annotationsGridPane = (GridPane) group.getChildren().get(0);
-		this.cellNumberLabel = (Label) group.getChildren().get(1);
 		init();
 	}
 
@@ -82,9 +71,8 @@ public class GUICell {
 		this.annotate = other.annotate;
 		this.erase = other.erase;
 		this.sudokuCell = new SudokuCell(other.sudokuCell);
-		this.group = other.group;
-		this.annotationsGridPane = other.annotationsGridPane;
-		this.cellNumberLabel = other.cellNumberLabel;
+		init();
+		updateDisplay();
 	}
 
 	/**
@@ -93,6 +81,16 @@ public class GUICell {
 	 * Or will erase the annotation or number from the SudokuCell (erase flag dependent).
 	 */
 	public void init () {
+		// create this GUICell's Group
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(GUICell.class.getResource("sudokuCellGroup.fxml"));
+		try {
+			this.group = loader.load();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		this.annotationsGridPane = (GridPane) group.getChildren().get(0);
+		this.cellNumberLabel = (Label) group.getChildren().get(1);
 		for (Node annotationNumBtn : annotationsGridPane.getChildren()) {
 			AtomicBoolean marked = new AtomicBoolean(false);    // has the button been pressed?
 			// display on hover, only if erase is not on
