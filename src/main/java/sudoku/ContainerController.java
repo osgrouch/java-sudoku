@@ -49,9 +49,27 @@ public class ContainerController implements Initializable {
 
 	/** Default constructor. */
 	public ContainerController () {
-		this.guiBoard = new GUIBoard();
+		this.guiBoard = new GUIBoard(this);
 		this.annotate = false;
 		this.erase = false;
+	}
+
+	/**
+	 * Undo the last action performed by the user.
+	 *
+	 * @param event ActionEvent from button press
+	 */
+	public void undoLastAction (ActionEvent event) {
+		guiBoard.undoLastAction();
+	}
+
+	/**
+	 * Redo the last action performed by the user.
+	 *
+	 * @param event ActionEvent from button press
+	 */
+	public void redoLastAction (ActionEvent event) {
+		guiBoard.redoLastAction();
 	}
 
 	/**
@@ -88,6 +106,20 @@ public class ContainerController implements Initializable {
 		} else {
 			eraseBtn.setText("Erase: OFF");
 		}
+	}
+
+	/**
+	 * @return the JavaFX Button representing undo
+	 */
+	public Button getUndoBtn () {
+		return undoBtn;
+	}
+
+	/**
+	 * @return the JavaFX Button representing redo
+	 */
+	public Button getRedoBtn () {
+		return redoBtn;
 	}
 
 	/**

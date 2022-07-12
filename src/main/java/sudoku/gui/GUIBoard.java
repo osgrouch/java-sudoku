@@ -3,6 +3,7 @@ package sudoku.gui;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.scene.layout.GridPane;
+import sudoku.ContainerController;
 import sudoku.puzzle.SudokuBoard;
 
 import java.io.IOException;
@@ -17,6 +18,9 @@ public class GUIBoard {
 	public static final int rows = 9;
 	/** The number of GUICells columns in this grid */
 	public static final int cols = 9;
+
+	/** The top-level controller class */
+	private final ContainerController controller;
 
 	/** 2D Array of GUICells in the puzzle */
 	private final GUICell[][] boardOfGUICells;
@@ -36,7 +40,8 @@ public class GUIBoard {
 	 * Create a new GUIBoard instance with a new SudokuBoard from the sample Sudoku CSV file.
 	 * Create a new GridPane to contain the GUICell's Group display.
 	 */
-	public GUIBoard () {
+	public GUIBoard (ContainerController controller) {
+		this.controller = controller;
 		this.sudokuBoard = new SudokuBoard("input/sample_puzzle.csv");
 		this.boardOfGUICells = new GUICell[rows][cols];
 		this.undoStack = new Stack<>();
@@ -94,12 +99,57 @@ public class GUIBoard {
 	}
 
 	/**
-	 * Push the given GUICell on to the undo Stack.
+	 * Push the given GUICell on to the undo stack and enable the undo button,
+	 * since the undo stack is no longer empty.
 	 *
 	 * @param cell GUICell to add
 	 */
 	public void pushOnToUndoStack (GUICell cell) {
 		undoStack.push(cell);
+		controller.getUndoBtn().setDisable(false);
+	}
+
+	/**
+	 * Push the given GUICell on to the redo stack and enable the redo button,
+	 * since the redo stack is no longer empty.
+	 *
+	 * @param cell GUICell to add
+	 */
+	public void pushOnToRedoStack (GUICell cell) {
+		redoStack.push(cell);
+		controller.getRedoBtn().setDisable(false);
+	}
+
+	/**
+	 * Undo the last action performed by the user, using the undo stack, and place
+	 * the overriden GUICell on to the redo stack. If the undo stack is now empty, disable its button in the GUI.
+	 */
+	public void undoLastAction () {
+		if (!undoStack.empty()) {
+			GUICell newCell = undoStack.pop();
+			GUICell oldCell = boardOfGUICells[newCell.getRow()][newCell.getCol()];
+			boardOfGUICells[newCell.getRow()][newCell.getCol()] = newCell;
+			pushOnToRedoStack(oldCell);
+			if (undoStack.empty()) {
+				controller.getUndoBtn().setDisable(true);
+			}
+		}
+	}
+
+	/**
+	 * Redo the last action performed by the user, using the redo stack, and place
+	 * the overridden GUICell on to the undo stack. If the redo stack is now empty, disable its button in the GUI.
+	 */
+	public void redoLastAction () {
+		if (!redoStack.empty()) {
+			GUICell newCell = redoStack.pop();
+			GUICell oldCell = boardOfGUICells[newCell.getRow()][newCell.getCol()];
+			boardOfGUICells[newCell.getRow()][newCell.getCol()] = newCell;
+			pushOnToUndoStack(oldCell);
+			if (redoStack.empty()) {
+				controller.getRedoBtn().setDisable(true);
+			}
+		}
 	}
 
 	/**

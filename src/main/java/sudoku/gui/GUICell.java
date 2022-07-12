@@ -238,6 +238,20 @@ public class GUICell {
 	}
 
 	/**
+	 * @return the row number of this GUICell's location in the 2D Array within its GUIBoard
+	 */
+	public int getRow () {
+		return row;
+	}
+
+	/**
+	 * @return the column number of this GUICell's location in the 2D Array within its GUIBoard
+	 */
+	public int getCol () {
+		return col;
+	}
+
+	/**
 	 * @return this GUICell's Group of nodes
 	 */
 	public Group getGroup () {
