@@ -43,8 +43,8 @@
 						</MenuButton>
 						<Pane maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minWidth="-Infinity" HBox.hgrow="ALWAYS"/>
 						<Button fx:id="annotationBtn" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-						        minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="130.0" style="-fx-background-color: none;"
-						        text="Annotations: OFF" textAlignment="CENTER">
+						        minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleAnnotate" prefHeight="40.0" prefWidth="130.0"
+						        style="-fx-background-color: none;" text="Annotations: OFF" textAlignment="CENTER">
 							<font>
 								<Font name="Iosevka 2022 Semibold" size="14.0"/>
 							</font>
@@ -52,8 +52,9 @@
 								<Cursor fx:constant="HAND"/>
 							</cursor>
 						</Button>
-						<Button fx:id="undoBtn" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-						        minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: none;">
+						<Button fx:id="undoBtn" contentDisplay="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity"
+						        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="30.0"
+						        style="-fx-background-color: none;">
 							<font>
 								<Font name="Iosevka 2022 Semibold" size="14.0"/>
 							</font>
@@ -61,8 +62,9 @@
 								<Cursor fx:constant="HAND"/>
 							</cursor>
 						</Button>
-						<Button fx:id="redoBtn" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-						        minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: none;">
+						<Button fx:id="redoBtn" contentDisplay="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity"
+						        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="30.0"
+						        style="-fx-background-color: none;">
 							<font>
 								<Font name="Iosevka 2022 Semibold" size="14.0"/>
 							</font>

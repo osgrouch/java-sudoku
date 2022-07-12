@@ -85,6 +85,32 @@ public class GUIBoard {
 	}
 
 	/**
+	 * Set each GUICell's annotate value in this GUIBoard.
+	 *
+	 * @param value boolean value to set
+	 */
+	public void setAnnotate (boolean value) {
+		for (int row = 0; row < rows; row++) {
+			for (int col = 0; col < cols; col++) {
+				boardOfGUICells[row][col].setAnnotate(value);
+			}
+		}
+	}
+
+	/**
+	 * Set each GUICell's erase value in this GUIBoard.
+	 *
+	 * @param value boolean value to set
+	 */
+	public void setErase (boolean value) {
+		for (int row = 0; row < rows; row++) {
+			for (int col = 0; col < cols; col++) {
+				boardOfGUICells[row][col].setErase(value);
+			}
+		}
+	}
+
+	/**
 	 * @return GridPane of Groups used to graphically represent a SudokuCell
 	 */
 	public GridPane getGridPaneOfGroups () {

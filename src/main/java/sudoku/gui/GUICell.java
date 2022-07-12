@@ -16,7 +16,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 /**
  * Class to represent a SudokuCell graphically using JavaFX nodes.
  * Updates information in the SudokuCell based on user input and displays
- * that changes made to the Cell to the user.
+ * that changes made to the SudokuCell to the user.
  */
 public class GUICell {
 	/** The SudokuCell this GUICell represents graphically */
@@ -181,17 +181,21 @@ public class GUICell {
 	}
 
 	/**
-	 * Toggle annotate boolean flag to indicate any numbers pressed are annotations made to the SudokuCell.
+	 * Set annotate boolean to indicate if numbers pressed are annotations made to the SudokuCell.
+	 *
+	 * @param value boolean value to set
 	 */
-	public void toggleAnnotate () {
-		annotate.set(!annotate.get());
+	public void setAnnotate (boolean value) {
+		annotate.set(value);
 	}
 
 	/**
-	 * Toggle erase boolean flag to indicate any numbers pressed are to be erased from the SudokuCell.
+	 * Set erase boolean to indicate if numbers pressed are to be erased from the SudokuCell.
+	 *
+	 * @param value boolean value to set
 	 */
-	public void toggleErase () {
-		erase.set(!erase.get());
+	public void setErase (boolean value) {
+		erase.set(value);
 	}
 
 	/**
