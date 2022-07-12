@@ -65,8 +65,12 @@ public class GUICell {
 	public void init () {
 		for (Node annotationNumBtn : annotationsGridPane.getChildren()) {
 			AtomicBoolean marked = new AtomicBoolean(false);    // has the button been pressed?
-			// display on hover
-			annotationNumBtn.setOnMouseEntered(event -> annotationNumBtn.setOpacity(1.0));
+			// display on hover, only if erase is not on
+			annotationNumBtn.setOnMouseEntered(event -> {
+				if (!erase.get()) {
+					annotationNumBtn.setOpacity(1.0);
+				}
+			});
 			// disappear when not hovered, only if not marked
 			annotationNumBtn.setOnMouseExited(event -> {
 				if (!marked.get()) {

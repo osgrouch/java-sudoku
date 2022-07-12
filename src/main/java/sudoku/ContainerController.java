@@ -68,6 +68,10 @@ public class ContainerController implements Initializable {
 		} else {
 			annotationBtn.setText("Annotations: OFF");
 		}
+		if (erase) {
+			// turn off erase when annotation button has been pressed
+			eraseBtn.fire();
+		}
 	}
 
 	/**
