@@ -9,6 +9,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
 import sudoku.gui.GUIBoard;
 
 import java.net.URL;
@@ -58,6 +59,36 @@ public class ContainerController implements Initializable {
 		this.guiBoard = new GUIBoard(this);
 		this.annotate = false;
 		this.erase = false;
+	}
+
+	/**
+	 * Display the given message and color it red.
+	 *
+	 * @param message message to display
+	 */
+	public void errorMessage (String message) {
+		messageLabel.setTextFill(Color.valueOf("#C33C54"));
+		displayMessage(message);
+	}
+
+	/**
+	 * Display the given message and color it green.
+	 *
+	 * @param message message to display
+	 */
+	public void successMessage (String message) {
+		messageLabel.setTextFill(Color.valueOf("#43AA8B"));
+		displayMessage(message);
+	}
+
+	/**
+	 * Display the given message on the message label and make the message pane visible again.
+	 *
+	 * @param message message to display
+	 */
+	private void displayMessage (String message) {
+		messageLabel.setText(message);
+		messagePane.setVisible(true);
 	}
 
 	/**
@@ -172,6 +203,7 @@ public class ContainerController implements Initializable {
 		toggleAnnotate(new ActionEvent());
 
 		updateBoardDisplay();
+		successMessage("Successfully loaded EASY puzzle");
 	}
 
 	/** Load the medium sudoku puzzle to the GUI Board and display it. */
@@ -182,6 +214,7 @@ public class ContainerController implements Initializable {
 		toggleAnnotate(new ActionEvent());
 
 		updateBoardDisplay();
+		successMessage("Successfully loaded MEDIUM puzzle");
 	}
 
 	/** Load the hard sudoku puzzle to the GUI Board and display it. */
@@ -192,6 +225,7 @@ public class ContainerController implements Initializable {
 		toggleAnnotate(new ActionEvent());
 
 		updateBoardDisplay();
+		successMessage("Successfully loaded HARD puzzle");
 	}
 
 	/** Update the GUI to display the changes made to GUI Board. */
