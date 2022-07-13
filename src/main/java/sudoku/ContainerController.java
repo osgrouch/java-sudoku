@@ -22,9 +22,6 @@ public class ContainerController implements Initializable {
 	/** Label used to display messages to the user, such as a win prompt */
 	@FXML
 	private Label messageLabel;
-	/** Button used to "close" the message box */
-	@FXML
-	private Button closeMessageBtn;
 
 	/** The AnchorPane which wraps GUIBoard's GridPane */
 	@FXML
@@ -61,6 +58,15 @@ public class ContainerController implements Initializable {
 		this.guiBoard = new GUIBoard(this);
 		this.annotate = false;
 		this.erase = false;
+	}
+
+	/**
+	 * "Close" the message box by making it invisible.
+	 *
+	 * @param event ActionEvent from button press
+	 */
+	public void hideMessagePane (ActionEvent event) {
+		messagePane.setVisible(false);
 	}
 
 	/**

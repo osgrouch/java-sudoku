@@ -121,9 +121,17 @@
 						<Insets/>
 					</opaqueInsets>
 				</Label>
-				<Button fx:id="closeMessageBtn" alignment="TOP_RIGHT" contentDisplay="CENTER" graphicTextGap="0.0" maxHeight="-Infinity"
-				        maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="24.0" prefWidth="24.0"
-				        style="-fx-background-color: none;" textAlignment="CENTER" StackPane.alignment="TOP_RIGHT"/>
+				<Button alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" maxHeight="-Infinity" maxWidth="-Infinity"
+				        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#hideMessagePane" prefHeight="35.0"
+				        prefWidth="35.0" style="-fx-background-color: none;" text="x" textFill="#c33c54" textOverrun="CLIP"
+				        StackPane.alignment="TOP_RIGHT">
+					<font>
+						<Font name="Iosevka 2022" size="18.0"/>
+					</font>
+					<cursor>
+						<Cursor fx:constant="HAND"/>
+					</cursor>
+				</Button>
 			</children>
 		</StackPane>
 	</children>
