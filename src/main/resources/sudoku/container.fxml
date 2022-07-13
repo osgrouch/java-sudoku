@@ -5,103 +5,126 @@
 <?import javafx.scene.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-            style="-fx-background-color: #e2e9ee;" xmlns="http://javafx.com/javafx/18" fx:controller="sudoku.ContainerController">
+<StackPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+           xmlns="http://javafx.com/javafx/18" fx:controller="sudoku.ContainerController">
 	<children>
-		<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0"
-		      AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+		<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: #e2e9ee;">
 			<children>
-				<HBox>
+				<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0"
+				      AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
 					<children>
-						<MenuButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
-						            prefHeight="40.0" style="-fx-background-color: none;" text="New Game">
-							<items>
-								<MenuItem mnemonicParsing="false" onAction="#loadEasyPuzzle" text="Easy"/>
-								<MenuItem mnemonicParsing="false" onAction="#loadMediumPuzzle" text="Medium"/>
-								<MenuItem mnemonicParsing="false" onAction="#loadHardPuzzle" text="Hard"/>
-								<MenuItem mnemonicParsing="false" text="Import Sudoku CSV File"/>
-							</items>
-							<font>
-								<Font name="Iosevka 2022 Semibold" size="14.0"/>
-							</font>
-							<cursor>
-								<Cursor fx:constant="HAND"/>
-							</cursor>
-						</MenuButton>
-						<MenuButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
-						            prefHeight="40.0" style="-fx-background-color: none;" text="Solve">
-							<items>
-								<MenuItem mnemonicParsing="false" text="Next Move"/>
-								<MenuItem mnemonicParsing="false" text="Final Solution"/>
-							</items>
-							<font>
-								<Font name="Iosevka 2022 Semibold" size="14.0"/>
-							</font>
-							<cursor>
-								<Cursor fx:constant="HAND"/>
-							</cursor>
-						</MenuButton>
-						<Pane maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minWidth="-Infinity" HBox.hgrow="ALWAYS"/>
-						<Button fx:id="annotationBtn" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-						        minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleAnnotate" prefHeight="40.0" prefWidth="130.0"
-						        style="-fx-background-color: none;" text="Annotations: OFF" textAlignment="CENTER">
-							<font>
-								<Font name="Iosevka 2022 Semibold" size="14.0"/>
-							</font>
-							<cursor>
-								<Cursor fx:constant="HAND"/>
-							</cursor>
-						</Button>
-						<Button fx:id="undoBtn" contentDisplay="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity"
-						        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#undoLastAction" prefHeight="40.0"
-						        prefWidth="30.0" style="-fx-background-color: none;">
-							<font>
-								<Font name="Iosevka 2022 Semibold" size="14.0"/>
-							</font>
-							<cursor>
-								<Cursor fx:constant="HAND"/>
-							</cursor>
-						</Button>
-						<Button fx:id="redoBtn" contentDisplay="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity"
-						        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#redoLastAction" prefHeight="40.0"
-						        prefWidth="30.0" style="-fx-background-color: none;">
-							<font>
-								<Font name="Iosevka 2022 Semibold" size="14.0"/>
-							</font>
-							<cursor>
-								<Cursor fx:constant="HAND"/>
-							</cursor>
-						</Button>
-						<Button fx:id="eraseBtn" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-						        minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleErase" prefHeight="40.0" prefWidth="88.0"
-						        style="-fx-background-color: none;" text="Erase: OFF" textAlignment="CENTER">
-							<font>
-								<Font name="Iosevka 2022 Semibold" size="14.0"/>
-							</font>
-							<cursor>
-								<Cursor fx:constant="HAND"/>
-							</cursor>
-						</Button>
-						<Button fx:id="resetBtn" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-						        minWidth="-Infinity" mnemonicParsing="false" onAction="#resetBoard" prefHeight="40.0"
-						        style="-fx-background-color: none;" text="Reset">
-							<font>
-								<Font name="Iosevka 2022 Semibold" size="14.0"/>
-							</font>
-							<cursor>
-								<Cursor fx:constant="HAND"/>
-							</cursor>
-						</Button>
+						<HBox>
+							<children>
+								<MenuButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+								            mnemonicParsing="false" prefHeight="40.0" style="-fx-background-color: none;" text="New Game">
+									<items>
+										<MenuItem mnemonicParsing="false" onAction="#loadEasyPuzzle" text="Easy"/>
+										<MenuItem mnemonicParsing="false" onAction="#loadMediumPuzzle" text="Medium"/>
+										<MenuItem mnemonicParsing="false" onAction="#loadHardPuzzle" text="Hard"/>
+										<MenuItem mnemonicParsing="false" text="Import Sudoku CSV File"/>
+									</items>
+									<font>
+										<Font name="Iosevka 2022 Semibold" size="14.0"/>
+									</font>
+									<cursor>
+										<Cursor fx:constant="HAND"/>
+									</cursor>
+								</MenuButton>
+								<MenuButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+								            mnemonicParsing="false" prefHeight="40.0" style="-fx-background-color: none;" text="Solve">
+									<items>
+										<MenuItem mnemonicParsing="false" text="Next Move"/>
+										<MenuItem mnemonicParsing="false" text="Final Solution"/>
+									</items>
+									<font>
+										<Font name="Iosevka 2022 Semibold" size="14.0"/>
+									</font>
+									<cursor>
+										<Cursor fx:constant="HAND"/>
+									</cursor>
+								</MenuButton>
+								<Pane maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minWidth="-Infinity" HBox.hgrow="ALWAYS"/>
+								<Button fx:id="annotationBtn" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								        minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleAnnotate" prefHeight="40.0" prefWidth="130.0"
+								        style="-fx-background-color: none;" text="Annotations: OFF" textAlignment="CENTER">
+									<font>
+										<Font name="Iosevka 2022 Semibold" size="14.0"/>
+									</font>
+									<cursor>
+										<Cursor fx:constant="HAND"/>
+									</cursor>
+								</Button>
+								<Button fx:id="undoBtn" contentDisplay="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity"
+								        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#undoLastAction"
+								        prefHeight="40.0" prefWidth="30.0" style="-fx-background-color: none;">
+									<font>
+										<Font name="Iosevka 2022 Semibold" size="14.0"/>
+									</font>
+									<cursor>
+										<Cursor fx:constant="HAND"/>
+									</cursor>
+								</Button>
+								<Button fx:id="redoBtn" contentDisplay="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity"
+								        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#redoLastAction"
+								        prefHeight="40.0" prefWidth="30.0" style="-fx-background-color: none;">
+									<font>
+										<Font name="Iosevka 2022 Semibold" size="14.0"/>
+									</font>
+									<cursor>
+										<Cursor fx:constant="HAND"/>
+									</cursor>
+								</Button>
+								<Button fx:id="eraseBtn" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								        minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleErase" prefHeight="40.0" prefWidth="88.0"
+								        style="-fx-background-color: none;" text="Erase: OFF" textAlignment="CENTER">
+									<font>
+										<Font name="Iosevka 2022 Semibold" size="14.0"/>
+									</font>
+									<cursor>
+										<Cursor fx:constant="HAND"/>
+									</cursor>
+								</Button>
+								<Button fx:id="resetBtn" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+								        minWidth="-Infinity" mnemonicParsing="false" onAction="#resetBoard" prefHeight="40.0"
+								        style="-fx-background-color: none;" text="Reset">
+									<font>
+										<Font name="Iosevka 2022 Semibold" size="14.0"/>
+									</font>
+									<cursor>
+										<Cursor fx:constant="HAND"/>
+									</cursor>
+								</Button>
+							</children>
+						</HBox>
+						<Pane maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="2.0"
+						      style="-fx-background-color: #C9CFD4;"/>
+						<AnchorPane fx:id="boardAnchor" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+						            minWidth="-Infinity">
+							<VBox.margin>
+								<Insets bottom="40.0" left="40.0" right="40.0" top="40.0"/>
+							</VBox.margin>
+						</AnchorPane>
 					</children>
-				</HBox>
-				<Pane maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="2.0"
-				      style="-fx-background-color: #C9CFD4;"/>
-				<AnchorPane fx:id="boardAnchor" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity">
-					<VBox.margin>
-						<Insets bottom="40.0" left="40.0" right="40.0" top="40.0"/>
-					</VBox.margin>
-				</AnchorPane>
+				</VBox>
 			</children>
-		</VBox>
+		</AnchorPane>
+		<StackPane fx:id="messagePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+		           style="-fx-background-color: #E2E9EE; -fx-border-width: 4; -fx-border-color: #141414;">
+			<children>
+				<Label fx:id="messageLabel" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity"
+				       minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="400.0" textFill="#c33c54"
+				       StackPane.alignment="CENTER">
+					<font>
+						<Font name="Iosevka 2022 Heavy" size="24.0"/>
+					</font>
+					<opaqueInsets>
+						<Insets/>
+					</opaqueInsets>
+				</Label>
+				<Button fx:id="closeMessageBtn" alignment="TOP_RIGHT" contentDisplay="CENTER" graphicTextGap="0.0" maxHeight="-Infinity"
+				        maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="24.0" prefWidth="24.0"
+				        style="-fx-background-color: none;" textAlignment="CENTER" StackPane.alignment="TOP_RIGHT"/>
+			</children>
+		</StackPane>
 	</children>
-</AnchorPane>
+</StackPane>

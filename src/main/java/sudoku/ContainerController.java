@@ -4,9 +4,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.StackPane;
 import sudoku.gui.GUIBoard;
 
 import java.net.URL;
@@ -14,6 +16,16 @@ import java.util.ResourceBundle;
 
 /** Class that Controllers the contents of container.fxml and injects and controlls contents of the GUIBoard. */
 public class ContainerController implements Initializable {
+	/** StackPane where messages are printed out to the user */
+	@FXML
+	private StackPane messagePane;
+	/** Label used to display messages to the user, such as a win prompt */
+	@FXML
+	private Label messageLabel;
+	/** Button used to "close" the message box */
+	@FXML
+	private Button closeMessageBtn;
+
 	/** The AnchorPane which wraps GUIBoard's GridPane */
 	@FXML
 	private AnchorPane boardAnchor;
