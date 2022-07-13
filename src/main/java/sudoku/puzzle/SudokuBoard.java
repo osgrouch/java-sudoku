@@ -6,10 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Class representing a 9x9 Sudoku board.
- * Keeps track of the cells within the 9x9 board.
- */
+/** Class representing a 9x9 Sudoku board. Keeps track of the cells within the 9x9 board. */
 public class SudokuBoard {
 	/** The number of SudokuCell rows in this grid */
 	public static final int rows = 9;
@@ -29,33 +26,33 @@ public class SudokuBoard {
 		int[][] cellValues = new int[rows][cols];
 		try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
 			String line;
-			int row = 0;
+			int fileRow = 0;
 			while (( line = br.readLine() ) != null) {
 				String[] rowValues = line.split(",");
 				for (int col = 0; col < cols; col++) {
-					cellValues[row][col] = Integer.parseInt(rowValues[col]);
+					cellValues[fileRow][col] = Integer.parseInt(rowValues[col]);
 				}
-				++row;
+				++fileRow;
+			}
+
+			this.board = new SudokuCell[rows][cols];
+			int region = 1;
+			for (int row = 0; row < rows; row++) {
+				for (int col = 0; col < cols; col++) {
+					this.board[row][col] = new SudokuCell(region, cellValues[row][col]);
+					if (( col + 1 ) % 3 == 0) {
+						// increment the region every 3 columns
+						++region;
+					}
+				}
+				if (( ( row + 1 ) % 3 ) != 0) {
+					// only allow region to be incremented every 3 rows
+					// subtract by the number of regions in a row: 3
+					region -= 3;
+				}
 			}
 		} catch (IOException e) {
 			throw new RuntimeException(e);
-		}
-
-		this.board = new SudokuCell[rows][cols];
-		int region = 1;
-		for (int row = 0; row < rows; row++) {
-			for (int col = 0; col < cols; col++) {
-				this.board[row][col] = new SudokuCell(region, cellValues[row][col]);
-				if (( col + 1 ) % 3 == 0) {
-					// increment the region every 3 columns
-					++region;
-				}
-			}
-			if (( ( row + 1 ) % 3 ) != 0) {
-				// only allow region to be incremented every 3 rows
-				// subtract by the number of regions in a row: 3
-				region -= 3;
-			}
 		}
 	}
 
@@ -114,6 +111,18 @@ public class SudokuBoard {
 	 */
 	public SudokuCell getSudokuCell (int row, int col) {
 		return board[row][col];
+	}
+
+	/**
+	 * Replace the SudokuCell located at (row, col) in the 2D Array with the given SudokuCell.
+	 * Used when performing an undo or redo in the GUI.
+	 *
+	 * @param row    row number
+	 * @param col    col number
+	 * @param insert SudokuCell to insert
+	 */
+	public void replaceSudokuCell (int row, int col, SudokuCell insert) {
+		board[row][col] = insert;
 	}
 
 	/**

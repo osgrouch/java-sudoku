@@ -158,7 +158,7 @@ public class GUIBoard {
 		if (!undoStack.empty()) {
 			GUICell newCell = undoStack.pop();
 			GUICell oldCell = boardOfGUICells[newCell.getRow()][newCell.getCol()];
-			replaceGUICell(oldCell, newCell);
+			replaceCells(oldCell, newCell);
 			pushOnToRedoStack(oldCell);
 			if (undoStack.empty()) {
 				controller.disableUndoButton();
@@ -174,7 +174,7 @@ public class GUIBoard {
 		if (!redoStack.empty()) {
 			GUICell newCell = redoStack.pop();
 			GUICell oldCell = boardOfGUICells[newCell.getRow()][newCell.getCol()];
-			replaceGUICell(oldCell, newCell);
+			replaceCells(oldCell, newCell);
 			pushOnToUndoStack(oldCell, false);
 			if (redoStack.empty()) {
 				controller.disableRedoButton();
@@ -184,12 +184,15 @@ public class GUIBoard {
 
 	/**
 	 * Replace a GUICell with a different GUICell by replacing it from the 2D Array of GUICells
-	 * and replacing it in the GridPane of GUICell Groups to update the display.
+	 * and replacing it in the GridPane of GUICell Groups to update the display. Also replace the SudokuCell's
+	 * of the old GUICell with the new SudokuCell in the SudokuBoard.
 	 *
 	 * @param remove GUICell to remove
 	 * @param insert GUICell to insert
 	 */
-	private void replaceGUICell (GUICell remove, GUICell insert) {
+	private void replaceCells (GUICell remove, GUICell insert) {
+		sudokuBoard.replaceSudokuCell(remove.getRow(), remove.getCol(), insert.getSudokuCell());
+
 		gridPaneOfGroups.getChildren().remove(remove.getGroup());
 		boardOfGUICells[remove.getRow()][remove.getCol()] = insert;
 		gridPaneOfGroups.add(insert.getGroup(), insert.getCol(), insert.getRow());

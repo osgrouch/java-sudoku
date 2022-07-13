@@ -236,6 +236,13 @@ public class GUICell {
 	}
 
 	/**
+	 * @return SudokuCell this GUICell represents
+	 */
+	public SudokuCell getSudokuCell () {
+		return sudokuCell;
+	}
+
+	/**
 	 * @return the row number of this GUICell's location in the 2D Array within its GUIBoard
 	 */
 	public int getRow () {
