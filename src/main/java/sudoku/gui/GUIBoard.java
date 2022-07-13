@@ -19,6 +19,18 @@ public class GUIBoard {
 	/** The number of GUICells columns in this grid */
 	public static final int cols = 9;
 
+	/** Sample Sudoku puzzle launched on application start */
+	private static final String SAMPLE_PUZZLE = "input/sample_puzzle.csv";
+	/** Easy Sudoku puzzle that can be launched directly from GUI */
+	private static final String EASY_PUZZLE = "input/easy_puzzle.csv";
+	/** Medium Sudoku puzzle that can be launched directly from GUI */
+	private static final String MEDIUM_PUZZLE = "input/medium_puzzle.csv";
+	/** Hard Sudoku puzzle that can be launched directly from GUI */
+	private static final String HARD_PUZZLE = "input/hard_puzzle.csv";
+
+	/** The currently displayed Sudoku puzzle */
+	private final String currentPuzzle;
+
 	/** The top-level controller class */
 	private final ContainerController controller;
 
@@ -42,7 +54,8 @@ public class GUIBoard {
 	 */
 	public GUIBoard (ContainerController controller) {
 		this.controller = controller;
-		this.sudokuBoard = new SudokuBoard("input/sample_puzzle.csv");
+		this.sudokuBoard = new SudokuBoard(SAMPLE_PUZZLE);
+		this.currentPuzzle = SAMPLE_PUZZLE;
 		this.boardOfGUICells = new GUICell[rows][cols];
 		this.undoStack = new Stack<>();
 		this.redoStack = new Stack<>();
@@ -53,7 +66,7 @@ public class GUIBoard {
 	 * Populates the 2D Array of GUICells and links up each GUICell with its corresponding SudokuCell from the
 	 * SudokuBoard. Adds each GUICell Group to the GridPane to be displayed on the GUI.
 	 */
-	public void initializeGUI () {
+	private void initializeGUI () {
 		try {
 			// create this GUIBoard's GridPane
 			FXMLLoader loader = new FXMLLoader();
@@ -108,10 +121,9 @@ public class GUIBoard {
 	 */
 	public void pushOnToUndoStack (GUICell cell, boolean clearRedo) {
 		undoStack.push(cell);
-		controller.getUndoBtn().setDisable(false);
+		controller.enableUndoButton();
 		if (clearRedo) {
-			redoStack.clear();
-			controller.getRedoBtn().setDisable(true);
+			clearRedoStack();
 		}
 	}
 
@@ -123,7 +135,19 @@ public class GUIBoard {
 	 */
 	private void pushOnToRedoStack (GUICell cell) {
 		redoStack.push(cell);
-		controller.getRedoBtn().setDisable(false);
+		controller.enableRedoButton();
+	}
+
+	/** Clear all entries from the undo stack and disable its GUI button */
+	private void clearUndoStack () {
+		undoStack.clear();
+		controller.disableUndoButton();
+	}
+
+	/** Clear all entries from the redo stack and disable its GUI button */
+	private void clearRedoStack () {
+		redoStack.clear();
+		controller.disableRedoButton();
 	}
 
 	/**
@@ -137,7 +161,7 @@ public class GUIBoard {
 			replaceGUICell(oldCell, newCell);
 			pushOnToRedoStack(oldCell);
 			if (undoStack.empty()) {
-				controller.getUndoBtn().setDisable(true);
+				controller.disableUndoButton();
 			}
 		}
 	}
@@ -153,7 +177,7 @@ public class GUIBoard {
 			replaceGUICell(oldCell, newCell);
 			pushOnToUndoStack(oldCell, false);
 			if (redoStack.empty()) {
-				controller.getRedoBtn().setDisable(true);
+				controller.disableRedoButton();
 			}
 		}
 	}
@@ -221,6 +245,17 @@ public class GUIBoard {
 				boardOfGUICells[row][col].setErase(value);
 			}
 		}
+	}
+
+	/**
+	 * Reset the board back to its original state when initially loading up the puzzle,
+	 * clearing the undo and redo stacks
+	 */
+	public void resetBoard () {
+		sudokuBoard = new SudokuBoard(currentPuzzle);
+		clearUndoStack();
+		clearRedoStack();
+		initializeGUI();
 	}
 
 	/**

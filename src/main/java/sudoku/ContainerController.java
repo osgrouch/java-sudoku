@@ -12,10 +12,7 @@ import sudoku.gui.GUIBoard;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-/**
- * Class that Controllers the contents of container.fxml and injects
- * and controlls contents of the GUIBoard.
- */
+/** Class that Controllers the contents of container.fxml and injects and controlls contents of the GUIBoard. */
 public class ContainerController implements Initializable {
 	/** The AnchorPane which wraps GUIBoard's GridPane */
 	@FXML
@@ -76,6 +73,26 @@ public class ContainerController implements Initializable {
 		eraseOff();
 	}
 
+	/** Disable the undo button in the GUI */
+	public void disableUndoButton () {
+		undoBtn.setDisable(true);
+	}
+
+	/** Enabel the undo button in the GUI */
+	public void enableUndoButton () {
+		undoBtn.setDisable(false);
+	}
+
+	/** Disable the redo button in the GUI */
+	public void disableRedoButton () {
+		redoBtn.setDisable(true);
+	}
+
+	/** Enable the redo button in the GUI */
+	public void enableRedoButton () {
+		redoBtn.setDisable(false);
+	}
+
 	/**
 	 * Toggle annotations on all GUICell's, so that any number pressed is marked as an
 	 * annotation on the SudokuCell instead of the SudokuCell's number.
@@ -119,26 +136,20 @@ public class ContainerController implements Initializable {
 		}
 	}
 
-	/**
-	 * Update the GUI to display the changes made to GUI Board.
-	 */
+	/** Reset the SudokuBoard back to its original starting */
+	public void resetBoard (ActionEvent event) {
+		guiBoard.resetBoard();
+		// turn on annotate then toggle it off, which will in turn, turn off erase button, if on
+		annotate = true;
+		toggleAnnotate(new ActionEvent());
+
+		updateBoardDisplay();
+	}
+
+	/** Update the GUI to display the changes made to GUI Board. */
 	private void updateBoardDisplay () {
 		boardAnchor.getChildren().clear();
 		boardAnchor.getChildren().add(guiBoard.getGridPaneOfGroups());
-	}
-
-	/**
-	 * @return the JavaFX Button representing undo
-	 */
-	public Button getUndoBtn () {
-		return undoBtn;
-	}
-
-	/**
-	 * @return the JavaFX Button representing redo
-	 */
-	public Button getRedoBtn () {
-		return redoBtn;
 	}
 
 	/**

@@ -83,7 +83,8 @@
 							</cursor>
 						</Button>
 						<Button fx:id="resetBtn" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-						        minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" style="-fx-background-color: none;" text="Reset">
+						        minWidth="-Infinity" mnemonicParsing="false" onAction="#resetBoard" prefHeight="40.0"
+						        style="-fx-background-color: none;" text="Reset">
 							<font>
 								<Font name="Iosevka 2022 Semibold" size="14.0"/>
 							</font>

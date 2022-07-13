@@ -80,7 +80,7 @@ public class GUICell {
 	 * Will either add the button pressed as the SudokuCell's number or as annotation (annotate flag dependent).
 	 * Or will erase the annotation or number from the SudokuCell (erase flag dependent).
 	 */
-	public void initializeGUI () {
+	private void initializeGUI () {
 		try {
 			// create this GUICell's Group
 			FXMLLoader loader = new FXMLLoader();
