@@ -258,6 +258,33 @@ public class GUIBoard {
 		initializeGUI();
 	}
 
+	/** Load the easy sudoku puzzle. */
+	public void loadEasyPuzzle () {
+		loadNewPuzzle(EASY_PUZZLE);
+	}
+
+	/** Load the medium sudoku puzzle. */
+	public void loadMediumPuzzle () {
+		loadNewPuzzle(MEDIUM_PUZZLE);
+	}
+
+	/** Load the hard sudoku puzzle. */
+	public void loadHardPuzzle () {
+		loadNewPuzzle(HARD_PUZZLE);
+	}
+
+	/**
+	 * Load a new Sudoku puzzle with the given filename.
+	 *
+	 * @param filename Sudoku CSV filename
+	 */
+	public void loadNewPuzzle (String filename) {
+		sudokuBoard = new SudokuBoard(filename);
+		clearUndoStack();
+		clearRedoStack();
+		initializeGUI();
+	}
+
 	/**
 	 * @return GridPane of Groups used to graphically represent a SudokuCell
 	 */

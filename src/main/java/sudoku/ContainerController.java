@@ -146,6 +146,36 @@ public class ContainerController implements Initializable {
 		updateBoardDisplay();
 	}
 
+	/** Load the easy sudoku puzzle to the GUI Board and display it. */
+	public void loadEasyPuzzle (ActionEvent event) {
+		guiBoard.loadEasyPuzzle();
+		// turn on annotate then toggle it off, which will in turn, turn off erase button, if on
+		annotate = true;
+		toggleAnnotate(new ActionEvent());
+
+		updateBoardDisplay();
+	}
+
+	/** Load the medium sudoku puzzle to the GUI Board and display it. */
+	public void loadMediumPuzzle (ActionEvent event) {
+		guiBoard.loadMediumPuzzle();
+		// turn on annotate then toggle it off, which will in turn, turn off erase button, if on
+		annotate = true;
+		toggleAnnotate(new ActionEvent());
+
+		updateBoardDisplay();
+	}
+
+	/** Load the hard sudoku puzzle to the GUI Board and display it. */
+	public void loadHardPuzzle (ActionEvent event) {
+		guiBoard.loadHardPuzzle();
+		// turn on annotate then toggle it off, which will in turn, turn off erase button, if on
+		annotate = true;
+		toggleAnnotate(new ActionEvent());
+
+		updateBoardDisplay();
+	}
+
 	/** Update the GUI to display the changes made to GUI Board. */
 	private void updateBoardDisplay () {
 		boardAnchor.getChildren().clear();

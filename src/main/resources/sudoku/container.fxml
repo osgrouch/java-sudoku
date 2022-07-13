@@ -16,9 +16,9 @@
 						<MenuButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
 						            prefHeight="40.0" style="-fx-background-color: none;" text="New Game">
 							<items>
-								<MenuItem mnemonicParsing="false" text="Easy"/>
-								<MenuItem mnemonicParsing="false" text="Medium"/>
-								<MenuItem mnemonicParsing="false" text="Hard"/>
+								<MenuItem mnemonicParsing="false" onAction="#loadEasyPuzzle" text="Easy"/>
+								<MenuItem mnemonicParsing="false" onAction="#loadMediumPuzzle" text="Medium"/>
+								<MenuItem mnemonicParsing="false" onAction="#loadHardPuzzle" text="Hard"/>
 								<MenuItem mnemonicParsing="false" text="Import Sudoku CSV File"/>
 							</items>
 							<font>
