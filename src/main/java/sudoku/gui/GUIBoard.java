@@ -42,6 +42,11 @@ public class GUIBoard {
 	/** Stack of GUICells used to redo a user's actions */
 	private final Stack<GUICell> redoStack;
 
+	/** The total number of GUICells in the 9x9 Board */
+	private final int totalNumOfCells;
+	/** The number of GUICells that have a number set */
+	private int numOfGuessedCells;
+
 	/** The SudokuBoard this GUIBoard represents graphically */
 	private SudokuBoard sudokuBoard;
 
@@ -59,6 +64,8 @@ public class GUIBoard {
 		this.boardOfGUICells = new GUICell[rows][cols];
 		this.undoStack = new Stack<>();
 		this.redoStack = new Stack<>();
+		this.totalNumOfCells = 81;
+		this.numOfGuessedCells = 0;
 		initializeGUI();
 	}
 
@@ -77,6 +84,9 @@ public class GUIBoard {
 					// link each GUICell with its corresponding SudokuCell in the SudokuBoard
 					GUICell current = new GUICell(this, row, col);
 					current.setSudokuCell(sudokuBoard.getSudokuCell(row, col));
+					if (current.getSudokuCell().isGivenNumber()) {
+						++numOfGuessedCells;
+					}
 					boardOfGUICells[row][col] = current;
 					gridPaneOfGroups.add(current.getGroup(), col, row);
 
@@ -106,6 +116,7 @@ public class GUIBoard {
 				}
 			}
 		} catch (IOException e) {
+			controller.errorMessage("Failed to create SudokuBoard GUI");
 			e.printStackTrace();
 		}
 	}
@@ -258,6 +269,7 @@ public class GUIBoard {
 		sudokuBoard = new SudokuBoard(currentPuzzle);
 		clearUndoStack();
 		clearRedoStack();
+		numOfGuessedCells = 0;
 		initializeGUI();
 	}
 
@@ -285,7 +297,28 @@ public class GUIBoard {
 		sudokuBoard = new SudokuBoard(filename);
 		clearUndoStack();
 		clearRedoStack();
+		numOfGuessedCells = 0;
 		initializeGUI();
+	}
+
+	/**
+	 * Increment the count of cells with a guess. If the number equals the total number of cells, check if the current
+	 * board is the sudoku solution.
+	 */
+	public void incrementGuessedCellsCount () {
+		++numOfGuessedCells;
+		if (numOfGuessedCells == totalNumOfCells) {
+			if (sudokuBoard.isSolution()) {
+				controller.successMessage("Congratulations,\nyou've solved the puzzle!");
+			} else {
+				controller.errorMessage("There are repeating numbers\nin the puzzle.");
+			}
+		}
+	}
+
+	/** Decrement the number of cells with a guess by one. */
+	public void decrementGuessedCellsCount () {
+		--numOfGuessedCells;
 	}
 
 	/**

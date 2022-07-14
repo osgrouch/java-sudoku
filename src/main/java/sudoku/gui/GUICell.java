@@ -152,6 +152,7 @@ public class GUICell {
 	 */
 	private void setSudokuCellNumber (int num) {
 		sudokuCell.setNumber(num);
+		guiBoard.incrementGuessedCellsCount();
 		updateDisplay();
 	}
 
@@ -160,6 +161,7 @@ public class GUICell {
 	 */
 	private void removeSudokuCellNumber () {
 		sudokuCell.removeNumber();
+		guiBoard.decrementGuessedCellsCount();
 		updateDisplay();
 	}
 

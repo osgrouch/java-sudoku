@@ -63,17 +63,18 @@ public class SudokuBoard {
 	 * @param region region to search for
 	 * @return ArrayList of SudokuCells in the given region
 	 */
-	private SudokuCell[] getRegion (int region) {
+	private ArrayList<SudokuCell> getRegion (int region) {
 		ArrayList<SudokuCell> sudokuCells = new ArrayList<>(9); // there will only ever be 9 SudokuCells in a region
 		for (int row = 0; row < rows; row++) {
 			for (int col = 0; col < cols; col++) {
 				SudokuCell current = board[row][col];
+				System.out.println(row + "," + col + " :" + current);
 				if (current.getRegion() == region) {
 					sudokuCells.add(current);
 				}
 			}
 		}
-		return (SudokuCell[]) sudokuCells.toArray();
+		return sudokuCells;
 	}
 
 	/**
@@ -156,7 +157,7 @@ public class SudokuBoard {
 
 		for (int region = 0; region < 9; region++) {
 			// there will only be 9 regions in a 9x9 Sudoku puzzle
-			SudokuCell[] regionOfSudokuCells = getRegion(region);
+			ArrayList<SudokuCell> regionOfSudokuCells = getRegion(region);
 			ArrayList<Integer> numbers = new ArrayList<>(listOfNumbers);
 
 			for (SudokuCell sudokuCell : regionOfSudokuCells) {

@@ -112,7 +112,7 @@
 		           style="-fx-background-color: #E2E9EE; -fx-border-width: 4; -fx-border-color: #141414;" visible="false">
 			<children>
 				<Label fx:id="messageLabel" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity"
-				       minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="500.0" textFill="#c33c54"
+				       minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="500.0" textAlignment="CENTER" textFill="#c33c54"
 				       StackPane.alignment="CENTER">
 					<font>
 						<Font name="Iosevka 2022 Heavy" size="24.0"/>
