@@ -24,21 +24,25 @@ public class ContainerController implements Initializable {
 	private final Stack<GUIBoard> undoStack;
 	/** Stack of GUIBoards used to restore the Board to a previous state */
 	private final Stack<GUIBoard> redoStack;
+
 	/** StackPane where messages are printed out to the user */
 	@FXML
 	private StackPane messagePane;
 	/** Label used to display messages to the user, such as a win prompt */
 	@FXML
 	private Label messageLabel;
+
 	/** The AnchorPane which wraps GUIBoard's GridPane */
 	@FXML
 	private AnchorPane boardAnchor;
+
 	/** Button that undoes the user's last input */
 	@FXML
 	private Button undoBtn;
 	/** Button that redoes the user's next input */
 	@FXML
 	private Button redoBtn;
+
 	/** Button toggles annotation mode on or off */
 	@FXML
 	private Button annotationBtn;
@@ -50,10 +54,6 @@ public class ContainerController implements Initializable {
 	private Button eraseBtn;
 	/** Has the erase button been toggled? */
 	private boolean erase;
-
-	/** Button that resets the entire grid back to the starting grid */
-	@FXML
-	private Button resetBtn;
 
 	/** A graphical representation of a SudokuBoard */
 	private GUIBoard guiBoard;
@@ -128,14 +128,10 @@ public class ContainerController implements Initializable {
 		redoBtn.setDisable(false);
 	}
 
+	/** Clear the redo stack and disable the redo button. */
 	private void clearRedoStack () {
 		redoStack.clear();
 		redoBtn.setDisable(true);
-	}
-
-	private void clearUndoStack () {
-		undoStack.clear();
-		undoBtn.setDisable(true);
 	}
 
 	/**
