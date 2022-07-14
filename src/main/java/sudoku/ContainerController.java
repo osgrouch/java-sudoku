@@ -10,8 +10,10 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
+import javafx.stage.FileChooser;
 import sudoku.gui.GUIBoard;
 
+import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -226,6 +228,22 @@ public class ContainerController implements Initializable {
 
 		updateBoardDisplay();
 		successMessage("Successfully loaded HARD puzzle");
+	}
+
+	/** Open the file explorerer to allow the user to import a CSV Sudoku file. */
+	public void loadOutsidePuzzle (ActionEvent event) {
+		File newFile = new FileChooser().showOpenDialog(messagePane.getScene().getWindow());
+		if (newFile != null) {
+			guiBoard.loadNewPuzzle(newFile.getAbsolutePath());
+			// turn on annotate then toggle it off, which will in turn, turn off erase button, if on
+			annotate = true;
+			toggleAnnotate(new ActionEvent());
+
+			updateBoardDisplay();
+			successMessage("Successfully loaded EXTERNAL puzzle");
+		} else {
+			errorMessage("No file chosen");
+		}
 	}
 
 	/** Update the GUI to display the changes made to GUI Board. */

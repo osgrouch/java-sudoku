@@ -21,7 +21,7 @@
 										<MenuItem mnemonicParsing="false" onAction="#loadEasyPuzzle" text="Easy"/>
 										<MenuItem mnemonicParsing="false" onAction="#loadMediumPuzzle" text="Medium"/>
 										<MenuItem mnemonicParsing="false" onAction="#loadHardPuzzle" text="Hard"/>
-										<MenuItem mnemonicParsing="false" text="Import Sudoku CSV File"/>
+										<MenuItem mnemonicParsing="false" onAction="#loadOutsidePuzzle" text="Import Sudoku CSV File"/>
 									</items>
 									<font>
 										<Font name="Iosevka 2022 Semibold" size="14.0"/>
