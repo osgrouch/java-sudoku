@@ -215,40 +215,43 @@ public class ContainerController implements Initializable {
 		}
 	}
 
-	private void resetBoardAndStacks () {
-		clearUndoStack();
-		clearRedoStack();
-		// turn on annotate then toggle it off, which will in turn, turn off erase button, if on
-		annotate = true;
-		toggleAnnotate(new ActionEvent());
-
+	/** Clear this instance's stacks and reset annotate and erase buttons to off. */
+	private void resetButtons () {
+		undoStack.clear();
+		undoBtn.setDisable(true);
+		redoStack.clear();
+		redoBtn.setDisable(true);
+		annotate = false;
+		annotationBtn.setText("Annotations: OFF");
+		erase = false;
+		eraseBtn.setText("Erase: OFF");
 		updateBoardDisplay();
 	}
 
 	/** Reset the SudokuBoard back to its original starting */
 	public void resetBoard (ActionEvent event) {
 		guiBoard.resetBoard();
-		resetBoardAndStacks();
+		resetButtons();
 	}
 
 	/** Load the easy sudoku puzzle to the GUI Board and display it. */
 	public void loadEasyPuzzle (ActionEvent event) {
 		guiBoard.loadEasyPuzzle();
-		resetBoardAndStacks();
+		resetButtons();
 		successMessage("Successfully loaded EASY puzzle");
 	}
 
 	/** Load the medium sudoku puzzle to the GUI Board and display it. */
 	public void loadMediumPuzzle (ActionEvent event) {
 		guiBoard.loadMediumPuzzle();
-		resetBoardAndStacks();
+		resetButtons();
 		successMessage("Successfully loaded MEDIUM puzzle");
 	}
 
 	/** Load the hard sudoku puzzle to the GUI Board and display it. */
 	public void loadHardPuzzle (ActionEvent event) {
 		guiBoard.loadHardPuzzle();
-		resetBoardAndStacks();
+		resetButtons();
 		successMessage("Successfully loaded HARD puzzle");
 	}
 
@@ -257,7 +260,7 @@ public class ContainerController implements Initializable {
 		File newFile = new FileChooser().showOpenDialog(messagePane.getScene().getWindow());
 		if (newFile != null) {
 			guiBoard.loadNewPuzzle(newFile.getAbsolutePath());
-			resetBoardAndStacks();
+			resetButtons();
 			successMessage("Successfully loaded EXTERNAL puzzle");
 		} else {
 			errorMessage("No file chosen");
