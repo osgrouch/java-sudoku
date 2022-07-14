@@ -16,6 +16,7 @@ import sudoku.gui.GUIBoard;
 import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.Stack;
 
 /** Class that Controllers the contents of container.fxml and injects and controlls contents of the GUIBoard. */
 public class ContainerController implements Initializable {
@@ -33,9 +34,14 @@ public class ContainerController implements Initializable {
 	/** Button that undoes the user's last input */
 	@FXML
 	private Button undoBtn;
+	/** Stack of GUIBoards used to restore the Board to a previous state */
+	private Stack<GUIBoard> undoStack;
+
 	/** Button that redoes the user's next input */
 	@FXML
 	private Button redoBtn;
+	/** Stack of GUIBoards used to restore the Board to a previous state */
+	private Stack<GUIBoard> redoStack;
 
 	/** Button toggles annotation mode on or off */
 	@FXML
@@ -59,6 +65,8 @@ public class ContainerController implements Initializable {
 	/** Default constructor. */
 	public ContainerController () {
 		this.guiBoard = new GUIBoard(this);
+		this.undoStack = new Stack<>();
+		this.redoStack = new Stack<>();
 		this.annotate = false;
 		this.erase = false;
 	}
@@ -103,14 +111,43 @@ public class ContainerController implements Initializable {
 	}
 
 	/**
+	 * Push this instance's GUIBoard on to the undo stack and clear the redo stack
+	 * because the current board is not the first board in the redo stack.
+	 */
+	public void pushNewBoardToUndoStack () {
+		undoStack.push(new GUIBoard(guiBoard));
+		undoBtn.setDisable(false);
+		redoStack.clear();
+		redoBtn.setDisable(true);
+	}
+
+	/** Push this instance's GUIBoard on to the undo stack without clearing the current redo stack. */
+	private void pushBoardToUndoStack () {
+		undoStack.push(new GUIBoard(guiBoard));
+		undoBtn.setDisable(false);
+	}
+
+	/** Push this instance's GUIBoard on to the redo stack. */
+	public void pushOnToRedoStack () {
+		redoStack.push(new GUIBoard(guiBoard));
+		redoBtn.setDisable(false);
+	}
+
+	/**
 	 * Undo the last action performed by the user.
 	 *
 	 * @param event ActionEvent from button press
 	 */
 	public void undoLastAction (ActionEvent event) {
-		guiBoard.undoLastAction();
-		updateBoardDisplay();
-		eraseOff();
+		if (!undoStack.empty()) {
+			pushOnToRedoStack();
+			guiBoard = undoStack.pop();
+			updateBoardDisplay();
+			eraseOff();
+			if (undoStack.empty()) {
+				undoBtn.setDisable(true);
+			}
+		}
 	}
 
 	/**
@@ -119,29 +156,15 @@ public class ContainerController implements Initializable {
 	 * @param event ActionEvent from button press
 	 */
 	public void redoLastAction (ActionEvent event) {
-		guiBoard.redoLastAction();
-		updateBoardDisplay();
-		eraseOff();
-	}
-
-	/** Disable the undo button in the GUI */
-	public void disableUndoButton () {
-		undoBtn.setDisable(true);
-	}
-
-	/** Enabel the undo button in the GUI */
-	public void enableUndoButton () {
-		undoBtn.setDisable(false);
-	}
-
-	/** Disable the redo button in the GUI */
-	public void disableRedoButton () {
-		redoBtn.setDisable(true);
-	}
-
-	/** Enable the redo button in the GUI */
-	public void enableRedoButton () {
-		redoBtn.setDisable(false);
+		if (!redoStack.empty()) {
+			pushBoardToUndoStack();
+			guiBoard = redoStack.pop();
+			updateBoardDisplay();
+			eraseOff();
+			if (redoStack.empty()) {
+				redoBtn.setDisable(true);
+			}
+		}
 	}
 
 	/**

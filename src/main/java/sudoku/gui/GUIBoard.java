@@ -7,7 +7,6 @@ import sudoku.ContainerController;
 import sudoku.puzzle.SudokuBoard;
 
 import java.io.IOException;
-import java.util.Stack;
 
 /**
  * Class to represent a SudokuBoard graphically using GUICells.
@@ -37,11 +36,6 @@ public class GUIBoard {
 	/** 2D Array of GUICells in the puzzle */
 	private final GUICell[][] boardOfGUICells;
 
-	/** Stack of GUICells used to undo a user's actions */
-	private final Stack<GUICell> undoStack;
-	/** Stack of GUICells used to redo a user's actions */
-	private final Stack<GUICell> redoStack;
-
 	/** The total number of GUICells in the 9x9 Board */
 	private final int totalNumOfCells;
 	/** The number of GUICells that have a number set */
@@ -62,10 +56,23 @@ public class GUIBoard {
 		this.sudokuBoard = new SudokuBoard(SAMPLE_PUZZLE);
 		this.currentPuzzle = SAMPLE_PUZZLE;
 		this.boardOfGUICells = new GUICell[rows][cols];
-		this.undoStack = new Stack<>();
-		this.redoStack = new Stack<>();
 		this.totalNumOfCells = 81;
 		this.numOfGuessedCells = 0;
+		initializeGUI();
+	}
+
+	/**
+	 * Create a new GUIBoard instance cloning the fields of the given GUIBoard.
+	 *
+	 * @param other GUIBoard to clone
+	 */
+	public GUIBoard (GUIBoard other) {
+		this.controller = other.controller;
+		this.sudokuBoard = new SudokuBoard(other.sudokuBoard);
+		this.currentPuzzle = other.currentPuzzle;
+		this.boardOfGUICells = new GUICell[rows][cols];
+		this.totalNumOfCells = other.totalNumOfCells;
+		this.numOfGuessedCells = other.numOfGuessedCells;
 		initializeGUI();
 	}
 
@@ -126,113 +133,9 @@ public class GUIBoard {
 	 * since the undo stack is no longer empty.
 	 * ClearRedo argument shuld be true when pushing a new user action
 	 * and false when cycling back through the undo stack.
-	 *
-	 * @param cell      GUICell to add
-	 * @param clearRedo boolean value
 	 */
-	public void pushOnToUndoStack (GUICell cell, boolean clearRedo) {
-		undoStack.push(cell);
-		controller.enableUndoButton();
-		if (clearRedo) {
-			clearRedoStack();
-		}
-	}
-
-	/**
-	 * Push the given GUICell on to the redo stack and enable the redo button,
-	 * since the redo stack is no longer empty.
-	 *
-	 * @param cell GUICell to add
-	 */
-	private void pushOnToRedoStack (GUICell cell) {
-		redoStack.push(cell);
-		controller.enableRedoButton();
-	}
-
-	/** Clear all entries from the undo stack and disable its GUI button */
-	private void clearUndoStack () {
-		undoStack.clear();
-		controller.disableUndoButton();
-	}
-
-	/** Clear all entries from the redo stack and disable its GUI button */
-	private void clearRedoStack () {
-		redoStack.clear();
-		controller.disableRedoButton();
-	}
-
-	/**
-	 * Undo the last action performed by the user, using the undo stack, and place
-	 * the overriden GUICell on to the redo stack. If the undo stack is now empty, disable its button in the GUI.
-	 */
-	public void undoLastAction () {
-		if (!undoStack.empty()) {
-			GUICell newCell = undoStack.pop();
-			GUICell oldCell = boardOfGUICells[newCell.getRow()][newCell.getCol()];
-			replaceCells(oldCell, newCell);
-			pushOnToRedoStack(oldCell);
-			if (undoStack.empty()) {
-				controller.disableUndoButton();
-			}
-		}
-	}
-
-	/**
-	 * Redo the last action performed by the user, using the redo stack, and place
-	 * the overridden GUICell on to the undo stack. If the redo stack is now empty, disable its button in the GUI.
-	 */
-	public void redoLastAction () {
-		if (!redoStack.empty()) {
-			GUICell newCell = redoStack.pop();
-			GUICell oldCell = boardOfGUICells[newCell.getRow()][newCell.getCol()];
-			replaceCells(oldCell, newCell);
-			pushOnToUndoStack(oldCell, false);
-			if (redoStack.empty()) {
-				controller.disableRedoButton();
-			}
-		}
-	}
-
-	/**
-	 * Replace a GUICell with a different GUICell by replacing it from the 2D Array of GUICells
-	 * and replacing it in the GridPane of GUICell Groups to update the display. Also replace the SudokuCell's
-	 * of the old GUICell with the new SudokuCell in the SudokuBoard.
-	 *
-	 * @param remove GUICell to remove
-	 * @param insert GUICell to insert
-	 */
-	private void replaceCells (GUICell remove, GUICell insert) {
-		sudokuBoard.replaceSudokuCell(remove.getRow(), remove.getCol(), insert.getSudokuCell());
-
-		gridPaneOfGroups.getChildren().remove(remove.getGroup());
-		boardOfGUICells[remove.getRow()][remove.getCol()] = insert;
-		gridPaneOfGroups.add(insert.getGroup(), insert.getCol(), insert.getRow());
-
-		// add slight margins to show visual distinction between sudoku regions
-		int row = insert.getRow();
-		int col = insert.getCol();
-		if (col == 2) {
-			GridPane.setMargin(insert.getGroup(), new Insets(0, 4, 0, 0));
-		} else if (col == 6) {
-			GridPane.setMargin(insert.getGroup(), new Insets(0, 0, 0, 4));
-		}
-		if (row == 2) {
-			if (col == 2) {
-				GridPane.setMargin(insert.getGroup(), new Insets(0, 4, 4, 0));
-			} else if (col == 6) {
-				GridPane.setMargin(insert.getGroup(), new Insets(0, 0, 4, 4));
-			} else {
-				GridPane.setMargin(insert.getGroup(), new Insets(0, 0, 4, 0));
-			}
-		} else if (row == 6) {
-			if (col == 2) {
-				GridPane.setMargin(insert.getGroup(), new Insets(4, 4, 0, 0));
-			} else if (col == 6) {
-				GridPane.setMargin(insert.getGroup(), new Insets(4, 0, 0, 4));
-			} else {
-				GridPane.setMargin(insert.getGroup(), new Insets(4, 0, 0, 0));
-			}
-		}
+	public void pushNewBoardToUndoStack () {
+		controller.pushNewBoardToUndoStack();
 	}
 
 	/**
@@ -267,8 +170,6 @@ public class GUIBoard {
 	 */
 	public void resetBoard () {
 		sudokuBoard = new SudokuBoard(currentPuzzle);
-		clearUndoStack();
-		clearRedoStack();
 		numOfGuessedCells = 0;
 		initializeGUI();
 	}
@@ -295,8 +196,6 @@ public class GUIBoard {
 	 */
 	public void loadNewPuzzle (String filename) {
 		sudokuBoard = new SudokuBoard(filename);
-		clearUndoStack();
-		clearRedoStack();
 		numOfGuessedCells = 0;
 		initializeGUI();
 	}

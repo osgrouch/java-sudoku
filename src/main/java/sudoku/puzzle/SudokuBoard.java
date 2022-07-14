@@ -57,6 +57,21 @@ public class SudokuBoard {
 	}
 
 	/**
+	 * Create a new SudokuBoard instance and populate the 2D Array of SudokuCells with clones of the SudokuCells
+	 * in the given SudokuBoard 2D Array.
+	 *
+	 * @param other SudokuBoard to clone
+	 */
+	public SudokuBoard (SudokuBoard other) {
+		this.board = new SudokuCell[rows][cols];
+		for (int row = 0; row < rows; row++) {
+			for (int col = 0; col < cols; col++) {
+				this.board[row][col] = new SudokuCell(other.board[row][col]);
+			}
+		}
+	}
+
+	/**
 	 * Get all the SudokuCells within the given region.
 	 * Used when verifying if current puzzle grid is a solution.
 	 *
