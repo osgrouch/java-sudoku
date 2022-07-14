@@ -20,29 +20,25 @@ import java.util.Stack;
 
 /** Class that Controllers the contents of container.fxml and injects and controlls contents of the GUIBoard. */
 public class ContainerController implements Initializable {
+	/** Stack of GUIBoards used to restore the Board to a previous state */
+	private final Stack<GUIBoard> undoStack;
+	/** Stack of GUIBoards used to restore the Board to a previous state */
+	private final Stack<GUIBoard> redoStack;
 	/** StackPane where messages are printed out to the user */
 	@FXML
 	private StackPane messagePane;
 	/** Label used to display messages to the user, such as a win prompt */
 	@FXML
 	private Label messageLabel;
-
 	/** The AnchorPane which wraps GUIBoard's GridPane */
 	@FXML
 	private AnchorPane boardAnchor;
-
 	/** Button that undoes the user's last input */
 	@FXML
 	private Button undoBtn;
-	/** Stack of GUIBoards used to restore the Board to a previous state */
-	private Stack<GUIBoard> undoStack;
-
 	/** Button that redoes the user's next input */
 	@FXML
 	private Button redoBtn;
-	/** Stack of GUIBoards used to restore the Board to a previous state */
-	private Stack<GUIBoard> redoStack;
-
 	/** Button toggles annotation mode on or off */
 	@FXML
 	private Button annotationBtn;
@@ -117,8 +113,7 @@ public class ContainerController implements Initializable {
 	public void pushNewBoardToUndoStack () {
 		undoStack.push(new GUIBoard(guiBoard));
 		undoBtn.setDisable(false);
-		redoStack.clear();
-		redoBtn.setDisable(true);
+		clearRedoStack();
 	}
 
 	/** Push this instance's GUIBoard on to the undo stack without clearing the current redo stack. */
@@ -128,9 +123,19 @@ public class ContainerController implements Initializable {
 	}
 
 	/** Push this instance's GUIBoard on to the redo stack. */
-	public void pushOnToRedoStack () {
+	private void pushOnToRedoStack () {
 		redoStack.push(new GUIBoard(guiBoard));
 		redoBtn.setDisable(false);
+	}
+
+	private void clearRedoStack () {
+		redoStack.clear();
+		redoBtn.setDisable(true);
+	}
+
+	private void clearUndoStack () {
+		undoStack.clear();
+		undoBtn.setDisable(true);
 	}
 
 	/**
@@ -210,9 +215,9 @@ public class ContainerController implements Initializable {
 		}
 	}
 
-	/** Reset the SudokuBoard back to its original starting */
-	public void resetBoard (ActionEvent event) {
-		guiBoard.resetBoard();
+	private void resetBoardAndStacks () {
+		clearUndoStack();
+		clearRedoStack();
 		// turn on annotate then toggle it off, which will in turn, turn off erase button, if on
 		annotate = true;
 		toggleAnnotate(new ActionEvent());
@@ -220,36 +225,30 @@ public class ContainerController implements Initializable {
 		updateBoardDisplay();
 	}
 
+	/** Reset the SudokuBoard back to its original starting */
+	public void resetBoard (ActionEvent event) {
+		guiBoard.resetBoard();
+		resetBoardAndStacks();
+	}
+
 	/** Load the easy sudoku puzzle to the GUI Board and display it. */
 	public void loadEasyPuzzle (ActionEvent event) {
 		guiBoard.loadEasyPuzzle();
-		// turn on annotate then toggle it off, which will in turn, turn off erase button, if on
-		annotate = true;
-		toggleAnnotate(new ActionEvent());
-
-		updateBoardDisplay();
+		resetBoardAndStacks();
 		successMessage("Successfully loaded EASY puzzle");
 	}
 
 	/** Load the medium sudoku puzzle to the GUI Board and display it. */
 	public void loadMediumPuzzle (ActionEvent event) {
 		guiBoard.loadMediumPuzzle();
-		// turn on annotate then toggle it off, which will in turn, turn off erase button, if on
-		annotate = true;
-		toggleAnnotate(new ActionEvent());
-
-		updateBoardDisplay();
+		resetBoardAndStacks();
 		successMessage("Successfully loaded MEDIUM puzzle");
 	}
 
 	/** Load the hard sudoku puzzle to the GUI Board and display it. */
 	public void loadHardPuzzle (ActionEvent event) {
 		guiBoard.loadHardPuzzle();
-		// turn on annotate then toggle it off, which will in turn, turn off erase button, if on
-		annotate = true;
-		toggleAnnotate(new ActionEvent());
-
-		updateBoardDisplay();
+		resetBoardAndStacks();
 		successMessage("Successfully loaded HARD puzzle");
 	}
 
@@ -258,11 +257,7 @@ public class ContainerController implements Initializable {
 		File newFile = new FileChooser().showOpenDialog(messagePane.getScene().getWindow());
 		if (newFile != null) {
 			guiBoard.loadNewPuzzle(newFile.getAbsolutePath());
-			// turn on annotate then toggle it off, which will in turn, turn off erase button, if on
-			annotate = true;
-			toggleAnnotate(new ActionEvent());
-
-			updateBoardDisplay();
+			resetBoardAndStacks();
 			successMessage("Successfully loaded EXTERNAL puzzle");
 		} else {
 			errorMessage("No file chosen");
