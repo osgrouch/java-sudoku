@@ -21,10 +21,6 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public class GUICell {
 	/** The GUIBoard that contains this GUICell, used to add previous states of this GUICell to the undo stack */
 	private final GUIBoard guiBoard;
-	/** The row number, in the 2D Array within a GUIBoard */
-	private final int row;
-	/** The column number, in the 2D Array within a GUIBoard */
-	private final int col;
 
 	/** Used to set numbers pressed as annotations or as the number for the SudokuCell */
 	private final AtomicBoolean annotate;
@@ -46,33 +42,13 @@ public class GUICell {
 	 * afterwards to set its value.
 	 *
 	 * @param guiBoard the GUIBoard that contains this GUICell in a 2D Array
-	 * @param row      the row this GUICell is located in
-	 * @param col      the column number this GUICell is located in
 	 */
-	public GUICell (GUIBoard guiBoard, int row, int col) {
+	public GUICell (GUIBoard guiBoard) {
 		this.sudokuCell = null;
 		this.annotate = new AtomicBoolean(false);
 		this.erase = new AtomicBoolean(false);
 		this.guiBoard = guiBoard;
-		this.row = row;
-		this.col = col;
 		initializeGUI();
-	}
-
-	/**
-	 * Make a copy of the given GUICell's current state, for use in the GUIBoard's undoStack.
-	 *
-	 * @param other GUICell to clone
-	 */
-	private GUICell (GUICell other) {
-		this.guiBoard = other.guiBoard;
-		this.row = other.row;
-		this.col = other.col;
-		this.annotate = other.annotate;
-		this.erase = other.erase;
-		this.sudokuCell = new SudokuCell(other.sudokuCell);
-		initializeGUI();
-		updateDisplay();
 	}
 
 	/**
@@ -104,7 +80,7 @@ public class GUICell {
 				});
 
 				( (Button) annotationNumBtn ).setOnAction(event -> {
-					// add current GUICell state to undo stack
+					// add current GUIBoard state to undo stack
 					guiBoard.pushNewBoardToUndoStack();
 					if (erase.get()) {
 						// erase annotation
@@ -124,7 +100,7 @@ public class GUICell {
 				});
 			}
 			cellNumberLabel.setOnMouseClicked(event -> {
-				// add current GUICell state to undo stack
+				// add current GUIBoard state to undo stack
 				guiBoard.pushNewBoardToUndoStack();
 				if (erase.get()) {
 					removeSudokuCellNumber();
@@ -242,20 +218,6 @@ public class GUICell {
 	 */
 	public SudokuCell getSudokuCell () {
 		return sudokuCell;
-	}
-
-	/**
-	 * @return the row number of this GUICell's location in the 2D Array within its GUIBoard
-	 */
-	public int getRow () {
-		return row;
-	}
-
-	/**
-	 * @return the column number of this GUICell's location in the 2D Array within its GUIBoard
-	 */
-	public int getCol () {
-		return col;
 	}
 
 	/**

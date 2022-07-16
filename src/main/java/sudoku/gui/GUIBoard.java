@@ -89,7 +89,7 @@ public class GUIBoard {
 			for (int row = 0; row < rows; row++) {
 				for (int col = 0; col < cols; col++) {
 					// link each GUICell with its corresponding SudokuCell in the SudokuBoard
-					GUICell current = new GUICell(this, row, col);
+					GUICell current = new GUICell(this);
 					current.setSudokuCell(sudokuBoard.getSudokuCell(row, col));
 					if (current.getSudokuCell().isGivenNumber()) {
 						++numOfGuessedCells;
@@ -128,12 +128,7 @@ public class GUIBoard {
 		}
 	}
 
-	/**
-	 * Push the given GUICell on to the undo stack and enable the undo button,
-	 * since the undo stack is no longer empty.
-	 * ClearRedo argument shuld be true when pushing a new user action
-	 * and false when cycling back through the undo stack.
-	 */
+	/** Push the current GUIBoard state to the undo stack. */
 	public void pushNewBoardToUndoStack () {
 		controller.pushNewBoardToUndoStack();
 	}

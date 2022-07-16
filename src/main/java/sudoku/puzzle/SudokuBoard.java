@@ -130,18 +130,6 @@ public class SudokuBoard {
 	}
 
 	/**
-	 * Replace the SudokuCell located at (row, col) in the 2D Array with the given SudokuCell.
-	 * Used when performing an undo or redo in the GUI.
-	 *
-	 * @param row    row number
-	 * @param col    col number
-	 * @param insert SudokuCell to insert
-	 */
-	public void replaceSudokuCell (int row, int col, SudokuCell insert) {
-		board[row][col] = insert;
-	}
-
-	/**
 	 * Get the 2D Array of SudokuCells stored within this SudokuBoard instance as an ArrayList of SudokuCells
 	 * from left to right per row, starting at row 0 and ending at row 8.
 	 *
