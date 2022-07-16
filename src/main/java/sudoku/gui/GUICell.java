@@ -27,6 +27,9 @@ public class GUICell {
 	/** Used to indicate numbers pressed are to be removed from SudokuCell instead of added as annotations or its number */
 	private final AtomicBoolean erase;
 
+	/** Is this GUICell's number conflicting with another GUICell's number? */
+	private boolean conflicting;
+
 	/** The SudokuCell this GUICell represents graphically */
 	private SudokuCell sudokuCell;
 	/** The Group of nodes to visually display information on, about the SudokuCell */
@@ -47,7 +50,25 @@ public class GUICell {
 		this.sudokuCell = null;
 		this.annotate = new AtomicBoolean(false);
 		this.erase = new AtomicBoolean(false);
+		this.conflicting = false;
 		this.guiBoard = guiBoard;
+		initializeGUI();
+	}
+
+	/**
+	 * Create a new GUICell instance cloning the given GUICell's fields, and belonging to the given GUIBoard.
+	 * This instance's SudokuCell will be set to null, and {@link GUICell#setSudokuCell(SudokuCell)} should be called
+	 * afterwards to set its value.
+	 *
+	 * @param otherBoard the GUIBoard that contains this GUICell in a 2D Array
+	 * @param otherCell  the GUICell to clone
+	 */
+	public GUICell (GUIBoard otherBoard, GUICell otherCell) {
+		this.sudokuCell = null;
+		this.annotate = new AtomicBoolean(otherCell.annotate.get());
+		this.erase = new AtomicBoolean(otherCell.erase.get());
+		this.conflicting = otherCell.conflicting;
+		this.guiBoard = otherBoard;
 		initializeGUI();
 	}
 
@@ -98,6 +119,7 @@ public class GUICell {
 						int num = Integer.parseInt(( (Button) annotationNumBtn ).getText());
 						setSudokuCellNumber(num);
 						guiBoard.removeConflictingAnnotations(this, num);
+						guiBoard.highlightConflictingSetNumbers(this, num);
 					}
 				});
 			}
@@ -190,8 +212,11 @@ public class GUICell {
 		} else {
 			// display the number set for this SudokuCell
 			cellNumberLabel.setText(String.valueOf(number));
-			if (sudokuCell.isGivenNumber()) {
+			if (conflicting) {
 				cellNumberLabel.setTextFill(Color.valueOf("#C33C54"));
+				cellNumberLabel.setStyle("-fx-font-weight: bold");
+			} else if (sudokuCell.isGivenNumber()) {
+				cellNumberLabel.setTextFill(Color.valueOf("#522b47"));
 				cellNumberLabel.setStyle("-fx-font-weight: bold");
 			}
 			cellNumberLabel.setDisable(false);
@@ -215,6 +240,17 @@ public class GUICell {
 	 */
 	public void setErase (boolean value) {
 		erase.set(value);
+	}
+
+	/**
+	 * Set conflicting boolean to indicate if this SudokuCell's number is in conflict
+	 * with a guess made on a different SudokuCell.
+	 *
+	 * @param value boolean value to set
+	 */
+	public void setConflicting (boolean value) {
+		conflicting = value;
+		updateDisplay();
 	}
 
 	/**

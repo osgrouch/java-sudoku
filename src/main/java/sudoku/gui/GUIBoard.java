@@ -74,7 +74,7 @@ public class GUIBoard {
 		this.boardOfGUICells = new GUICell[rows][cols];
 		this.totalNumOfCells = other.totalNumOfCells;
 		this.numOfGuessedCells = other.numOfGuessedCells;
-		initializeGUI();
+		initializeGUI(other);
 	}
 
 	/**
@@ -91,6 +91,61 @@ public class GUIBoard {
 				for (int col = 0; col < cols; col++) {
 					// link each GUICell with its corresponding SudokuCell in the SudokuBoard
 					GUICell current = new GUICell(this);
+					current.setSudokuCell(sudokuBoard.getSudokuCell(row, col));
+					if (current.getSudokuCell().isGivenNumber()) {
+						++numOfGuessedCells;
+					}
+					boardOfGUICells[row][col] = current;
+					gridPaneOfGroups.add(current.getGroup(), col, row);
+
+					// add slight margins to show visual distinction between sudoku regions
+					if (col == 2) {
+						GridPane.setMargin(current.getGroup(), new Insets(0, 4, 0, 0));
+					} else if (col == 6) {
+						GridPane.setMargin(current.getGroup(), new Insets(0, 0, 0, 4));
+					}
+					if (row == 2) {
+						if (col == 2) {
+							GridPane.setMargin(current.getGroup(), new Insets(0, 4, 4, 0));
+						} else if (col == 6) {
+							GridPane.setMargin(current.getGroup(), new Insets(0, 0, 4, 4));
+						} else {
+							GridPane.setMargin(current.getGroup(), new Insets(0, 0, 4, 0));
+						}
+					} else if (row == 6) {
+						if (col == 2) {
+							GridPane.setMargin(current.getGroup(), new Insets(4, 4, 0, 0));
+						} else if (col == 6) {
+							GridPane.setMargin(current.getGroup(), new Insets(4, 0, 0, 4));
+						} else {
+							GridPane.setMargin(current.getGroup(), new Insets(4, 0, 0, 0));
+						}
+					}
+				}
+			}
+		} catch (IOException e) {
+			controller.errorMessage("Failed to create SudokuBoard GUI");
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * Populates the 2D Array of GUICells with clones of the given GUIBoard and links up each GUICell
+	 * with its corresponding SudokuCell from this instance's SudokuBoard.
+	 * Adds each GUICell Group to the GridPane to be displayed on the GUI.
+	 *
+	 * @param guiBoard GUIBoard to clone GUICells from
+	 */
+	private void initializeGUI (GUIBoard guiBoard) {
+		try {
+			// create this GUIBoard's GridPane
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(GUICell.class.getResource("sudokuBoardGridPane.fxml"));
+			this.gridPaneOfGroups = loader.load();
+			for (int row = 0; row < rows; row++) {
+				for (int col = 0; col < cols; col++) {
+					// link each GUICell with its corresponding SudokuCell in the SudokuBoard
+					GUICell current = new GUICell(this, guiBoard.boardOfGUICells[row][col]);
 					current.setSudokuCell(sudokuBoard.getSudokuCell(row, col));
 					if (current.getSudokuCell().isGivenNumber()) {
 						++numOfGuessedCells;
@@ -217,10 +272,51 @@ public class GUIBoard {
 	}
 
 	/**
+	 * Find all GUICells with their number set to the given number guessed on the given GUICell, in the region,
+	 * row and column of the given GUICell. Highlight these numbers red to indicate there is a conflict.
+	 *
+	 * @param guiCell a GUICell
+	 * @param num     the number guessed on the GUICell
+	 */
+	public void highlightConflictingSetNumbers (GUICell guiCell, int num) {
+		int region = guiCell.getSudokuCell().getRegion();
+		for (GUICell current : getRegion(region)) {
+			if (current.equals(guiCell)) {
+				continue;
+			}
+			if (current.getSudokuCell().getNumber() == num) {
+				current.setConflicting(true);
+				guiCell.setConflicting(true);
+			}
+		}
+		int row = guiCell.getSudokuCell().getRow();
+		for (GUICell current : getRow(row)) {
+			if (current.equals(guiCell)) {
+				continue;
+			}
+			if (current.getSudokuCell().getNumber() == num) {
+				current.setConflicting(true);
+				guiCell.setConflicting(true);
+			}
+		}
+		int col = guiCell.getSudokuCell().getCol();
+		for (GUICell current : getCol(col)) {
+			if (current.equals(guiCell)) {
+				continue;
+			}
+			if (current.getSudokuCell().getNumber() == num) {
+				current.setConflicting(true);
+				guiCell.setConflicting(true);
+			}
+		}
+	}
+
+	/**
 	 * Find all annotations of the given number in the region, row and column of the given GUICell and remove them.
 	 * These annotations are in conflict with the number just guessed on the GUICell and can be removed.
 	 *
-	 * @param guiCell GUICell with a guessed number
+	 * @param guiCell a GUICell
+	 * @param num     the number guessed on the GUICell
 	 */
 	public void removeConflictingAnnotations (GUICell guiCell, int num) {
 		int region = guiCell.getSudokuCell().getRegion();
