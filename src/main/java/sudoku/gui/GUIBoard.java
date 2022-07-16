@@ -312,6 +312,47 @@ public class GUIBoard {
 	}
 
 	/**
+	 * Find all GUICells that were in conflict with the given GUICell, due to the given number,
+	 * and remove the color highlighting previously set on those GUICells because the GUICell causing conflict
+	 * no longer has that number set.
+	 *
+	 * @param guiCell a GUICell
+	 * @param num     the number removed from the GUICell
+	 */
+	public void removeHighlightFromPreviouslyConflictingSetNumbers (GUICell guiCell, int num) {
+		int region = guiCell.getSudokuCell().getRegion();
+		for (GUICell current : getRegion(region)) {
+			if (current.equals(guiCell)) {
+				continue;
+			}
+			if (current.getSudokuCell().getNumber() == num) {
+				current.setConflicting(false);
+				guiCell.setConflicting(false);
+			}
+		}
+		int row = guiCell.getSudokuCell().getRow();
+		for (GUICell current : getRow(row)) {
+			if (current.equals(guiCell)) {
+				continue;
+			}
+			if (current.getSudokuCell().getNumber() == num) {
+				current.setConflicting(false);
+				guiCell.setConflicting(false);
+			}
+		}
+		int col = guiCell.getSudokuCell().getCol();
+		for (GUICell current : getCol(col)) {
+			if (current.equals(guiCell)) {
+				continue;
+			}
+			if (current.getSudokuCell().getNumber() == num) {
+				current.setConflicting(false);
+				guiCell.setConflicting(false);
+			}
+		}
+	}
+
+	/**
 	 * Find all annotations of the given number in the region, row and column of the given GUICell and remove them.
 	 * These annotations are in conflict with the number just guessed on the GUICell and can be removed.
 	 *

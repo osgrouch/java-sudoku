@@ -160,9 +160,11 @@ public class GUICell {
 	 */
 	private void removeSudokuCellNumber () {
 		if (!sudokuCell.isGivenNumber()) {
+			int num = sudokuCell.getNumber();
 			sudokuCell.removeNumber();
 			guiBoard.decrementGuessedCellsCount();
 			updateDisplay();
+			guiBoard.removeHighlightFromPreviouslyConflictingSetNumbers(this, num);
 		}
 	}
 
