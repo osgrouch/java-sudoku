@@ -122,9 +122,9 @@ public class GUICell {
 	}
 
 	/**
-	 * Set the given number as this instance's SudokuCell number, if the SudokuCell does not contain a given number.
+	 * Set the given number as this instance's SudokuCell number.
 	 *
-	 * @param num num to set
+	 * @param num number to set
 	 */
 	private void setSudokuCellNumber (int num) {
 		sudokuCell.setNumber(num);
@@ -136,9 +136,11 @@ public class GUICell {
 	 * Remove this instance's SudokuCell number, if the SudokuCell does not contain a given number.
 	 */
 	private void removeSudokuCellNumber () {
-		sudokuCell.removeNumber();
-		guiBoard.decrementGuessedCellsCount();
-		updateDisplay();
+		if (!sudokuCell.isGivenNumber()) {
+			sudokuCell.removeNumber();
+			guiBoard.decrementGuessedCellsCount();
+			updateDisplay();
+		}
 	}
 
 	/**
