@@ -116,10 +116,7 @@ public class GUICell {
 					} else {
 						// set the number selected as this SudokuCell's number
 						marked.set(false);
-						int num = Integer.parseInt(( (Button) annotationNumBtn ).getText());
-						setSudokuCellNumber(num);
-						guiBoard.removeConflictingAnnotations(this, num);
-						guiBoard.highlightConflictingSetNumbers(this, num);
+						setSudokuCellNumber(Integer.parseInt(( (Button) annotationNumBtn ).getText()));
 					}
 				});
 			}
@@ -154,6 +151,8 @@ public class GUICell {
 		sudokuCell.setNumber(num);
 		guiBoard.incrementGuessedCellsCount();
 		updateDisplay();
+		guiBoard.removeConflictingAnnotations(this, num);
+		guiBoard.highlightConflictingSetNumbers(this, num);
 	}
 
 	/**
