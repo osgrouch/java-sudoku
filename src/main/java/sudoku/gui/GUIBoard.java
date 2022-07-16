@@ -7,6 +7,7 @@ import sudoku.ContainerController;
 import sudoku.puzzle.SudokuBoard;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  * Class to represent a SudokuBoard graphically using GUICells.
@@ -213,6 +214,70 @@ public class GUIBoard {
 	/** Decrement the number of cells with a guess by one. */
 	public void decrementGuessedCellsCount () {
 		--numOfGuessedCells;
+	}
+
+	/**
+	 * Find all annotations of the given number in the region, row and column of the given GUICell and remove them.
+	 * These annotations are in conflict with the number just guessed on the GUICell and can be removed.
+	 *
+	 * @param guiCell GUICell with a guessed number
+	 */
+	public void removeConflictingAnnotations (GUICell guiCell, int num) {
+		int region = guiCell.getSudokuCell().getRegion();
+		for (GUICell current : getRegion(region)) {
+			current.removeAnnotation(num);
+		}
+		int row = guiCell.getSudokuCell().getRow();
+		for (GUICell current : getRow(row)) {
+			current.removeAnnotation(num);
+		}
+		int col = guiCell.getSudokuCell().getCol();
+		for (GUICell current : getCol(col)) {
+			current.removeAnnotation(num);
+		}
+	}
+
+	/**
+	 * Get all the GUICell's that contain a SudokuCell in the given region.
+	 *
+	 * @param region region to look for
+	 * @return ArrayList of GUICells
+	 */
+	private ArrayList<GUICell> getRegion (int region) {
+		ArrayList<GUICell> guiCells = new ArrayList<>(9); // there will only ever be 9 GUICells in a region
+		for (int row = 0; row < rows; row++) {
+			for (int col = 0; col < cols; col++) {
+				GUICell current = boardOfGUICells[row][col];
+				if (current.getSudokuCell().getRegion() == region) {
+					guiCells.add(current);
+				}
+			}
+		}
+		return guiCells;
+	}
+
+	/**
+	 * Get all the GUICells in the given row.
+	 *
+	 * @param row row to look for
+	 * @return Array of GUICells
+	 */
+	private GUICell[] getRow (int row) {
+		return boardOfGUICells[row];
+	}
+
+	/**
+	 * Get all the GUICells in the given col.
+	 *
+	 * @param col column to look for
+	 * @return Array of GUICells
+	 */
+	private GUICell[] getCol (int col) {
+		GUICell[] column = new GUICell[rows];
+		for (int row = 0; row < rows; row++) {
+			column[row] = boardOfGUICells[row][col];
+		}
+		return column;
 	}
 
 	/**

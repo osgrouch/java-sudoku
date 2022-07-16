@@ -39,7 +39,7 @@ public class SudokuBoard {
 			int region = 1;
 			for (int row = 0; row < rows; row++) {
 				for (int col = 0; col < cols; col++) {
-					this.board[row][col] = new SudokuCell(region, cellValues[row][col]);
+					this.board[row][col] = new SudokuCell(region, row, col, cellValues[row][col]);
 					if (( col + 1 ) % 3 == 0) {
 						// increment the region every 3 columns
 						++region;

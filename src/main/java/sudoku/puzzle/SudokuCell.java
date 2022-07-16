@@ -11,6 +11,10 @@ import java.util.Set;
 public class SudokuCell {
 	/** The region within the Sudoku puzzle this SudokuCell belongs to */
 	private final int region;
+	/** The row within the Sudoku puzzle this SudokuCell belongs to */
+	private final int row;
+	/** The column within the Sudoku puzzle this SudokuCell belongs to */
+	private final int col;
 
 	/** Does this SudokuCell contain a given number? */
 	private final boolean givenNumber;
@@ -21,10 +25,17 @@ public class SudokuCell {
 	private Set<Integer> annotations;
 
 	/**
-	 * Create a new SudokuCell instance with the given region number and SudokuCell number.
+	 * Create a new SudokuCell instance with the given region, row and column number, and SudokuCell number.
+	 *
+	 * @param region the region within the puzzle
+	 * @param row    the row number of this SudokuCell
+	 * @param col    the column number of this SudokuCell
+	 * @param number the number of this SudokuCell, if given
 	 */
-	public SudokuCell (int region, int number) {
+	public SudokuCell (int region, int row, int col, int number) {
 		this.region = region;
+		this.row = row;
+		this.col = col;
 		this.number = number;
 		this.givenNumber = ( number != 0 );
 		this.annotations = new HashSet<>();
@@ -37,6 +48,8 @@ public class SudokuCell {
 	 */
 	public SudokuCell (SudokuCell other) {
 		this.region = other.region;
+		this.row = other.row;
+		this.col = other.col;
 		this.number = other.number;
 		this.givenNumber = other.givenNumber;
 		this.annotations = other.annotations;
@@ -92,6 +105,20 @@ public class SudokuCell {
 	 */
 	public int getRegion () {
 		return region;
+	}
+
+	/**
+	 * @return the row this SudokuCell belongs to
+	 */
+	public int getRow () {
+		return row;
+	}
+
+	/**
+	 * @return the column this SudokuCell belongs to
+	 */
+	public int getCol () {
+		return col;
 	}
 
 	/**

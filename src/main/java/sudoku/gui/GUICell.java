@@ -95,14 +95,16 @@ public class GUICell {
 					} else {
 						// set the number selected as this SudokuCell's number
 						marked.set(false);
-						setSudokuCellNumber(Integer.parseInt(( (Button) annotationNumBtn ).getText()));
+						int num = Integer.parseInt(( (Button) annotationNumBtn ).getText());
+						setSudokuCellNumber(num);
+						guiBoard.removeConflictingAnnotations(this, num);
 					}
 				});
 			}
 			cellNumberLabel.setOnMouseClicked(event -> {
-				// add current GUIBoard state to undo stack
-				guiBoard.pushNewBoardToUndoStack();
 				if (erase.get()) {
+					// add current GUIBoard state to undo stack
+					guiBoard.pushNewBoardToUndoStack();
 					removeSudokuCellNumber();
 				}
 			});
@@ -158,7 +160,7 @@ public class GUICell {
 	 *
 	 * @param num number to remove
 	 */
-	private void removeAnnotation (int num) {
+	public void removeAnnotation (int num) {
 		sudokuCell.removeAnnotation(num);
 		updateDisplay();
 	}
