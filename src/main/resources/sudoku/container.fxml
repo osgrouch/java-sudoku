@@ -30,19 +30,6 @@
 										<Cursor fx:constant="HAND"/>
 									</cursor>
 								</MenuButton>
-								<MenuButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-								            mnemonicParsing="false" prefHeight="40.0" style="-fx-background-color: none;" text="Solve">
-									<items>
-										<MenuItem mnemonicParsing="false" text="Next Move"/>
-										<MenuItem mnemonicParsing="false" onAction="#displaySolution" text="Final Solution"/>
-									</items>
-									<font>
-										<Font name="Iosevka 2022 Semibold" size="14.0"/>
-									</font>
-									<cursor>
-										<Cursor fx:constant="HAND"/>
-									</cursor>
-								</MenuButton>
 								<Pane maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minWidth="-Infinity" HBox.hgrow="ALWAYS"/>
 								<Button fx:id="annotationBtn" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
 								        minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleAnnotate" prefHeight="40.0" prefWidth="130.0"
@@ -87,6 +74,16 @@
 								<Button contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
 								        mnemonicParsing="false" onAction="#resetBoard" prefHeight="40.0" style="-fx-background-color: none;"
 								        text="Reset">
+									<font>
+										<Font name="Iosevka 2022 Semibold" size="14.0"/>
+									</font>
+									<cursor>
+										<Cursor fx:constant="HAND"/>
+									</cursor>
+								</Button>
+								<Button contentDisplay="CENTER" layoutX="367.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity"
+								        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#displaySolution"
+								        prefHeight="40.0" style="-fx-background-color: none;" text="Solve" textAlignment="CENTER">
 									<font>
 										<Font name="Iosevka 2022 Semibold" size="14.0"/>
 									</font>
