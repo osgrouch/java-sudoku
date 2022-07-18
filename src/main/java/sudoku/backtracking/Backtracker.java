@@ -14,7 +14,7 @@ public class Backtracker {
 	/*
 	 * Should debug output be enabled?
 	 */
-	private boolean debug;
+	private final boolean debug;
 
 	/**
 	 * Initialize a new backtracker
@@ -48,15 +48,20 @@ public class Backtracker {
 	 * @return A solution config, or null if no solution
 	 */
 	public Optional<Configuration> solve (Configuration config) {
+		debugPrint("Current config", config);
 		if (config.isGoal()) {
+			debugPrint("\tGoal config", config);
 			return Optional.of(config);
 		} else {
 			for (Configuration child : config.getSuccessors()) {
 				if (child.isValid()) {
+					debugPrint("\tValid successor", child);
 					Optional<Configuration> sol = solve(child);
 					if (sol.isPresent()) {
 						return sol;
 					}
+				} else {
+					debugPrint("\tInvalid successor", child);
 				}
 			}
 			// implicit backtracking happens here
