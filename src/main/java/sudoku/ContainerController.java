@@ -11,10 +11,14 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
+import sudoku.backtracking.Backtracker;
+import sudoku.backtracking.Configuration;
 import sudoku.gui.GUIBoard;
+import sudoku.puzzle.SudokuBoard;
 
 import java.io.File;
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.Stack;
 
@@ -260,6 +264,20 @@ public class ContainerController implements Initializable {
 			successMessage("Successfully loaded EXTERNAL puzzle");
 		} else {
 			errorMessage("No file chosen");
+		}
+	}
+
+	/** Find the solution to the loaded Sudoku puzzle and display it. */
+	public void displaySolution (ActionEvent event) {
+		resetBoard(new ActionEvent());
+		Backtracker backtracker = new Backtracker(false);
+		Optional<Configuration> solution = backtracker.solve(guiBoard.getSudokuBoard());
+		if (solution.isEmpty()) {
+			errorMessage("No solution was found.");
+		} else {
+			guiBoard.setSudokuBoard((SudokuBoard) solution.get());
+			updateBoardDisplay();
+			successMessage("The puzzle is solved!");
 		}
 	}
 

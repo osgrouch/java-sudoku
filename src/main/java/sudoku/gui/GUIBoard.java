@@ -184,6 +184,17 @@ public class GUIBoard {
 		}
 	}
 
+	/**
+	 * Set this instance's SudokuBoard and display it on the GridPane of Groups.
+	 *
+	 * @param sudokuBoard a SudokuBoard
+	 */
+	public void setSudokuBoard (SudokuBoard sudokuBoard) {
+		this.sudokuBoard = sudokuBoard;
+		numOfGuessedCells = totalNumOfCells;
+		initializeGUI();
+	}
+
 	/** Push the current GUIBoard state to the undo stack. */
 	public void pushNewBoardToUndoStack () {
 		controller.pushNewBoardToUndoStack();
@@ -415,6 +426,20 @@ public class GUIBoard {
 			column[row] = boardOfGUICells[row][col];
 		}
 		return column;
+	}
+
+	/**
+	 * @return
+	 */
+	public String getCurrentPuzzle () {
+		return currentPuzzle;
+	}
+
+	/**
+	 * @return this instance's SudokuBoard
+	 */
+	public SudokuBoard getSudokuBoard () {
+		return sudokuBoard;
 	}
 
 	/**

@@ -34,7 +34,7 @@
 								            mnemonicParsing="false" prefHeight="40.0" style="-fx-background-color: none;" text="Solve">
 									<items>
 										<MenuItem mnemonicParsing="false" text="Next Move"/>
-										<MenuItem mnemonicParsing="false" text="Final Solution"/>
+										<MenuItem mnemonicParsing="false" onAction="#displaySolution" text="Final Solution"/>
 									</items>
 									<font>
 										<Font name="Iosevka 2022 Semibold" size="14.0"/>
