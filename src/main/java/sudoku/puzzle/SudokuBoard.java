@@ -1,13 +1,16 @@
 package sudoku.puzzle;
 
+import sudoku.backtracking.Configuration;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 /** Class representing a 9x9 Sudoku board. Keeps track of the cells within the 9x9 board. */
-public class SudokuBoard {
+public class SudokuBoard implements Configuration {
 	/** The number of SudokuCell rows in this grid */
 	public static final int rows = 9;
 	/** The number of SudokuCell columns in this grid */
@@ -83,7 +86,6 @@ public class SudokuBoard {
 		for (int row = 0; row < rows; row++) {
 			for (int col = 0; col < cols; col++) {
 				SudokuCell current = board[row][col];
-				System.out.println(row + "," + col + " :" + current);
 				if (current.getRegion() == region) {
 					sudokuCells.add(current);
 				}
@@ -130,17 +132,98 @@ public class SudokuBoard {
 	}
 
 	/**
-	 * Get the 2D Array of SudokuCells stored within this SudokuBoard instance as an ArrayList of SudokuCells
-	 * from left to right per row, starting at row 0 and ending at row 8.
+	 * Generate the successors to this instance's 2D Array of SudokuCells by placing a new number [1, 9]
+	 * in the first empty SudokuCell found in the lowest numbered row and column.
 	 *
-	 * @return ArrayList of SudokuCells
+	 * @return all successors, valid and invalid
 	 */
-	public ArrayList<SudokuCell> getBoardAsArrayList () {
-		ArrayList<SudokuCell> sudokuCells = new ArrayList<>(81);
+	@Override
+	public Collection<Configuration> getSuccessors () {
+		Collection<Configuration> successors = new ArrayList<>();
 		for (int row = 0; row < rows; row++) {
-			sudokuCells.addAll(List.of(getRow(row)));
+			for (int col = 0; col < cols; col++) {
+				if (getSudokuCell(row, col).getNumber() == 0) {
+					for (int num = 1; num <= 9; ++num) {
+						// create a copy of this board with this SudokuCell as every number in the range [1, 9]
+						SudokuBoard newBoard = new SudokuBoard(this);
+						newBoard.getSudokuCell(row, col).setNumber(num);
+						successors.add(newBoard);
+					}
+					return successors;
+				}
+			}
 		}
-		return sudokuCells;
+		return null;
+	}
+
+	/**
+	 * Check if this SudokuBoard has any repeating numbers in all nine regions, rows and columns of the board.
+	 * If a SudokuCell is set to 0, it is considered empty and skipped from the check, therefore, the number 0
+	 * is allowed to be repeated across SudokuCells.
+	 *
+	 * @return true if this SudokuBoard is a solution
+	 */
+	@Override
+	public boolean isValid () {
+		// used to create arraylists below to check for repeating numbers
+		final List<Integer> listOfNumbers = List.of(new Integer[]{ 1, 2, 3, 4, 5, 6, 7, 8, 9 });
+
+		for (int region = 0; region < 9; region++) {
+			// there will only be 9 regions in a 9x9 Sudoku puzzle
+			ArrayList<SudokuCell> regionOfSudokuCells = getRegion(region);
+			ArrayList<Integer> numbers = new ArrayList<>(listOfNumbers);
+
+			for (SudokuCell sudokuCell : regionOfSudokuCells) {
+				Integer num = sudokuCell.getNumber();
+				if (num.equals(0)) {
+					// skip checking the cell if it is empty
+					continue;
+				}
+				if (!numbers.remove(num)) {
+					// remove returns false only if the given object was not in the ArrayList
+					// therefore a number was repeated in the region and this SudokuBoard is not a solution
+					return false;
+				}
+			}
+		}
+
+		for (int row = 0; row < rows; row++) {
+			SudokuCell[] rowOfSudokuCells = getRow(row);
+			ArrayList<Integer> numbers = new ArrayList<>(listOfNumbers);
+
+			for (SudokuCell sudokuCell : rowOfSudokuCells) {
+				Integer num = sudokuCell.getNumber();
+				if (num.equals(0)) {
+					// skip checking the cell if it is empty
+					continue;
+				}
+				if (!numbers.remove(num)) {
+					// remove returns false only if the given object was not in the ArrayList
+					// therefore a number was repeated in the row and this SudokuBoard is not a solution
+					return false;
+				}
+			}
+		}
+
+		for (int col = 0; col < cols; col++) {
+			SudokuCell[] colOfSudokuCells = getCol(col);
+			ArrayList<Integer> numbers = new ArrayList<>(listOfNumbers);
+
+			for (SudokuCell sudokuCell : colOfSudokuCells) {
+				Integer num = sudokuCell.getNumber();
+				if (num.equals(0)) {
+					// skip checking the cell if it is empty
+					continue;
+				}
+				if (!numbers.remove(num)) {
+					// remove returns false only if the given object was not in the ArrayList
+					// therefore a number was repeated in the column and this SudokuBoard is not a solution
+					return false;
+				}
+			}
+		}
+
+		return true;
 	}
 
 	/**
@@ -154,7 +237,8 @@ public class SudokuBoard {
 	 *
 	 * @return true if this SudokuBoard is a solution
 	 */
-	public boolean isSolution () {
+	@Override
+	public boolean isGoal () {
 		// used to create arraylists below to check for repeating numbers
 		final List<Integer> listOfNumbers = List.of(new Integer[]{ 1, 2, 3, 4, 5, 6, 7, 8, 9 });
 

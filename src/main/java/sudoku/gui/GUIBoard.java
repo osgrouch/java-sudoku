@@ -258,7 +258,7 @@ public class GUIBoard {
 	public void incrementGuessedCellsCount () {
 		++numOfGuessedCells;
 		if (numOfGuessedCells == totalNumOfCells) {
-			if (sudokuBoard.isSolution()) {
+			if (sudokuBoard.isGoal()) {
 				controller.successMessage("Congratulations,\nyou've solved the puzzle!");
 			} else {
 				controller.errorMessage("There are repeating numbers\nin the puzzle.");
