@@ -22,7 +22,7 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.Stack;
 
-/** Class that Controllers the contents of container.fxml and injects and controlls contents of the GUIBoard. */
+/** Class that Controllers the contents of container.fxml and injects and controls contents of the GUIBoard. */
 public class ContainerController implements Initializable {
 	/** Stack of GUIBoards used to restore the Board to a previous state */
 	private final Stack<GUIBoard> undoStack;
@@ -255,7 +255,7 @@ public class ContainerController implements Initializable {
 		successMessage("Successfully loaded HARD puzzle");
 	}
 
-	/** Open the file explorerer to allow the user to import a CSV Sudoku file. */
+	/** Open the file explorer to allow the user to import a CSV Sudoku file. */
 	public void loadOutsidePuzzle (ActionEvent event) {
 		File newFile = new FileChooser().showOpenDialog(messagePane.getScene().getWindow());
 		if (newFile != null) {
@@ -298,7 +298,7 @@ public class ContainerController implements Initializable {
 	 */
 	@Override
 	public void initialize (URL location, ResourceBundle resources) {
-		// display intitial sudoku board
+		// display initial sudoku board
 		boardAnchor.getChildren().add(guiBoard.getGridPaneOfGroups());
 
 		// set undo and redo images

@@ -290,7 +290,7 @@ public class SudokuBoard implements Configuration {
 
 	/**
 	 * Create a String representation of the current state of the SudokuBoard by displaying the SudokuCell numbers
-	 * distinctly seperated by regions.
+	 * distinctly separated by regions.
 	 *
 	 * @return visual String representation of 2D Array of SudokuCells
 	 */
